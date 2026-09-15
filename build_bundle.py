@@ -44,6 +44,14 @@ DEFAULTS = [
 
 SKIPPED_SECTIONS = {"Document Control", "Working Titles"}
 
+# Sections to exclude from the bundle, matched by exact number ("6.4") or by
+# normalized heading text ("testable predictions"). The source drafts stay
+# untouched — edit this set (or pass --drop on the command line) and rebuild.
+DROP_SECTIONS = set()
+
+DEFAULT_AUTHOR = "Squid"
+DEFAULT_ID = "light-reality-cycle"
+
 GAP = 0.10  # insertion/deletion penalty in the alignment
 
 
@@ -119,6 +127,34 @@ def strip_frontmatter(text: str) -> str:
             if lines[i].strip() == "---":
                 return "\n".join(lines[i + 1:])
     return text
+
+
+def read_frontmatter(text: str) -> dict:
+    """Parse the --- frontmatter block into {key: value} (first value wins)."""
+    lines = text.split("\n")
+    if not lines or lines[0].strip() != "---":
+        return {}
+    meta = {}
+    for i in range(1, len(lines)):
+        ln = lines[i].strip()
+        if ln == "---":
+            break
+        m = re.match(r"^([A-Za-z_][\w-]*):\s*(.*)$", ln)
+        if m:
+            key = m.group(1).lower()
+            val = m.group(2).strip().strip('"').strip("'")
+            if key not in meta:
+                meta[key] = val
+    return meta
+
+
+def is_dropped(heading: Block) -> bool:
+    """True when a heading matches DROP_SECTIONS by number or name."""
+    if heading is None:
+        return False
+    if heading.num and heading.num in DROP_SECTIONS:
+        return True
+    return normalize(heading.name or "") in DROP_SECTIONS
 
 
 def tokenize(text: str):
@@ -373,11 +409,19 @@ def build_bundle(text_a: str, text_b: str):
     pair_sections(sections_a, sections_b)  # silent run
 
     section_pairs = pair_sections(sections_a, sections_b)
+    kept, dropped = [], []
+    for sa, sb in section_pairs:
+        if is_dropped(sa.heading) or is_dropped(sb.heading):
+            dropped.append((sa, sb))
+        else:
+            kept.append((sa, sb))
     bundle_sections = []
 
-    for sa, sb in section_pairs:
+    for sa, sb in kept:
         # subsections
-        sub_pairs = pair_sections(sa.subsections, sb.subsections)
+        all_subs = pair_sections(sa.subsections, sb.subsections)
+        sub_pairs = [(ua, ub) for ua, ub in all_subs
+                     if not (is_dropped(ua.heading) or is_dropped(ub.heading))]
         subs = []
         for ua, ub in sub_pairs:
             blocks = align_blocks(ua.blocks, ub.blocks)
@@ -398,14 +442,18 @@ def build_bundle(text_a: str, text_b: str):
             "subsections": subs,
         })
 
+    meta_a = read_frontmatter(text_a)
+    meta_b = read_frontmatter(text_b)
+
     return {
-        "id": "light-reality-cycle",
+        "id": meta_a.get("id") or DEFAULT_ID,
         "title": {"original": header_a["title"], "everyone": header_b["title"]},
         "subtitle": {"original": header_a["subtitle"], "everyone": header_b["subtitle"]},
         "tagline": {"original": header_a["tagline"], "everyone": header_b["tagline"]},
         "epigraph": {"original": header_a["epigraph"], "everyone": header_b["epigraph"]},
+        "author": meta_a.get("author") or meta_b.get("author") or DEFAULT_AUTHOR,
         "sections": bundle_sections,
-    }, header_a, header_b
+    }, header_a, header_b, dropped
 
 
 def stats(bundle):
@@ -443,12 +491,16 @@ def main():
     ap.add_argument("original", nargs="?", default=DEFAULTS[0])
     ap.add_argument("everyone", nargs="?", default=DEFAULTS[1])
     ap.add_argument("--out", default=str(OUT))
+    ap.add_argument("--drop", action="append", default=[], metavar="NUM|NAME",
+                    help="exclude a section by number or name (repeatable)")
     args = ap.parse_args()
+
+    DROP_SECTIONS.update(d.strip().lower() for d in args.drop)
 
     ta = Path(args.original).read_text(encoding="utf-8")
     tb = Path(args.everyone).read_text(encoding="utf-8")
 
-    bundle, ha, hb = build_bundle(ta, tb)
+    bundle, ha, hb, dropped_sections = build_bundle(ta, tb)
     bundle["meta"] = {
         "built": date.today().isoformat(),
         "sources": {"original": Path(args.original).name, "everyone": Path(args.everyone).name},
@@ -470,7 +522,13 @@ def main():
     print(f"  original-only gap  : {gaps_o}")
     print(f"  everyone-only gap  : {gaps_e}")
     print(f"title    : {ha['title']}")
+    print(f"author   : {bundle['author']}")
     print(f"tagline  : {ha['tagline']!r} vs {hb['tagline']!r}")
+    if dropped_sections:
+        print("dropped  :")
+        for sa, sb in dropped_sections:
+            num = sb.heading.num or sa.heading.num
+            print(f"           [{num or '-'}] {sa.heading.name or '?'}")
     print()
     print("section map (alignment anchor = headings):")
     for kind, num, name in section_report(bundle):
