@@ -47,7 +47,7 @@ SKIPPED_SECTIONS = {"Document Control", "Working Titles"}
 # Sections to exclude from the bundle, matched by exact number ("6.4") or by
 # normalized heading text ("testable predictions"). The source drafts stay
 # untouched — edit this set (or pass --drop on the command line) and rebuild.
-DROP_SECTIONS = set()
+DROP_SECTIONS = {"3", "10", "continuation"}  # 3 Related Frameworks, 10 Objections and Responses (O1-O8), Continuation
 
 DEFAULT_AUTHOR = "Squid"
 DEFAULT_ID = "light-reality-cycle"
