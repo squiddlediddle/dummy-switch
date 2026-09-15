@@ -1,0 +1,6 @@
+# Generated build artifacts — recreate with: python build_share.py
+share/
+
+# Python
+__pycache__/
+*.pyc
