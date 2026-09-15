@@ -62,44 +62,6 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
    "heading": {
     "original": {
      "kind": "heading",
-     "text": "Keywords",
-     "level": 2,
-     "number": null,
-     "name": "Keywords"
-    },
-    "everyone": {
-     "kind": "heading",
-     "text": "Keywords",
-     "level": 2,
-     "number": null,
-     "name": "Keywords"
-    }
-   },
-   "blocks": [
-    {
-     "original": {
-      "kind": "list",
-      "text": "- light, photons, null geodesics, information throughput, perception, subjective time, specious present, ontology, observer-dependence, metaphysics, phenomenology, \"it from bit\", relationalism, relativity of simultaneity",
-      "level": null,
-      "number": null,
-      "name": "- light, photons, null geodesics, information throughput, perception, subjective time, specious present, ontology, observer-dependence, metaphysics, phenomenology, \"it from bit\", relationalism, relativity of simultaneity"
-     },
-     "everyone": {
-      "kind": "list",
-      "text": "- light, photons, information, time, perception, reality, metaphysics, \"the now\", observer, relativity, bits, mystery-of-time",
-      "level": null,
-      "number": null,
-      "name": "- light, photons, information, time, perception, reality, metaphysics, \"the now\", observer, relativity, bits, mystery-of-time"
-     }
-    }
-   ],
-   "subsections": []
-  },
-  {
-   "number": null,
-   "heading": {
-    "original": {
-     "kind": "heading",
      "text": "How to Read This Document",
      "level": 2,
      "number": null,
