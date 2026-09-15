@@ -1,4 +1,5 @@
-window.PAPER_BUNDLE = {
+window.PAPER_BUNDLES = window.PAPER_BUNDLES || {};
+window.PAPER_BUNDLES["light-reality-cycle"] = {
  "id": "light-reality-cycle",
  "title": {
   "original": "THE LIGHT–REALITY CYCLE",

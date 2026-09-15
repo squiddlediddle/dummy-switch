@@ -25,11 +25,14 @@ ROOT = Path(__file__).resolve().parent
 
 def build(out: Path):
     html = (ROOT / "index.html").read_text(encoding="utf-8")
-    bundle = (ROOT / "bundle.js").read_text(encoding="utf-8")
 
-    # 1. inline the pre-loaded bundle (works offline from file://)
-    html = html.replace('<script src="bundle.js"></script>',
-                        "<script>\n" + bundle + "\n</script>")
+    # 1. inline every bundle file referenced by <script src="bundle-<id>.js">
+    html = re.sub(
+        r'<script src="(bundle-[A-Za-z0-9_-]+\.js)"></script>',
+        lambda m: "<script>\n" + (ROOT / m.group(1)).read_text(encoding="utf-8")
+                  + "\n</script>",
+        html,
+    )
 
     # 2. drop PWA assets that can't exist in a single file
     html = re.sub(r"\s*<!-- BUILD:PWA-START -->[\s\S]*?<!-- BUILD:PWA-END -->", "", html)
@@ -37,8 +40,8 @@ def build(out: Path):
     # 3. drop the service-worker registration (needs a server + HTTPS anyway)
     html = re.sub(r"\s*/\* BUILD:SW-START \*/[\s\S]*?/\* BUILD:SW-END \*/", "", html)
 
-    if 'src="bundle.js"' in html:
-        raise SystemExit("ERROR: bundle.js reference still present in the output")
+    if re.search(r'src="bundle-[A-Za-z0-9_-]+\.js"', html):
+        raise SystemExit("ERROR: bundle script reference still present in the output")
     if "BUILD:SW-START" in html or "BUILD:PWA-START" in html:
         raise SystemExit("ERROR: build markers still present in the output")
 

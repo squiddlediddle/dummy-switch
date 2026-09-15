@@ -12,7 +12,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Dummy Switch">
 <!-- BUILD:PWA-END -->
-<title>The Dummy Switch — Light–Reality Cycle</title>
+<title>The Dummy Switch</title>
 
 <!-- KaTeX from CDN. If offline, the reader falls back to raw $...$ text. -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
@@ -109,6 +109,38 @@
     margin: 0 auto;
     padding: 2.2rem 1.4rem 8rem;
   }
+  #doc.hidden, #library.hidden, #toggle.hidden { display: none; }
+
+  /* library (paper picker) */
+  #library {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 8rem;
+  }
+  #library h1 {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: .8em; font-weight: 700; color: var(--muted);
+    text-transform: uppercase; letter-spacing: .08em;
+    margin: 0 0 1.2em;
+  }
+  .lib-card {
+    display: block; width: 100%; text-align: left;
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 1.1rem 1.3rem; margin: 0 0 1rem; cursor: pointer;
+    font-family: Georgia, "Times New Roman", serif; color: var(--ink);
+  }
+  .lib-card:hover { border-color: var(--accent); }
+  .lib-card h2 { margin: 0 0 .1em; border: none; font-size: 1.25em; }
+  .lib-card .byline { margin: 0 0 .7em; color: var(--muted); font-size: .92em; }
+  .lib-card .voices { display: flex; flex-direction: column; gap: .35em; font-size: .85em; color: var(--muted); }
+  .chip {
+    display: inline-block; font-family: system-ui, sans-serif;
+    font-size: .72em; font-weight: 700; padding: 1px 8px;
+    border-radius: 999px; margin-right: 6px; vertical-align: 1px;
+  }
+  .chip.o { background: #3d88d8; color: #fff; }
+  .chip.e { background: #d83d3d; color: #fff; }
+  .lib-empty { color: var(--muted); font-style: italic; }
 
   .doc-title h1 { font-size: 1.9em; line-height: 1.15; margin: 0 0 .2em; }
 .doc-title h2 { font-size: 1.25em; font-weight: 600; color: var(--muted); margin: 0 0 .1em; }
@@ -203,6 +235,7 @@
 
 <header id="topbar">
   <span class="app">The Dummy Switch</span>
+  <button id="homeBtn" title="Library">☰</button>
   <span class="spacer"></span>
   <button id="fontMinus" title="Smaller text">A−</button>
   <button id="fontPlus" title="Bigger text">A+</button>
@@ -211,7 +244,10 @@
   <span class="badge" id="badge">Original</span>
 </header>
 
-<main id="container"><div id="doc"></div></main>
+<main id="container">
+  <div id="doc"></div>
+  <div id="library" class="hidden"><h1>Library</h1><div id="libList"></div></div>
+</main>
 
 <button id="toggle">Dumb It Down</button>
 
@@ -226,7 +262,8 @@
   </div>
 </div>
 
-<script src="bundle.js"></script>
+<script src="bundle-light-reality-cycle.js"></script>
+<!-- add one <script src="bundle-<id>.js"></script> per paper (build with build_bundle.py) -->
 <script>
 "use strict";
 
@@ -234,7 +271,7 @@
 /* state                                                               */
 /* ------------------------------------------------------------------ */
 
-var B = window.PAPER_BUNDLE;
+var BUNDLES = window.PAPER_BUNDLES || {};
 var VOICE = { ORIGINAL: "original", EVERYONE: "everyone" };
 var state = {
   voice: VOICE.ORIGINAL,
@@ -242,17 +279,20 @@ var state = {
   dark: false,
   topIndex: 0,        // item index currently at the top of the viewport
   items: [],          // flattened paper: {kind, o, e}
-  els: []             // rendered DOM elements aligned to items
+  els: [],            // rendered DOM elements aligned to items
+  bundle: null        // selected paper bundle (null = library view)
 };
 var PREFS_KEY = "ds.pref";      // {voice}
 var UI_KEY = "ds.ui";           // {fs, dark}
-var PROG_KEY = "ds.progress:" + B.id;  // {i, v}
+var PROG_KEY = "ds.progress:";  // {i, v} — full per-paper key set in openBundle()
+var LAST_KEY = "ds.last";       // last opened bundle id
+var prefLoaded = false;
 
 /* ------------------------------------------------------------------ */
 /* flatten bundle -> items                                             */
 /* ------------------------------------------------------------------ */
 
-function flatten() {
+function flatten(B) {
   var items = [];
   items.push({ kind: "title", o: {
       kind: "title",
@@ -524,12 +564,85 @@ function setVoice(v, rerender) {
 }
 
 /* ------------------------------------------------------------------ */
+/* library (paper picker)                                              */
+/* ------------------------------------------------------------------ */
+
+var library = document.getElementById("library");
+var libList = document.getElementById("libList");
+
+function buildLibrary() {
+  libList.innerHTML = "";
+  var ids = Object.keys(BUNDLES);
+  if (!ids.length) {
+    var p = document.createElement("p");
+    p.className = "lib-empty";
+    p.textContent = "No papers yet — build one with: python build_bundle.py";
+    libList.appendChild(p);
+    return;
+  }
+  ids.forEach(function (id) {
+    var b = BUNDLES[id];
+    var card = document.createElement("button");
+    card.className = "lib-card";
+    card.innerHTML =
+        "<h2>" + esc(b.title.original) + "</h2>"
+      + (b.author ? "<p class=\"byline\">by " + esc(b.author) + "</p>" : "")
+      + "<div class=\"voices\">"
+      + "<span><span class=\"chip o\">Original</span>"
+      + esc((b.tagline && b.tagline.original) || "") + "</span>"
+      + "<span><span class=\"chip e\">Everyone</span>"
+      + esc((b.tagline && b.tagline.everyone) || "") + "</span>"
+      + "</div>";
+    card.addEventListener("click", function () { openBundle(id); });
+    libList.appendChild(card);
+  });
+}
+
+function showLibrary() {
+  state.bundle = null;
+  state.items = [];
+  state.els = [];
+  doc.classList.add("hidden");
+  library.classList.remove("hidden");
+  document.getElementById("toggle").classList.add("hidden");
+  document.title = "The Dummy Switch";
+  container.scrollTop = 0;
+}
+
+function hideLibrary() {
+  library.classList.add("hidden");
+  doc.classList.remove("hidden");
+  document.getElementById("toggle").classList.remove("hidden");
+}
+
+function openBundle(id) {
+  var b = BUNDLES[id];
+  if (!b) { showLibrary(); return; }
+  state.bundle = b;
+  state.items = flatten(b);
+  PROG_KEY = "ds.progress:" + b.id;
+  try { localStorage.setItem(LAST_KEY, b.id); } catch (e) {}
+  var prog = null;
+  try { prog = JSON.parse(localStorage.getItem(PROG_KEY) || "null"); } catch (e) {}
+  document.title = "The Dummy Switch — " + b.title.original;
+  hideLibrary();
+  if (prog && prog.v) setVoice(prog.v === VOICE.EVERYONE ? VOICE.EVERYONE : VOICE.ORIGINAL, false);
+  render();
+  if (prog && typeof prog.i === "number") {
+    var el = state.els[prog.i];
+    if (el) container.scrollTop = el.offsetTop - 40;
+  }
+  if (!prefLoaded) modal.classList.remove("hidden");
+}
+
+/* ------------------------------------------------------------------ */
 /* wiring                                                              */
 /* ------------------------------------------------------------------ */
 
 document.getElementById("toggle").addEventListener("click", function () {
   setVoice(state.voice === VOICE.ORIGINAL ? VOICE.EVERYONE : VOICE.ORIGINAL, true);
 });
+document.getElementById("homeBtn").addEventListener("click", showLibrary);
 document.getElementById("fontPlus").addEventListener("click", function () {
   state.fs = Math.min(26, state.fs + 1); applyUI(); saveUI(); render();
 });
@@ -558,10 +671,16 @@ function flash(msg) {
   setTimeout(function () { t.remove(); }, 1400);
 }
 document.getElementById("shareBtn").addEventListener("click", function () {
+  var b = state.bundle;
+  if (!b) { flash("Open a paper first"); return; }
+  var url;
+  try {
+    url = location.protocol === "file:" ? location.href : location.pathname + "?p=" + b.id;
+  } catch (e) { url = location.href; }
   var data = {
     title: document.title,
-    text: "The Light–Reality Cycle — read it in two voices, original and for everyone:",
-    url: location.href
+    text: b.title.original + " — read it in two voices, original and for everyone:",
+    url: url
   };
   if (navigator.share) {
     navigator.share(data).catch(function () {});
@@ -585,36 +704,37 @@ if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
 /* onboarding + boot */
 var modal = document.getElementById("modal");
 function boot() {
-  var pref = null, ui = null, prog = null;
+  var pref = null, ui = null;
   try {
     pref = JSON.parse(localStorage.getItem(PREFS_KEY) || "null");
     ui = JSON.parse(localStorage.getItem(UI_KEY) || "null");
-    prog = JSON.parse(localStorage.getItem(PROG_KEY) || "null");
   } catch (e) {}
 
   if (ui) { state.fs = ui.fs || 18; state.dark = !!ui.dark; }
   applyUI();
 
   if (pref && pref.voice) setVoice(pref.voice === VOICE.EVERYONE ? VOICE.EVERYONE : VOICE.ORIGINAL, false);
+  prefLoaded = !!pref;
 
-  state.items = flatten();
-  render();
+  buildLibrary();
 
-  if (prog && typeof prog.i === "number") {
-    // resume where they left off, in the voice they were using
-    if (prog.v) setVoice(prog.v === VOICE.EVERYONE ? VOICE.EVERYONE : VOICE.ORIGINAL, false);
-    var el = state.els[prog.i];
-    if (el) container.scrollTop = el.offsetTop - 40;
+  // deep link wins (?p=<id>), then the last-opened paper, then the library
+  var wanted = "";
+  try { wanted = new URLSearchParams(location.search).get("p") || ""; } catch (e) {}
+  if (!wanted) {
+    try { wanted = localStorage.getItem(LAST_KEY) || ""; } catch (e) {}
   }
-
-  if (!pref) modal.classList.remove("hidden");
+  if (BUNDLES[wanted]) openBundle(wanted);
+  else showLibrary();
 }
 document.getElementById("pickScientist").addEventListener("click", function () {
+  prefLoaded = true;
   localStorage.setItem(PREFS_KEY, JSON.stringify({ voice: VOICE.ORIGINAL }));
   modal.classList.add("hidden");
   setVoice(VOICE.ORIGINAL, true);
 });
 document.getElementById("pickDummy").addEventListener("click", function () {
+  prefLoaded = true;
   localStorage.setItem(PREFS_KEY, JSON.stringify({ voice: VOICE.EVERYONE }));
   modal.classList.add("hidden");
   setVoice(VOICE.EVERYONE, true);

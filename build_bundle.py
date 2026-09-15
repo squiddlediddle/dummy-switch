@@ -16,14 +16,17 @@ Alignment strategy:
      into its best match — extra paragraphs on either side become gaps
      instead of breaking the mapping.
 
-Output:
-  structure.json  the bundle (human-inspectable; this is the spec)
-  bundle.js       window.PAPER_BUNDLE = {...} (pre-loaded data, loads
-                  via <script> even from file:// with no server)
+Output (one file per paper, named by its id):
+  structure-<id>.json  the bundle (human-inspectable; this is the spec)
+  bundle-<id>.js       window.PAPER_BUNDLES["<id>"] = {...} (loads via
+                       <script> from file:// with no server — add a
+                       <script src="bundle-<id>.js"></script> tag to
+                       index.html for every paper you want included)
 
 Usage:
   python build_bundle.py                 # uses ../finals/*.md by default
   python build_bundle.py ORIG EVERY      # explicit pair
+  python build_bundle.py "a.md" "b.md" --id the-theory  # force an id
 """
 
 import argparse
@@ -493,6 +496,9 @@ def main():
     ap.add_argument("--out", default=str(OUT))
     ap.add_argument("--drop", action="append", default=[], metavar="NUM|NAME",
                     help="exclude a section by number or name (repeatable)")
+    ap.add_argument("--id", default=None, metavar="ID",
+                    help="override the bundle id (default: frontmatter id or "
+                         "'light-reality-cycle')")
     args = ap.parse_args()
 
     DROP_SECTIONS.update(d.strip().lower() for d in args.drop)
@@ -501,6 +507,8 @@ def main():
     tb = Path(args.everyone).read_text(encoding="utf-8")
 
     bundle, ha, hb, dropped_sections = build_bundle(ta, tb)
+    if args.id:
+        bundle["id"] = args.id
     bundle["meta"] = {
         "built": date.today().isoformat(),
         "sources": {"original": Path(args.original).name, "everyone": Path(args.everyone).name},
@@ -509,10 +517,13 @@ def main():
 
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
+    slug = (bundle["id"] or DEFAULT_ID).replace('"', '\\"')
     json_text = json.dumps(bundle, ensure_ascii=False, indent=1)
-    (out / "structure.json").write_text(json_text, encoding="utf-8")
-    (out / "bundle.js").write_text("window.PAPER_BUNDLE = " + json_text + ";\n",
-                                   encoding="utf-8")
+    (out / f"structure-{slug}.json").write_text(json_text, encoding="utf-8")
+    (out / f"bundle-{slug}.js").write_text(
+        "window.PAPER_BUNDLES = window.PAPER_BUNDLES || {};\n"
+        f'window.PAPER_BUNDLES["{slug}"] = ' + json_text + ";\n",
+        encoding="utf-8")
 
     total, both, gaps_o, gaps_e = stats(bundle)
     print(f"sections paired      : {len(bundle['sections'])} "
@@ -536,8 +547,8 @@ def main():
             print(f"  [{num or '-'}] {name}")
         else:
             print(f"       . {num} {name}")
-    print(f"wrote    : {out / 'structure.json'} ({len(json_text)} chars)")
-    print(f"wrote    : {out / 'bundle.js'}")
+    print(f"wrote    : {out / f'structure-{slug}.json'} ({len(json_text)} chars)")
+    print(f"wrote    : {out / f'bundle-{slug}.js'}")
 
 
 if __name__ == "__main__":

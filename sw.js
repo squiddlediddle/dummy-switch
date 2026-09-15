@@ -3,11 +3,12 @@
    Note: only active on http/https (not file://), and service workers
    require a secure context — so it kicks in on the hosted share link. */
 
-var CACHE = "dummy-switch-v3";
+var CACHE = "dummy-switch-v4";
 var LOCAL = [
   "./",
   "./index.html",
-  "./bundle.js",
+  "./bundle-light-reality-cycle.js",
+  // add every "./bundle-<id>.js" shipped in index.html here too
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
@@ -32,9 +33,12 @@ self.addEventListener("fetch", function (event) {
   if (req.method !== "GET") return;
   var url = new URL(req.url);
   if (url.origin === location.origin) {
-    // local: cache-first, then network and store
+    // local: cache-first, then network and store.
+    // Navigations carry ?p=<id> — cache them under the path-only key so
+    // deep links still work offline.
+    var key = (req.mode === "navigate") ? url.origin + url.pathname : req.url;
     event.respondWith(
-      caches.match(req).then(function (hit) {
+      caches.match(key).then(function (hit) {
         return hit || fetch(req).then(function (res) {
           var copy = res.clone();
           caches.open(CACHE).then(function (c) { c.put(req, copy); });

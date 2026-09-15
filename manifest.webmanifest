@@ -1,7 +1,7 @@
 {
-  "name": "The Dummy Switch — Light–Reality Cycle",
+  "name": "The Dummy Switch",
   "short_name": "Dummy Switch",
-  "description": "One paper, two voices: the scientist's and everybody else's. Toggle between the original and the for-everyone version without losing your place.",
+  "description": "Papers in two voices: the scientist's and everybody else's. Read the original or the for-everyone version and toggle between them without losing your place.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

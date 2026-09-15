@@ -101,7 +101,7 @@ def selftest(port: int):
     t = threading.Thread(target=server.serve_forever, daemon=True)
     t.start()
     results = []
-    for path in ("/", "/index.html", "/bundle.js", "/manifest.webmanifest", "/sw.js", "/icons/icon-192.png", "/__qr"):
+    for path in ("/", "/index.html", "/bundle-light-reality-cycle.js", "/manifest.webmanifest", "/sw.js", "/icons/icon-192.png", "/__qr"):
         try:
             with urllib.request.urlopen(f"http://127.0.0.1:{port}{path}", timeout=10) as r:
                 results.append(f"200  {path:28s} {r.headers.get('Content-Type')}")
