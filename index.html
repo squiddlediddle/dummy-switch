@@ -31,7 +31,7 @@
     --code-bg: #e4e7f1b2;
     --quote-bg: #ffffff;
     --quote-ink: #3d3d3d;
-    --fs: 18px;
+    --fs: 17px;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; height: 100%; }
@@ -203,8 +203,6 @@
   <span class="app">The Dummy Switch</span>
   <button id="homeBtn" title="Library">☰</button>
   <span class="spacer"></span>
-  <button id="fontMinus" title="Smaller text">A−</button>
-  <button id="fontPlus" title="Bigger text">A+</button>
   <button id="shareBtn" title="Share">⤴</button>
   <span class="badge" id="badge">Original</span>
 </header>
@@ -227,14 +225,12 @@
 
 var BUNDLES = window.PAPER_BUNDLES || {};
 var state = {
-  fs: 18,
   topIndex: 0,        // item index currently at the top of the viewport
   items: [],          // flattened paper: {kind, o, e}
   els: [],            // rendered DOM elements aligned to items
   explained: {},      // item index -> true when that block shows the "everyone" voice
   bundle: null        // selected paper bundle (null = library view)
 };
-var UI_KEY = "ds.ui";           // {fs}
 var PROG_KEY = "ds.progress:";  // {i, x} — full per-paper key set in openBundle()
 var LAST_KEY = "ds.last";       // last opened bundle id
 
@@ -486,9 +482,6 @@ function applyKatexDiffs() {
 /* persistence                                                         */
 /* ------------------------------------------------------------------ */
 
-function saveUI() {
-  localStorage.setItem(UI_KEY, JSON.stringify({ fs: state.fs }));
-}
 function saveProgress() {
   var t = topVisible();
   state.topIndex = t.index;
@@ -496,10 +489,6 @@ function saveProgress() {
   Object.keys(state.explained).forEach(function (k) { if (state.explained[k]) x.push(+k); });
   x.sort(function (a, b) { return a - b; });
   localStorage.setItem(PROG_KEY, JSON.stringify({ i: t.index, x: x }));
-}
-function applyUI() {
-  document.documentElement.style.setProperty("--fs", state.fs + "px");
-  updateBadge();
 }
 
 function updateBadge() {
@@ -616,12 +605,6 @@ doc.addEventListener("click", function (ev) {
   }
 });
 document.getElementById("homeBtn").addEventListener("click", showLibrary);
-document.getElementById("fontPlus").addEventListener("click", function () {
-  state.fs = Math.min(26, state.fs + 1); applyUI(); saveUI(); render();
-});
-document.getElementById("fontMinus").addEventListener("click", function () {
-  state.fs = Math.max(14, state.fs - 1); applyUI(); saveUI(); render();
-});
 
 var scrollT = null;
 container.addEventListener("scroll", function () {
@@ -673,10 +656,6 @@ if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
 
 /* boot */
 function boot() {
-  var ui = null;
-  try { ui = JSON.parse(localStorage.getItem(UI_KEY) || "null"); } catch (e) {}
-  if (ui && ui.fs) state.fs = ui.fs;
-  applyUI();
   buildLibrary();
 
   // deep link wins (?p=<id>), then the last-opened paper, then the library
