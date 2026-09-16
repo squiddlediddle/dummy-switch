@@ -93,7 +93,7 @@
   }
   .lib-card {
     display: block; width: 100%; text-align: left;
-    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    background: var(--card); border: 1px solid var(--line);
     padding: 1.1rem 1.3rem; margin: 0 0 1rem; cursor: pointer;
     font-family: Georgia, "Times New Roman", serif; color: var(--ink);
   }
@@ -122,17 +122,25 @@
 
   p { margin: 0 0 1em; }
 
-  /* explained (dark panel) blocks — scoped dark palette via inherited vars */
+  /* explained (blue panel) blocks — same blue as the UI accent, white text,
+     and the font size stays identical to the rest of the paper */
   .toggleable { cursor: pointer; }
-  .toggleable:hover { outline: 1px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .toggleable:hover { outline: 1px solid var(--accent); outline-offset: 3px; }
   .explained {
-    --bg: #14171f; --ink: #dfe4ef; --muted: #8d95a8;
-    --card: #1c2029; --accent: #6fa8e0; --accent-ink: #0c1622;
-    --line: #2d3340; --code-bg: #1f232e;
-    --quote-bg: #1c2029; --quote-ink: #dfe4ef;
+    --bg: #3d88d8;
+    --ink: #ffffff;
+    --muted: rgba(255, 255, 255, .82);
+    --card: #3d88d8;
+    --accent: #ffffff;
+    --accent-ink: #3d88d8;
+    --line: rgba(255, 255, 255, .4);
+    --code-bg: #3579c4;
+    --quote-bg: #3579c4;
+    --quote-ink: #ffffff;
+    font-size: var(--fs);
     background: var(--card);
+    color: var(--ink);
     box-shadow: inset 3px 0 0 var(--accent);
-    border-radius: 0 8px 8px 0;
   }
   p.explained, ul.explained, ol.explained { padding: .55em .9em; }
   .explained pre, .explained blockquote, .explained table, .explained .callout { margin: 0; }
@@ -142,7 +150,6 @@
     margin: 1em 0; padding: .6em 1.1em;
     border-left: 3px solid var(--accent);
     background: var(--quote-bg);
-    border-radius: 0 8px 8px 0;
     font-style: italic; color: var(--quote-ink);
   }
   .callout {
@@ -391,7 +398,11 @@ function makeParagraph(text) {
 // structural blocks (title, headings) always stay in the original voice;
 // everything else follows the per-block "explained" flag when set.
 function isStructural(item) { return item.kind === "title" || item.kind === "heading"; }
-function isToggleable(item) { return !isStructural(item) && !!item.o && !!item.e; }
+function isToggleable(item) {
+  // only blocks whose "for everyone" version actually differs are clickable —
+  // identical blocks (and structural ones) stay plain
+  return !isStructural(item) && !!item.o && !!item.e && item.o.text !== item.e.text;
+}
 function sideFor(item, i) {
   return (state.explained[i] && item.e) ? item.e : item.o;
 }
@@ -678,6 +689,7 @@ window.ds = {
   state: state,
   toggleItem: toggleItem,
   isToggleable: isToggleable,
+  isStructural: isStructural,
   sideFor: sideFor,
   render: render
 };
