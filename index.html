@@ -141,8 +141,15 @@
     background: var(--card);
     color: var(--ink);
   }
-  /* the blue panel never adds padding/margins — it keeps the exact same box
-     as the original block so nothing shifts when a block is explained */
+  /* a few px of air around the text of explained paragraphs/lists: the
+     negative margins cancel the added padding exactly, so the text and the
+     flow keep their positions — only the blue box grows outward */
+  p.explained, ul.explained, ol.explained {
+    padding: 5px 8px;
+    margin: -5px -8px calc(1em - 5px);
+  }
+
+  /* explained blocks that already carry their own padding keep it */
   .explained pre, .explained blockquote, .explained table, .explained .callout { margin: 0; }
   .explained .callout { background: var(--code-bg); }
 
