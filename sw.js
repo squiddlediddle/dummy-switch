@@ -8,6 +8,7 @@ var LOCAL = [
   "./",
   "./index.html",
   "./bundle-light-reality-cycle.js",
+  "./bundle-the-theory.js",
   // add every "./bundle-<id>.js" shipped in index.html here too
   "./manifest.webmanifest",
   "./icons/icon-192.png",
