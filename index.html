@@ -54,17 +54,19 @@
   }
   #topbar .app { font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
   #topbar .spacer { flex: 1; }
-  #topbar .badge {
+  #topbar button.badge {
     padding: 3px 10px; border-radius: 999px;
     background: var(--accent); color: var(--accent-ink);
-    font-weight: 600; white-space: nowrap;
+    border: none; font-weight: 600; white-space: nowrap;
   }
+  #topbar button.badge:hover { filter: brightness(1.1); }
   #topbar button {
     background: transparent; color: var(--muted);
     border: 1px solid var(--line); border-radius: 8px;
     padding: 4px 10px; cursor: pointer; font-size: 13px;
   }
   #topbar button:hover { color: var(--ink); border-color: var(--muted); }
+  #topbar button.badge:hover { color: var(--accent-ink); border-color: var(--accent); }
 
   #container {
     height: calc(100vh - 46px);
@@ -204,7 +206,7 @@
   <button id="homeBtn" title="Library">☰</button>
   <span class="spacer"></span>
   <button id="shareBtn" title="Share">⤴</button>
-  <span class="badge" id="badge">Original</span>
+  <button id="badge" class="badge" title="Click: turn off all explanations — or when none are on, turn them all on">Original</button>
 </header>
 
 <main id="container">
@@ -500,6 +502,23 @@ function updateBadge() {
   b.textContent = n ? (n + " explained") : "Original";
 }
 
+/* badge click: if anything is explained, explain nothing; if nothing is
+   explained, explain every toggleable block */
+function toggleAll() {
+  if (!state.bundle) return;
+  var n = 0;
+  Object.keys(state.explained).forEach(function (k) { if (state.explained[k]) n++; });
+  state.explained = {};
+  if (n === 0) {
+    state.items.forEach(function (item, i) {
+      if (isToggleable(item)) state.explained[i] = true;
+    });
+  }
+  updateBadge();
+  saveProgress();
+  render();
+}
+
 /* per-block explain toggle */
 function toggleItem(i) {
   var item = state.items[i];
@@ -605,6 +624,7 @@ doc.addEventListener("click", function (ev) {
   }
 });
 document.getElementById("homeBtn").addEventListener("click", showLibrary);
+document.getElementById("badge").addEventListener("click", toggleAll);
 
 var scrollT = null;
 container.addEventListener("scroll", function () {
@@ -674,6 +694,7 @@ boot();
 window.ds = {
   state: state,
   toggleItem: toggleItem,
+  toggleAll: toggleAll,
   isToggleable: isToggleable,
   isStructural: isStructural,
   sideFor: sideFor,
