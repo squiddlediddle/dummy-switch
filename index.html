@@ -33,38 +33,6 @@
     --quote-ink: #3d3d3d;
     --fs: 18px;
   }
-  /* Everyone (red) — light */
-  body.voice-everyone {
-    --bg: #faf4f4;
-    --accent: #d83d3d;
-    --code-bg: #f1e4e4b2;
-  }
-  /* Original (blue) — dark */
-  body.dark {
-    --bg: #14171f;
-    --ink: #dfe4ef;
-    --muted: #8d95a8;
-    --card: #1c2029;
-    --accent: #6fa8e0;
-    --accent-ink: #0c1622;
-    --line: #2d3340;
-    --code-bg: #1f232e;
-    --quote-bg: #1c2029;
-    --quote-ink: #dfe4ef;
-  }
-  /* Everyone (red) — dark */
-  body.dark.voice-everyone {
-    --bg: #1c1413;
-    --ink: #e6d9d5;
-    --muted: #a3908b;
-    --card: #251b19;
-    --accent: #e07a6f;
-    --accent-ink: #2a0e0b;
-    --line: #382925;
-    --code-bg: #241b18;
-    --quote-bg: #251b19;
-    --quote-ink: #e6d9d5;
-  }
   * { box-sizing: border-box; }
   html, body { margin: 0; height: 100%; }
   body {
@@ -109,7 +77,7 @@
     margin: 0 auto;
     padding: 2.2rem 1.4rem 8rem;
   }
-  #doc.hidden, #library.hidden, #toggle.hidden { display: none; }
+  #doc.hidden, #library.hidden, #badge.hidden { display: none; }
 
   /* library (paper picker) */
   #library {
@@ -153,6 +121,23 @@
   h3 { font-size: 1.1em; }
 
   p { margin: 0 0 1em; }
+
+  /* explained (dark panel) blocks — scoped dark palette via inherited vars */
+  .toggleable { cursor: pointer; }
+  .toggleable:hover { outline: 1px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .explained {
+    --bg: #14171f; --ink: #dfe4ef; --muted: #8d95a8;
+    --card: #1c2029; --accent: #6fa8e0; --accent-ink: #0c1622;
+    --line: #2d3340; --code-bg: #1f232e;
+    --quote-bg: #1c2029; --quote-ink: #dfe4ef;
+    background: var(--card);
+    box-shadow: inset 3px 0 0 var(--accent);
+    border-radius: 0 8px 8px 0;
+  }
+  p.explained, ul.explained, ol.explained { padding: .55em .9em; }
+  .explained pre, .explained blockquote, .explained table, .explained .callout { margin: 0; }
+  .explained .callout { background: var(--code-bg); }
+
   blockquote {
     margin: 1em 0; padding: .6em 1.1em;
     border-left: 3px solid var(--accent);
@@ -190,40 +175,7 @@
   p code, li code, td code, th code { background: var(--code-bg); padding: .05em .35em; border-radius: 5px; }
   .math-raw { font-style: italic; color: var(--accent); font-family: "Cascadia Code", Consolas, monospace; }
 
-  /* floating toggle */
-  #toggle {
-    position: fixed; right: calc(18px + env(safe-area-inset-right)); bottom: calc(22px + env(safe-area-inset-bottom)); z-index: 30;
-    font-family: system-ui, sans-serif; font-size: 14px; font-weight: 700;
-    padding: 12px 18px; border: none; border-radius: 999px;
-    background: var(--accent); color: var(--accent-ink);
-    box-shadow: 0 6px 20px rgba(0,0,0,.25);
-    cursor: pointer;
-  }
-  #toggle:hover { filter: brightness(1.08); }
-
-  /* onboarding modal */
-  #modal {
-    position: fixed; inset: 0; z-index: 50;
-    background: rgba(0,0,0,.55);
-    display: flex; align-items: center; justify-content: center;
-    padding: 20px;
-  }
-  #modal.hidden { display: none; }
-  #modal .box {
-    background: var(--card); color: var(--ink);
-    max-width: 30rem; padding: 1.8rem; border-radius: 16px;
-    font-family: system-ui, -apple-system, sans-serif;
-    box-shadow: 0 20px 60px rgba(0,0,0,.35);
-  }
-  #modal h2 { margin: 0 0 .5em; border: none; font-size: 1.3em; }
-  #modal p { color: var(--muted); font-size: 14px; margin: 0 0 1.2em; }
-  #modal .row { display: flex; gap: 10px; }
-  #modal button {
-    flex: 1; padding: 12px 8px; border-radius: 10px; border: none;
-    background: var(--accent); color: var(--accent-ink);
-    font-weight: 700; cursor: pointer; font-size: 15px;
-  }
-  #modal button.alt { background: var(--code-bg); color: var(--ink); border: 1px solid var(--line); }
+  
 
   .foot {
     margin-top: 3em; color: var(--muted); font-size: .8em;
@@ -239,7 +191,6 @@
   <span class="spacer"></span>
   <button id="fontMinus" title="Smaller text">A−</button>
   <button id="fontPlus" title="Bigger text">A+</button>
-  <button id="themeBtn" title="Light / dark">◐</button>
   <button id="shareBtn" title="Share">⤴</button>
   <span class="badge" id="badge">Original</span>
 </header>
@@ -248,19 +199,6 @@
   <div id="doc"></div>
   <div id="library" class="hidden"><h1>Library</h1><div id="libList"></div></div>
 </main>
-
-<button id="toggle">Dumb It Down</button>
-
-<div id="modal">
-  <div class="box">
-    <h2>Are you a scientist, or a dummy?</h2>
-    <p>Both answers are valid and you can switch anytime — even in the middle of a hard paragraph. This just picks where you start.</p>
-    <div class="row">
-      <button id="pickScientist">I'm a scientist</button>
-      <button id="pickDummy" class="alt">I'm a dummy (proudly)</button>
-    </div>
-  </div>
-</div>
 
 <script src="bundle-light-reality-cycle.js"></script>
 <script src="bundle-the-theory.js"></script>
@@ -274,21 +212,17 @@
 /* ------------------------------------------------------------------ */
 
 var BUNDLES = window.PAPER_BUNDLES || {};
-var VOICE = { ORIGINAL: "original", EVERYONE: "everyone" };
 var state = {
-  voice: VOICE.ORIGINAL,
   fs: 18,
-  dark: false,
   topIndex: 0,        // item index currently at the top of the viewport
   items: [],          // flattened paper: {kind, o, e}
   els: [],            // rendered DOM elements aligned to items
+  explained: {},      // item index -> true when that block shows the "everyone" voice
   bundle: null        // selected paper bundle (null = library view)
 };
-var PREFS_KEY = "ds.pref";      // {voice}
-var UI_KEY = "ds.ui";           // {fs, dark}
-var PROG_KEY = "ds.progress:";  // {i, v} — full per-paper key set in openBundle()
+var UI_KEY = "ds.ui";           // {fs}
+var PROG_KEY = "ds.progress:";  // {i, x} — full per-paper key set in openBundle()
 var LAST_KEY = "ds.last";       // last opened bundle id
-var prefLoaded = false;
 
 /* ------------------------------------------------------------------ */
 /* flatten bundle -> items                                             */
@@ -372,7 +306,7 @@ function makeQuote(text) {
   return el;
 }
 function makeHeading(item) {
-  var sideObj = state.voice === VOICE.ORIGINAL ? item.o : item.e;
+  var sideObj = item.o;
   if (!sideObj) return null;
   var el = document.createElement(item.level === 3 ? "h3" : "h2");
   el.textContent = sideObj.text;
@@ -454,20 +388,31 @@ function makeParagraph(text) {
   return el;
 }
 
-function buildEl(item) {
-  var sideObj = state.voice === VOICE.ORIGINAL ? item.o : item.e;
+// structural blocks (title, headings) always stay in the original voice;
+// everything else follows the per-block "explained" flag when set.
+function isStructural(item) { return item.kind === "title" || item.kind === "heading"; }
+function isToggleable(item) { return !isStructural(item) && !!item.o && !!item.e; }
+function sideFor(item, i) {
+  return (state.explained[i] && item.e) ? item.e : item.o;
+}
+function buildEl(item, i) {
+  var sideObj = sideFor(item, i);
   if (!sideObj) return null;
+  var el;
   switch (sideObj.kind) {
-    case "title":    return makeTitle(sideObj);
-    case "heading":  return makeHeading(item);
-    case "quote":    return makeQuote(sideObj.text);
-    case "callout":  return makeCallout(sideObj.text);
-    case "list":     return makeList(sideObj.text);
-    case "table":    return makeTable(sideObj.text);
-    case "code":     return makeCode(sideObj.text);
+    case "title":    el = makeTitle(sideObj); break;
+    case "heading":  el = makeHeading(item); break;
+    case "quote":    el = makeQuote(sideObj.text); break;
+    case "callout":  el = makeCallout(sideObj.text); break;
+    case "list":     el = makeList(sideObj.text); break;
+    case "table":    el = makeTable(sideObj.text); break;
+    case "code":     el = makeCode(sideObj.text); break;
     case "paragraph":
-    default:         return makeParagraph(sideObj.text);
+    default:         el = makeParagraph(sideObj.text); break;
   }
+  if (isToggleable(item)) el.className += " toggleable";
+  if (state.explained[i] && item.e) el.className += " explained";
+  return el;
 }
 
 /* ------------------------------------------------------------------ */
@@ -492,13 +437,10 @@ function render() {
   var anchor = topVisible();
   doc.innerHTML = "";
   state.els = [];
-  var WHOLE = 0;
-  var INSERT = 1; // block whose other voice is missing
-  var seen = {};  // stamp blocks that exist in the other voice
 
-  // first pass: build elements for the active voice
+  // first pass: build elements (respecting per-block explained flags)
   state.items.forEach(function (item, i) {
-    var el = buildEl(item);
+    var el = buildEl(item, i);
     if (!el) { state.els.push(null); return; }
     el.dataset.i = i;
     doc.appendChild(el);
@@ -527,42 +469,45 @@ function applyKatexDiffs() {
 /* ------------------------------------------------------------------ */
 
 function saveUI() {
-  localStorage.setItem(UI_KEY, JSON.stringify({ fs: state.fs, dark: state.dark }));
+  localStorage.setItem(UI_KEY, JSON.stringify({ fs: state.fs }));
 }
 function saveProgress() {
   var t = topVisible();
   state.topIndex = t.index;
-  localStorage.setItem(PROG_KEY, JSON.stringify({ i: t.index, v: state.voice }));
+  var x = [];
+  Object.keys(state.explained).forEach(function (k) { if (state.explained[k]) x.push(+k); });
+  x.sort(function (a, b) { return a - b; });
+  localStorage.setItem(PROG_KEY, JSON.stringify({ i: t.index, x: x }));
 }
-function applyVoice() {
-  document.body.classList.toggle("voice-original", state.voice === VOICE.ORIGINAL);
-  document.body.classList.toggle("voice-everyone", state.voice === VOICE.EVERYONE);
-  var iconLink = document.querySelector('link[rel="icon"]');
-  if (iconLink) {
-    iconLink.href = state.voice === VOICE.EVERYONE ? "icons/favicon-red.png" : "icons/favicon.png";
-  }
-}
-
 function applyUI() {
   document.documentElement.style.setProperty("--fs", state.fs + "px");
-  document.body.classList.toggle("dark", state.dark);
-  applyVoice();
-  document.getElementById("themeBtn").textContent = state.dark ? "☀" : "◐";
   updateBadge();
 }
 
 function updateBadge() {
-  document.getElementById("badge").textContent =
-    state.voice === VOICE.ORIGINAL ? "For Nerds" : "For Dummies";
+  var n = 0;
+  Object.keys(state.explained).forEach(function (k) { if (state.explained[k]) n++; });
+  var b = document.getElementById("badge");
+  if (!state.bundle) { b.classList.add("hidden"); return; }
+  b.classList.remove("hidden");
+  b.textContent = n ? (n + " explained") : "Original";
 }
 
-function setVoice(v, rerender) {
-  state.voice = v;
+/* per-block explain toggle */
+function toggleItem(i) {
+  var item = state.items[i];
+  if (!item || !isToggleable(item)) return false;
+  if (state.explained[i]) delete state.explained[i];
+  else state.explained[i] = true;
+  var old = state.els[i];
+  var fresh = buildEl(item, i);
+  if (!fresh) { delete state.explained[i]; return false; }
+  fresh.dataset.i = i;
+  state.els[i] = fresh;
+  if (old && old.parentNode) old.parentNode.replaceChild(fresh, old);
   updateBadge();
-  applyVoice();
-  var btn = document.getElementById("toggle");
-  btn.textContent = v === VOICE.ORIGINAL ? "Dumb It Down" : "Read The Original";
-  if (rerender) { render(); saveProgress(); }
+  saveProgress();
+  return true;
 }
 
 /* ------------------------------------------------------------------ */
@@ -606,15 +551,14 @@ function showLibrary() {
   state.els = [];
   doc.classList.add("hidden");
   library.classList.remove("hidden");
-  document.getElementById("toggle").classList.add("hidden");
   document.title = "The Dummy Switch";
   container.scrollTop = 0;
+  updateBadge();
 }
 
 function hideLibrary() {
   library.classList.add("hidden");
   doc.classList.remove("hidden");
-  document.getElementById("toggle").classList.remove("hidden");
 }
 
 function openBundle(id) {
@@ -628,21 +572,30 @@ function openBundle(id) {
   try { prog = JSON.parse(localStorage.getItem(PROG_KEY) || "null"); } catch (e) {}
   document.title = "The Dummy Switch — " + b.title.original;
   hideLibrary();
-  if (prog && prog.v) setVoice(prog.v === VOICE.EVERYONE ? VOICE.EVERYONE : VOICE.ORIGINAL, false);
+  state.explained = {};
+  (prog && prog.x || []).forEach(function (i) {
+    if (typeof i === "number" && state.items[i]) state.explained[i] = true;
+  });
   render();
+  updateBadge();
   if (prog && typeof prog.i === "number") {
     var el = state.els[prog.i];
     if (el) container.scrollTop = el.offsetTop - 40;
   }
-  if (!prefLoaded) modal.classList.remove("hidden");
 }
 
 /* ------------------------------------------------------------------ */
 /* wiring                                                              */
 /* ------------------------------------------------------------------ */
 
-document.getElementById("toggle").addEventListener("click", function () {
-  setVoice(state.voice === VOICE.ORIGINAL ? VOICE.EVERYONE : VOICE.ORIGINAL, true);
+/* click on a block swaps only that block to the "explained" voice (and back) */
+doc.addEventListener("click", function (ev) {
+  var t = ev.target;
+  while (t && t !== doc) {
+    var i = t.dataset && t.dataset.i;
+    if (i !== undefined) { toggleItem(+i); return; }
+    t = t.parentNode;
+  }
 });
 document.getElementById("homeBtn").addEventListener("click", showLibrary);
 document.getElementById("fontPlus").addEventListener("click", function () {
@@ -650,9 +603,6 @@ document.getElementById("fontPlus").addEventListener("click", function () {
 });
 document.getElementById("fontMinus").addEventListener("click", function () {
   state.fs = Math.max(14, state.fs - 1); applyUI(); saveUI(); render();
-});
-document.getElementById("themeBtn").addEventListener("click", function () {
-  state.dark = !state.dark; applyUI(); saveUI();
 });
 
 var scrollT = null;
@@ -703,21 +653,12 @@ if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
 }
 /* BUILD:SW-END */
 
-/* onboarding + boot */
-var modal = document.getElementById("modal");
+/* boot */
 function boot() {
-  var pref = null, ui = null;
-  try {
-    pref = JSON.parse(localStorage.getItem(PREFS_KEY) || "null");
-    ui = JSON.parse(localStorage.getItem(UI_KEY) || "null");
-  } catch (e) {}
-
-  if (ui) { state.fs = ui.fs || 18; state.dark = !!ui.dark; }
+  var ui = null;
+  try { ui = JSON.parse(localStorage.getItem(UI_KEY) || "null"); } catch (e) {}
+  if (ui && ui.fs) state.fs = ui.fs;
   applyUI();
-
-  if (pref && pref.voice) setVoice(pref.voice === VOICE.EVERYONE ? VOICE.EVERYONE : VOICE.ORIGINAL, false);
-  prefLoaded = !!pref;
-
   buildLibrary();
 
   // deep link wins (?p=<id>), then the last-opened paper, then the library
@@ -729,20 +670,17 @@ function boot() {
   if (BUNDLES[wanted]) openBundle(wanted);
   else showLibrary();
 }
-document.getElementById("pickScientist").addEventListener("click", function () {
-  prefLoaded = true;
-  localStorage.setItem(PREFS_KEY, JSON.stringify({ voice: VOICE.ORIGINAL }));
-  modal.classList.add("hidden");
-  setVoice(VOICE.ORIGINAL, true);
-});
-document.getElementById("pickDummy").addEventListener("click", function () {
-  prefLoaded = true;
-  localStorage.setItem(PREFS_KEY, JSON.stringify({ voice: VOICE.EVERYONE }));
-  modal.classList.add("hidden");
-  setVoice(VOICE.EVERYONE, true);
-});
 
 boot();
+
+/* window.ds seam — used by the automated click tests */
+window.ds = {
+  state: state,
+  toggleItem: toggleItem,
+  isToggleable: isToggleable,
+  sideFor: sideFor,
+  render: render
+};
 </script>
 </body>
 </html>
