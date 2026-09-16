@@ -140,9 +140,9 @@
     font-size: var(--fs);
     background: var(--card);
     color: var(--ink);
-    box-shadow: inset 3px 0 0 var(--accent);
   }
-  p.explained, ul.explained, ol.explained { padding: .55em .9em; }
+  /* the blue panel never adds padding/margins — it keeps the exact same box
+     as the original block so nothing shifts when a block is explained */
   .explained pre, .explained blockquote, .explained table, .explained .callout { margin: 0; }
   .explained .callout { background: var(--code-bg); }
 
