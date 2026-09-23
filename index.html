@@ -127,17 +127,14 @@
   /* explained (blue panel) blocks — same blue as the UI accent, white text,
      and the font size stays identical to the rest of the paper */
   .toggleable { cursor: pointer; }
-  /* hover outline (all devices) */
-  .toggleable:hover { outline: 1px solid var(--accent); outline-offset: 3px; }
-  /* on desktop (fine pointer) the outline is visible by default, so the
-     reader can see at a glance what is clickable; a hover just thickens it.
-     Touch screens keep the hover-only rule — an always-on outline around
-     every switchable block would be noise on a phone. Outlines don't take
-     part in layout, so the zero-shift guarantee is unaffected. */
-  @media (hover: hover) and (pointer: fine) {
-    .toggleable { outline: 1px solid var(--accent); outline-offset: 3px; }
-    .toggleable:hover { outline-width: 2px; }
-  }
+  /* switchable blocks are outlined at all times, on every device, so they
+     read as clickable — except once switched: the explained blue panel
+     wears no outline (the panel itself is the "explained" state; the
+     pointer cursor and the badge still mark it as revertible). Hover just
+     thickens the line. Outlines don't participate in layout, so the
+     zero-shift guarantee is unaffected. */
+  .toggleable:not(.explained) { outline: 1px solid var(--accent); outline-offset: 3px; }
+  .toggleable:not(.explained):hover { outline-width: 2px; }
   .explained {
     --bg: #3d88d8;
     --ink: #ffffff;
