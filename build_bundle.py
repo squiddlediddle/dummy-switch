@@ -85,9 +85,12 @@ def normalize(text: str) -> str:
 # explanation text (the panel already IS the "explained" signal). Unmarked
 # blocks stay verbatim on both sides and are not clickable in the reader.
 # Matches the marker after an optional bullet/number prefix ("- ", "1. ") or
-# a blockquote prefix ("> "), and tolerates 1–3 asterisks on either side.
+# any number of blockquote prefixes ("> ", "> > "), with or without a bullet,
+# and tolerates 1–3 asterisks on either side. Group 1 is the prefix that must
+# survive (the "> " so the block still parses as a quote, the "- " so list
+# structure is kept) — only the marker itself is dropped.
 MARKER_RE = re.compile(
-    r"^(\s*(?:>\s*)?(?:[-*]|\d+\.)\s+)?✳️\*{1,3}[Ee]xplained:\*{1,3}\s*",
+    r"^(\s*(?:>\s*)*(?:[-*]|\d+\.)?\s*)✳️\*{1,3}[Ee]xplained:\*{1,3}\s*",
     re.MULTILINE,
 )
 

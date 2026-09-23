@@ -17,6 +17,7 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
   "original": "\"A spark becomes a messenger: photons leave an event, thread the fabric of space–time, exchange with matter, strike an eye or sensor, and in the brain's quiet machinery those flashes become a single, lived present.\"",
   "everyone": "\"A spark becomes a messenger: photons leave an event, thread the fabric of space–time, exchange with matter, strike an eye or sensor, and in the brain's quiet machinery those flashes become a single, lived present.\""
  },
+ "lead": [],
  "author": "Squid",
  "sections": [
   {
@@ -1187,10 +1188,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "quote",
-        "text": "✳️***Explained:*** **Hypothesis H1 (Perceived rate tracks throughput).** When you're watching time pass, the felt rate of time is a steadily rising (but saturating) function of how much information your brain is processing: more information per second → time feels as if it's moving faster or fuller.",
+        "text": "**Hypothesis H1 (Perceived rate tracks throughput).** When you're watching time pass, the felt rate of time is a steadily rising (but saturating) function of how much information your brain is processing: more information per second → time feels as if it's moving faster or fuller.",
         "level": null,
         "number": null,
-        "name": "✳️***Explained:*** **Hypothesis H1 (Perceived rate tracks throughput).** When you're watching time pass, the felt rate of time is a steadily rising (but saturating) function of how much information your brain is processing: more information per second → time feels as if it's moving faster or fuller."
+        "name": "**Hypothesis H1 (Perceived rate tracks throughput).** When you're watching time pass, the felt rate of time is a steadily rising (but saturating) function of how much information your brain is processing: more information per second → time feels as if it's moving faster or fuller."
        }
       }
      ]

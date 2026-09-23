@@ -155,6 +155,17 @@
   .explained pre, .explained blockquote, .explained table, .explained .callout { margin: 0; }
   .explained .callout { background: var(--code-bg); }
 
+  /* explained panels carry a small star so the reader can tell at a glance
+     which blocks are explained — the drafted ✳️***Explained:*** markers are
+     stripped at build time, and the reader adds its own clean signal instead.
+     Plain ✳ (no emoji variation selector) so it renders in the text color */
+  p.explained::before, li.explained::before,
+  ul.explained::before, ol.explained::before, blockquote.explained::before {
+    content: "\2733\00a0";  /* ✳ + non-breaking space */
+    font-weight: 700;
+    font-style: normal;
+  }
+
   blockquote {
     margin: 1em 0; padding: .6em 1.1em;
     border-left: 3px solid var(--accent);
