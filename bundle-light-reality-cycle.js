@@ -11,7 +11,7 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
  },
  "tagline": {
   "original": "A Metaphysical Theory of Informational Reality",
-  "everyone": "The Same Paper — Every Paragraph Explained"
+  "everyone": "A Metaphysical Theory of Informational Reality"
  },
  "epigraph": {
   "original": "\"A spark becomes a messenger: photons leave an event, thread the fabric of space–time, exchange with matter, strike an eye or sensor, and in the brain's quiet machinery those flashes become a single, lived present.\"",
@@ -48,48 +48,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
      },
      "everyone": {
       "kind": "paragraph",
-      "text": "Here's the whole theory in a paragraph. Everything we know about the world arrives to us as **light messages**. That much is plain science — your eyes are light detectors. This theory goes further and claims: the world you see — the \"reality\" you live in — is made of those messages; and the flow of time you feel is the rate at which the messages arrive and get decoded by your brain. The more information your brain is chewing on, the more time feels like it is happening. The whole round trip is called the **Light–Reality Cycle**: seven stages from the spark at the source event to the felt \"now\" in your head. The paper defends the idea against the standard objections (but we can also hear and touch!), grounds it in the philosophical literature (Kant, Bergson, Husserl, Whitehead, Wheeler, Rovelli), and turns it into specific, falsifiable laboratory predictions. It is not offered as derived physics — it is a first-principle ontology that takes the physics of light and the feel of time seriously.",
+      "text": "This theory, the **Light–Reality Cycle**, is about how we experience reality. It makes two claims. First: everything we can know about the world around us arrives through light. Look at anything: a face, a tree, a screen. What's actually happening is that light leaves that thing, travels to your eyes, and carries the information with it. Light is the messenger. Second, and stronger: reality, as we experience it, really *is* that light-carried information. There's no hidden extra \"stuff\" behind the message; the message is the world, at least for anyone watching it. The theory pictures this as a cycle of seven steps: an event gives off light, the light travels across space and time, it bumps into matter, it reaches your eye, the eye turns it into nerve signals, the brain decodes those signals, and from that stream the brain builds your sense of the \"now\" and the flow of time. The key new idea: how *fast* time seems to pass depends on how much information your brain is receiving per second. A rich stream of new information stretches time; a slow, boring stream makes it fly. The theory also faces its objections head-on, sits alongside thinkers from Kant to modern physics, and offers predictions you could actually test. It isn't new physics; it's a way of taking light, information, and the felt flow of time seriously, together.",
       "level": null,
       "number": null,
-      "name": "Here's the whole theory in a paragraph. Everything we know about the world arrives to us as **light messages**. That much is plain science — your eyes are light detectors. This theory goes further and claims: the world you see — the \"reality\" you live in — is made of those messages; and the flow of time you feel is the rate at which the messages arrive and get decoded by your brain. The more information your brain is chewing on, the more time feels like it is happening. The whole round trip is called the **Light–Reality Cycle**: seven stages from the spark at the source event to the felt \"now\" in your head. The paper defends the idea against the standard objections (but we can also hear and touch!), grounds it in the philosophical literature (Kant, Bergson, Husserl, Whitehead, Wheeler, Rovelli), and turns it into specific, falsifiable laboratory predictions. It is not offered as derived physics — it is a first-principle ontology that takes the physics of light and the feel of time seriously."
-     }
-    }
-   ],
-   "subsections": []
-  },
-  {
-   "number": null,
-   "heading": {
-    "original": {
-     "kind": "heading",
-     "text": "How to Read This Document",
-     "level": 2,
-     "number": null,
-     "name": "How to Read This Document"
-    },
-    "everyone": {
-     "kind": "heading",
-     "text": "How to Read This Document",
-     "level": 2,
-     "number": null,
-     "name": "How to Read This Document"
-    }
-   },
-   "blocks": [
-    {
-     "original": {
-      "kind": "callout",
-      "text": "[!info] Genre declaration\nThe physics used here is real and held to ordinary scientific standards. The ontology is a *proposal* — a coherent metaphysical reading of that physics, not a result derivable from it. Where the prose becomes poetic, that is deliberate: the theory is offered as a creative theory of reality in the field of metaphysics. Poetic shorthand is always flagged as such when it touches physics.",
-      "level": null,
-      "number": null,
-      "name": "[!info] Genre declaration\nThe physics used here is real and held to ordinary scientific standards. The ontology is a *proposal* — a coherent metaphysical reading of that physics, not a result derivable from it. Where the prose becomes poetic, that is deliberate: the theory is offered as a creative theory of reality in the field of metaphysics. Poetic shorthand is always flagged as such when it touches physics."
-     },
-     "everyone": {
-      "kind": "callout",
-      "text": "[!info] Switching rules\nThe switch between voices is a *per-paragraph* explain button, not a second book. The technical paper is one continuous read; this edition explains it piece by piece, in the same order, and each explanation here sits directly beneath the paragraph it translates. Stuck on a paragraph? Switch, read that paragraph's explanation, switch back — you'll be at the exact same spot. Every formula here gets a sentence that says what it means. And the honesty rule is the same as the original's: everything here that is *science* is really science; the one big leap — \"reality is made of light-delivered information\" — is a proposal, not a result the physics forces on us; and where the writing gets poetic, that's on purpose.",
-      "level": null,
-      "number": null,
-      "name": "[!info] Switching rules\nThe switch between voices is a *per-paragraph* explain button, not a second book. The technical paper is one continuous read; this edition explains it piece by piece, in the same order, and each explanation here sits directly beneath the paragraph it translates. Stuck on a paragraph? Switch, read that paragraph's explanation, switch back — you'll be at the exact same spot. Every formula here gets a sentence that says what it means. And the honesty rule is the same as the original's: everything here that is *science* is really science; the one big leap — \"reality is made of light-delivered information\" — is a proposal, not a result the physics forces on us; and where the writing gets poetic, that's on purpose."
+      "name": "This theory, the **Light–Reality Cycle**, is about how we experience reality. It makes two claims. First: everything we can know about the world around us arrives through light. Look at anything: a face, a tree, a screen. What's actually happening is that light leaves that thing, travels to your eyes, and carries the information with it. Light is the messenger. Second, and stronger: reality, as we experience it, really *is* that light-carried information. There's no hidden extra \"stuff\" behind the message; the message is the world, at least for anyone watching it. The theory pictures this as a cycle of seven steps: an event gives off light, the light travels across space and time, it bumps into matter, it reaches your eye, the eye turns it into nerve signals, the brain decodes those signals, and from that stream the brain builds your sense of the \"now\" and the flow of time. The key new idea: how *fast* time seems to pass depends on how much information your brain is receiving per second. A rich stream of new information stretches time; a slow, boring stream makes it fly. The theory also faces its objections head-on, sits alongside thinkers from Kant to modern physics, and offers predictions you could actually test. It isn't new physics; it's a way of taking light, information, and the felt flow of time seriously, together."
      }
     }
    ],
@@ -144,10 +106,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**The technical text just said:** every act of perception is a meeting. Somewhere out there, something happens — a leaf falls, a bulb lights, a friend smiles; that event releases energy, and patterns of field disturbance depart it and travel across space. They meet matter along the way — including the sensitive machinery of a living eye. And at the end of that journey, a mind finds itself standing *inside a scene*. The felt present — the \"now\" in which we live — is not delivered to us ready-made. Your brain assembles it.",
+        "text": "Every act of perception is a meeting between the world and you. Somewhere, an event happens; energy is let loose; waves of disturbance leave the event and travel across space; they run into matter — including the sensitive machinery of a living eye; and at the end of that journey, a mind finds itself standing inside a *scene*. The felt \"now\" we live in isn't handed to us ready-made. It is assembled — built, moment by moment, from those arriving waves.",
         "level": null,
         "number": null,
-        "name": "**The technical text just said:** every act of perception is a meeting. Somewhere out there, something happens — a leaf falls, a bulb lights, a friend smiles; that event releases energy, and patterns of field disturbance depart it and travel across space. They meet matter along the way — including the sensitive machinery of a living eye. And at the end of that journey, a mind finds itself standing *inside a scene*. The felt present — the \"now\" in which we live — is not delivered to us ready-made. Your brain assembles it."
+        "name": "Every act of perception is a meeting between the world and you. Somewhere, an event happens; energy is let loose; waves of disturbance leave the event and travel across space; they run into matter — including the sensitive machinery of a living eye; and at the end of that journey, a mind finds itself standing inside a *scene*. The felt \"now\" we live in isn't handed to us ready-made. It is assembled — built, moment by moment, from those arriving waves."
        }
       },
       {
@@ -160,10 +122,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**And then:** the central intuition of the whole thesis is simple enough to state in one line. It drops the image that gives the paper its name — the spark that becomes a messenger. Here it is:",
+        "text": "The central intuition of this thesis is simple enough to state in one line:",
         "level": null,
         "number": null,
-        "name": "**And then:** the central intuition of the whole thesis is simple enough to state in one line. It drops the image that gives the paper its name — the spark that becomes a messenger. Here it is:"
+        "name": "The central intuition of this thesis is simple enough to state in one line:"
        }
       },
       {
@@ -176,10 +138,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "quote",
-        "text": "A spark becomes a messenger: light brings events to our senses, and our brain weaves those messages into the felt flow of time. — In one sentence: what we call the flow of time is the brain reading the light that arrives.",
+        "text": "A spark becomes a messenger: light brings events to our senses, and our brain weaves those messages into the felt flow of time.",
         "level": null,
         "number": null,
-        "name": "A spark becomes a messenger: light brings events to our senses, and our brain weaves those messages into the felt flow of time. — In one sentence: what we call the flow of time is the brain reading the light that arrives."
+        "name": "A spark becomes a messenger: light brings events to our senses, and our brain weaves those messages into the felt flow of time."
        }
       },
       {
@@ -192,10 +154,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**And then:** the project is to take that intuition seriously — to state it precisely enough that it can be examined, and to defend a strong version of it as a metaphysical theory of reality. That's it. That one beautiful sentence, said carefully, tested where it can be tested, and defended as a theory of what reality is.",
+        "text": "The whole project is to take that simple intuition seriously — to say it precisely enough that it can be examined and argued about, and to defend a strong version of it: a real theory about what reality is.",
         "level": null,
         "number": null,
-        "name": "**And then:** the project is to take that intuition seriously — to state it precisely enough that it can be examined, and to defend a strong version of it as a metaphysical theory of reality. That's it. That one beautiful sentence, said carefully, tested where it can be tested, and defended as a theory of what reality is."
+        "name": "The whole project is to take that simple intuition seriously — to say it precisely enough that it can be examined and argued about, and to defend a strong version of it: a real theory about what reality is."
        }
       }
      ]
@@ -229,10 +191,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "list",
-        "text": "- **Claim 1 — about what we know.** *We perceive reality through light messages.*\n  - This is easy to accept: seeing is our main sense, and seeing is just detecting light. Everything you've ever seen — faces, mountains, screens, a cat at the window — you saw because light bounced off it (or came from it) and reached your eye.\n  - (Fair question already on the table: what about hearing and touch? We answer that properly in §3, §10.1. Short version: the deep idea works for sound waves and touch too — light is just the superstar carrier.)\n- **Claim 2 — about what reality is.** *Reality itself is made of light-delivered information.*\n  - This is the bold one. It says: what is real *for us* — and possibly what is real, full stop — is the information carried by light. Physics describes the rules of that information exchange. It doesn't need a second, secret \"stuff\" hiding behind the messages.",
+        "text": "- **(1) The Epistemic Claim** — *we perceive reality through information carried by light.*\n  - This one is easy to accept. Vision is by far our most important sense, and seeing is really just detecting light. Everything we see is visible because light — or, more precisely, electromagnetic waves — came off it, or bounced off it, and reached our retinas.\n  - (Note: hearing, touch, and smell don't work via light; the theory deals with that in §3 and §10.1.)\n- **(2) The Ontological Claim** — *reality itself is made of light-delivered information.*\n  - This one is stronger and far more controversial: what is real *for us* — and arguably what is real, full stop — is the information light carries. Physics describes the rules of that exchange of information; it doesn't need some extra, hidden \"stuff\" underneath it.",
         "level": null,
         "number": null,
-        "name": "- **Claim 1 — about what we know.** *We perceive reality through light messages.*\n  - This is easy to accept: seeing is our main sense, and seeing is just detecting light. Everything you've ever seen — faces, mountains, screens, a cat at the window — you saw because light bounced off it (or came from it) and reached your eye.\n  - (Fair question already on the table: what about hearing and touch? We answer that properly in §3, §10.1. Short version: the deep idea works for sound waves and touch too — light is just the superstar carrier.)\n- **Claim 2 — about what reality is.** *Reality itself is made of light-delivered information.*\n  - This is the bold one. It says: what is real *for us* — and possibly what is real, full stop — is the information carried by light. Physics describes the rules of that information exchange. It doesn't need a second, secret \"stuff\" hiding behind the messages."
+        "name": "- **(1) The Epistemic Claim** — *we perceive reality through information carried by light.*\n  - This one is easy to accept. Vision is by far our most important sense, and seeing is really just detecting light. Everything we see is visible because light — or, more precisely, electromagnetic waves — came off it, or bounced off it, and reached our retinas.\n  - (Note: hearing, touch, and smell don't work via light; the theory deals with that in §3 and §10.1.)\n- **(2) The Ontological Claim** — *reality itself is made of light-delivered information.*\n  - This one is stronger and far more controversial: what is real *for us* — and arguably what is real, full stop — is the information light carries. Physics describes the rules of that exchange of information; it doesn't need some extra, hidden \"stuff\" underneath it."
        }
       },
       {
@@ -245,10 +207,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**And then the paper separated the two claims — because the difference matters:** Claim 1 is basically settled science — nobody argues that you see with photons. Claim 2 is a first principle — a place where the theory plants its flag and says: *this is the ground I choose.* Most of the interesting fights happen at Claim 2, and the paper takes those fights seriously.",
+        "text": "The difference between the two claims matters. Claim (1) is close to being settled science — hardly anyone argues with it. Claim (2) is a metaphysical leap — a first principle about what reality is. This thesis argues that claim (2) is logical, useful, doesn't contradict modern physics, and grows naturally out of what we actually experience.",
         "level": null,
         "number": null,
-        "name": "**And then the paper separated the two claims — because the difference matters:** Claim 1 is basically settled science — nobody argues that you see with photons. Claim 2 is a first principle — a place where the theory plants its flag and says: *this is the ground I choose.* Most of the interesting fights happen at Claim 2, and the paper takes those fights seriously."
+        "name": "The difference between the two claims matters. Claim (1) is close to being settled science — hardly anyone argues with it. Claim (2) is a metaphysical leap — a first principle about what reality is. This thesis argues that claim (2) is logical, useful, doesn't contradict modern physics, and grows naturally out of what we actually experience."
        }
       }
      ]
@@ -275,17 +237,17 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
       {
        "original": {
         "kind": "list",
-        "text": "- The theory is developed as **visual realism** first (photons), with a generalization strategy (§10.1) to other information carriers.\n- The theory makes an **empirical contact point** (hypothesis of perceived time, §7) that is framed as testable psychophysics.\n- The theory does **not** claim to unify fundamental forces, replace quantum field theory, or resolve the measurement problem. It is narrower than a theory of everything and is honest about that.\n- The theory borrows from [[The Theory]] the discipline of naming its own failure modes — see §11.",
+        "text": "- The theory is developed as **visual realism** first (photons), with a generalization strategy (§10.1) to other information carriers.\n- The theory makes an **empirical contact point** (hypothesis of perceived time, §7) that is framed as testable psychophysics.\n- The theory does **not** claim to unify fundamental forces, replace quantum field theory, or resolve the measurement problem. It is narrower than a theory of everything and is honest about that.",
         "level": null,
         "number": null,
-        "name": "- The theory is developed as **visual realism** first (photons), with a generalization strategy (§10.1) to other information carriers.\n- The theory makes an **empirical contact point** (hypothesis of perceived time, §7) that is framed as testable psychophysics.\n- The theory does **not** claim to unify fundamental forces, replace quantum field theory, or resolve the measurement problem. It is narrower than a theory of everything and is honest about that.\n- The theory borrows from [[The Theory]] the discipline of naming its own failure modes — see §11."
+        "name": "- The theory is developed as **visual realism** first (photons), with a generalization strategy (§10.1) to other information carriers.\n- The theory makes an **empirical contact point** (hypothesis of perceived time, §7) that is framed as testable psychophysics.\n- The theory does **not** claim to unify fundamental forces, replace quantum field theory, or resolve the measurement problem. It is narrower than a theory of everything and is honest about that."
        },
        "everyone": {
         "kind": "list",
-        "text": "- The theory is developed **for the seen world first** (light), with a plan to extend the same machinery to the other senses (§10.1).\n- It makes **one big testable promise**: that how fast time feels depends on how much information your brain is processing (§7). That part can be tested in real experiments.\n- It does **not** claim to unite the forces of physics, replace quantum theory, or resolve the deepest mysteries of measurement and consciousness. It is narrower than a theory of everything and says so. (For the wider ambitions, see [[The Theory]] and [[The Unified Theory of Everyone]].)\n- It borrows one habit from [[The Theory]]: naming its own failure modes in advance. That list lives in §11.",
+        "text": "- The theory starts with **vision** — light — and has a plan to extend the same idea to other ways of getting information (§10.1).\n- It has one **point of contact with real experiments**: a hypothesis about how we experience time (§7), written so it can actually be tested.\n- The theory does **not** claim to unify the fundamental forces, replace quantum field theory, or solve the measurement problem. It's narrower than a \"theory of everything\" — and it says so honestly.",
         "level": null,
         "number": null,
-        "name": "- The theory is developed **for the seen world first** (light), with a plan to extend the same machinery to the other senses (§10.1).\n- It makes **one big testable promise**: that how fast time feels depends on how much information your brain is processing (§7). That part can be tested in real experiments.\n- It does **not** claim to unite the forces of physics, replace quantum theory, or resolve the deepest mysteries of measurement and consciousness. It is narrower than a theory of everything and says so. (For the wider ambitions, see [[The Theory]] and [[The Unified Theory of Everyone]].)\n- It borrows one habit from [[The Theory]]: naming its own failure modes in advance. That list lives in §11."
+        "name": "- The theory starts with **vision** — light — and has a plan to extend the same idea to other ways of getting information (§10.1).\n- It has one **point of contact with real experiments**: a hypothesis about how we experience time (§7), written so it can actually be tested.\n- The theory does **not** claim to unify the fundamental forces, replace quantum field theory, or solve the measurement problem. It's narrower than a \"theory of everything\" — and it says so honestly."
        }
       }
      ]
@@ -341,10 +303,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**The technical text just said:** reality-for-an-observer is generated in a cycle of seven steps. In its most compressed technical form, the whole cycle fits on one line — the quote coming next. The plain version: something happens and light leaves it; the light travels; it meets matter on the way; it arrives at a detector; the eye turns it into nerve signals; the brain encodes them; and the brain builds the \"now\" and the feeling of time passing. A message chain, seven links long.",
+        "text": "Reality-for-an-observer is generated in a cycle. In its most compressed form:",
         "level": null,
         "number": null,
-        "name": "**The technical text just said:** reality-for-an-observer is generated in a cycle of seven steps. In its most compressed technical form, the whole cycle fits on one line — the quote coming next. The plain version: something happens and light leaves it; the light travels; it meets matter on the way; it arrives at a detector; the eye turns it into nerve signals; the brain encodes them; and the brain builds the \"now\" and the feeling of time passing. A message chain, seven links long."
+        "name": "Reality-for-an-observer is generated in a cycle. In its most compressed form:"
        }
       },
       {
@@ -357,10 +319,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "quote",
-        "text": "Emission → propagation (null geodesics; $ds^2=0$) → interaction (inelastic scattering; Compton/Raman) → reception → transduction → encoding (bits/s) → subjective time (hypothesis: perceived rate ∝ information throughput) — In plain words: flash, fly, bump, arrive, transduce, encode, feel.",
+        "text": "Emission → travel through space → interaction with matter → reception → transduction → encoding (bits/s) → subjective time (hypothesis: perceived rate follows information throughput)",
         "level": null,
         "number": null,
-        "name": "Emission → propagation (null geodesics; $ds^2=0$) → interaction (inelastic scattering; Compton/Raman) → reception → transduction → encoding (bits/s) → subjective time (hypothesis: perceived rate ∝ information throughput) — In plain words: flash, fly, bump, arrive, transduce, encode, feel."
+        "name": "Emission → travel through space → interaction with matter → reception → transduction → encoding (bits/s) → subjective time (hypothesis: perceived rate follows information throughput)"
        }
       },
       {
@@ -373,10 +335,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**And then it drew the same cycle as a logical flow map** — one line in which each stage hands off to the next. The technical line below is the map; the plain line beneath it says the same thing in everyday words.",
+        "text": "As a logical flow map:",
         "level": null,
         "number": null,
-        "name": "**And then it drew the same cycle as a logical flow map** — one line in which each stage hands off to the next. The technical line below is the map; the plain line beneath it says the same thing in everyday words."
+        "name": "As a logical flow map:"
        }
       },
       {
@@ -388,11 +350,11 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
         "name": "Source event ==→== photons emitted ==→== propagate through space–time (null paths) ==→== interact with matter (absorb/scatter/shift) ==→== reach detector/observer ==→== neural transduction ==→== perceived \"present\"/duration"
        },
        "everyone": {
-        "kind": "heading",
-        "text": "Something happens ==→== light leaves the event ==→== travels (empty paths at light speed) ==→== meets matter (absorbed / bent / recolored) ==→== reaches the eye ==→== brain translates ==→== felt \"now\"",
-        "level": 1,
+        "kind": "paragraph",
+        "text": "Event happens → light is sent out → travels through space–time (the fastest possible paths) → interacts with matter (absorbed/scattered/shifted) → reaches an eye or sensor → turned into nerve signals → perceived \"present\"/duration",
+        "level": null,
         "number": null,
-        "name": "Something happens ==→== light leaves the event ==→== travels (empty paths at light speed) ==→== meets matter (absorbed / bent / recolored) ==→== reaches the eye ==→== brain translates ==→== felt \"now\""
+        "name": "Event happens → light is sent out → travels through space–time (the fastest possible paths) → interacts with matter (absorbed/scattered/shifted) → reaches an eye or sensor → turned into nerve signals → perceived \"present\"/duration"
        }
       },
       {
@@ -405,10 +367,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**And then it laid the same cycle out as a vertical stepper** — seven stages, each its own step, from the spark to the felt present. Here they are, in plain words:",
+        "text": "As a vertical stepper:",
         "level": null,
         "number": null,
-        "name": "**And then it laid the same cycle out as a vertical stepper** — seven stages, each its own step, from the spark to the felt present. Here they are, in plain words:"
+        "name": "As a vertical stepper:"
        }
       },
       {
@@ -421,26 +383,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "list",
-        "text": "- **Stage 1 — Source event.** Something happens; it sends out electromagnetic radiation (light).\n- **Stage 2 — Emission.** Light leaves the event, carrying energy $E = hf$.\n- **Stage 3 — Propagation.** The light travels along light-speed paths ($ds^2 = 0$); the travel delay $t = d/c$ decides which messages arrive first.\n- **Stage 4 — Interaction.** The light meets matter: absorbed, reflected, bent, scattered, sometimes changed in color (Compton, Raman).\n- **Stage 5 — Reception.** The light reaches a detector — a sensor, a retina, an eye.\n- **Stage 6 — Transduction and encoding.** The eye converts light into nerve signals; the visual system measures and encodes them in bits per second.\n- **Stage 7 — Perception.** The brain builds the experienced \"present\" and its felt duration.\n- **Holding it all together.** It's a message chain: the event *writes* the message, the photon *delivers* it, the eye *receives* it, the brain *reads* it — and the feeling that \"this is happening now, and it took this long\" is what the brain makes *out of the act of reading*.",
+        "text": "- **Stage 1 — Source event.** An event emits electromagnetic radiation (photons).\n- **Stage 2 — Emission.** Photons leave the event with energy $E = hf$.\n- **Stage 3 — Propagation.** Photons travel along lightlike (null) paths, $ds^2 = 0$; light-travel delay $t = d/c$ orders all arrival times.\n- **Stage 4 — Interaction.** Photons interact with intervening and target matter: absorption, reflection, refraction, scattering, and frequency shifts (Compton, Raman).\n- **Stage 5 — Reception.** Photons (or transduced signals) reach a detector — a sensor, a retina, an eye.\n- **Stage 6 — Transduction and encoding.** Photoreceptors convert photon arrivals into neural signals; the visual system encodes them at a measured rate in bits per second.\n- **Stage 7 — Perception.** Neural processing constructs the experienced \"present\" and its duration.",
         "level": null,
         "number": null,
-        "name": "- **Stage 1 — Source event.** Something happens; it sends out electromagnetic radiation (light).\n- **Stage 2 — Emission.** Light leaves the event, carrying energy $E = hf$.\n- **Stage 3 — Propagation.** The light travels along light-speed paths ($ds^2 = 0$); the travel delay $t = d/c$ decides which messages arrive first.\n- **Stage 4 — Interaction.** The light meets matter: absorbed, reflected, bent, scattered, sometimes changed in color (Compton, Raman).\n- **Stage 5 — Reception.** The light reaches a detector — a sensor, a retina, an eye.\n- **Stage 6 — Transduction and encoding.** The eye converts light into nerve signals; the visual system measures and encodes them in bits per second.\n- **Stage 7 — Perception.** The brain builds the experienced \"present\" and its felt duration.\n- **Holding it all together.** It's a message chain: the event *writes* the message, the photon *delivers* it, the eye *receives* it, the brain *reads* it — and the feeling that \"this is happening now, and it took this long\" is what the brain makes *out of the act of reading*."
-       }
-      },
-      {
-       "original": {
-        "kind": "code",
-        "text": "Source event\n    ↓\nPhotons emitted\n    ↓\nPropagate along lightlike paths\n    ↓\nInteract with matter: absorb / scatter / shift\n    ↓\nReach detector / observer\n    ↓\nNeural processing → Perception: present / duration",
-        "level": null,
-        "number": null,
-        "name": "Source event\n    ↓\nPhotons emitted\n    ↓\nPropagate along lightlike paths\n    ↓\nInteract with matter: absorb / scatter / shift\n    ↓\nReach detector / observer\n    ↓\nNeural processing → Perception: present / duration"
-       },
-       "everyone": {
-        "kind": "code",
-        "text": "Source event\n    ↓\nPhotons emitted\n    ↓\nPropagate along lightlike paths\n    ↓\nInteract with matter: absorb / scatter / shift\n    ↓\nReach detector / observer\n    ↓\nNeural processing → Perception: present / duration",
-        "level": null,
-        "number": null,
-        "name": "Source event\n    ↓\nPhotons emitted\n    ↓\nPropagate along lightlike paths\n    ↓\nInteract with matter: absorb / scatter / shift\n    ↓\nReach detector / observer\n    ↓\nNeural processing → Perception: present / duration"
+        "name": "- **Stage 1 — Source event.** An event emits electromagnetic radiation (photons).\n- **Stage 2 — Emission.** Photons leave the event with energy $E = hf$.\n- **Stage 3 — Propagation.** Photons travel along lightlike (null) paths, $ds^2 = 0$; light-travel delay $t = d/c$ orders all arrival times.\n- **Stage 4 — Interaction.** Photons interact with intervening and target matter: absorption, reflection, refraction, scattering, and frequency shifts (Compton, Raman).\n- **Stage 5 — Reception.** Photons (or transduced signals) reach a detector — a sensor, a retina, an eye.\n- **Stage 6 — Transduction and encoding.** Photoreceptors convert photon arrivals into neural signals; the visual system encodes them at a measured rate in bits per second.\n- **Stage 7 — Perception.** Neural processing constructs the experienced \"present\" and its duration."
        }
       }
      ]
@@ -474,10 +420,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**The technical text just said:** here is the aesthetic heart of the theory — the claim that gives the thesis its poetic name. The line it quotes next is the one to remember:",
+        "text": "The aesthetic heart of the theory — and the claim that gives the thesis its poetic name — is this:",
         "level": null,
         "number": null,
-        "name": "**The technical text just said:** here is the aesthetic heart of the theory — the claim that gives the thesis its poetic name. The line it quotes next is the one to remember:"
+        "name": "The aesthetic heart of the theory — and the claim that gives the thesis its poetic name — is this:"
        }
       },
       {
@@ -490,10 +436,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "quote",
-        "text": "The photon's journey is what we call \"time\": the time it takes for a photon to travel, to exchange with the matter of the universe, and to reach our eye, is the rate at which we experience time. The speed of that light. — In one line: the time the light takes to reach you is the pace at which you feel time pass.",
+        "text": "The photon's journey is what we call \"time\": the time it takes for a photon to travel, to exchange with the matter of the universe, and to reach our eye, is the rate at which we experience time. The speed of that light.",
         "level": null,
         "number": null,
-        "name": "The photon's journey is what we call \"time\": the time it takes for a photon to travel, to exchange with the matter of the universe, and to reach our eye, is the rate at which we experience time. The speed of that light. — In one line: the time the light takes to reach you is the pace at which you feel time pass."
+        "name": "The photon's journey is what we call \"time\": the time it takes for a photon to travel, to exchange with the matter of the universe, and to reach our eye, is the rate at which we experience time. The speed of that light."
        }
       },
       {
@@ -506,10 +452,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**And then it did something important:** it separated two readings of that sentence — the one it keeps and the one it gently rejects. This is the paper checking its own poetry.",
+        "text": "Two readings must be separated:",
         "level": null,
         "number": null,
-        "name": "**And then it did something important:** it separated two readings of that sentence — the one it keeps and the one it gently rejects. This is the paper checking its own poetry."
+        "name": "Two readings must be separated:"
        }
       },
       {
@@ -522,10 +468,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "list",
-        "text": "- **The poetic reading (we keep this one):** felt time is a story being told by incoming light. The pace of the story is set by the light. A photon's flight and your lived \"now\" are the same cycle seen from two sides. This is the beautiful version, and it's the one the theory builds on.\n- **The literal reading (we gently reject this one):** the actual seconds of a photon's flight are the same as the seconds of your felt time. They're not. In everyday life, light travel time is a few nanoseconds to milliseconds — far too fast to feel. Your felt time is built by brain activity over milliseconds to seconds. The theory never says \"photon flight = your heartbeat.\" What it *does* say: the **information** the light delivers — its volume, its newness — drives how fast time feels.",
+        "text": "- **Creative reading (kept):** \"Time\" as *felt duration* is a story told by information arrivals; the flow of the story is paced by light. A photon's flight and the lived now are the same cycle seen from two sides.\n- **Literal reading (rejected):** Photon flight time is not the same as your body's timekeeping. Light-travel delays in everyday scenes are tiny — nanoseconds to milliseconds — while felt time is built by brain activity over tens of milliseconds to seconds. The theory never equates light's travel time with a clock's tick. It links *information throughput*, not flight time, to felt rate.",
         "level": null,
         "number": null,
-        "name": "- **The poetic reading (we keep this one):** felt time is a story being told by incoming light. The pace of the story is set by the light. A photon's flight and your lived \"now\" are the same cycle seen from two sides. This is the beautiful version, and it's the one the theory builds on.\n- **The literal reading (we gently reject this one):** the actual seconds of a photon's flight are the same as the seconds of your felt time. They're not. In everyday life, light travel time is a few nanoseconds to milliseconds — far too fast to feel. Your felt time is built by brain activity over milliseconds to seconds. The theory never says \"photon flight = your heartbeat.\" What it *does* say: the **information** the light delivers — its volume, its newness — drives how fast time feels."
+        "name": "- **Creative reading (kept):** \"Time\" as *felt duration* is a story told by information arrivals; the flow of the story is paced by light. A photon's flight and the lived now are the same cycle seen from two sides.\n- **Literal reading (rejected):** Photon flight time is not the same as your body's timekeeping. Light-travel delays in everyday scenes are tiny — nanoseconds to milliseconds — while felt time is built by brain activity over tens of milliseconds to seconds. The theory never equates light's travel time with a clock's tick. It links *information throughput*, not flight time, to felt rate."
        }
       }
      ]
@@ -559,10 +505,159 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "list",
-        "text": "- **A1 (Carrier).** Think of these as the theory's foundation stones — you can argue with them, fair game, but everything else is built on them. Everything we know about far-away events travels to us as a physical signal. For seeing, the signal is light.\n- **A2 (Light-speed travel).** Light travels at light speed on paths where the spacetime \"distance\" measures zero. You cannot catch up to light, so no clock can ride along on a light beam. Saying \"time stands still for a photon\" is a poetic way to say that — and the theory flags it as poetry, not physics.\n- **A3 (Interaction).** Light is changed by the world on the way: absorbed, bounced, bent, recolored. It does not pass through untouched — which is exactly how it manages to carry news.\n- **A4 (Transduction).** Our bodies turn light into nerve signals through a fixed pipeline with real speed limits. We get a compressed version, not the raw flood.\n- **A5 (Temporal construction).** The \"now\" and the felt pace of time are built from the arriving message stream. Rule of thumb: the more information being processed, the more felt time per real second. Written as an equation: $\\frac{d\\tau}{dT} = \\Phi[I(t)]$ — felt time per real time is some function of the bits per second.",
+        "text": "- **A1 (Carrier).** All knowledge of distant events is carried by physically travelling signals; for seeing, the signal is light.\n- **A2 (Null propagation).** Light travels on the fastest possible paths through space–time; it has no \"rest frame,\" and there's no clock that rides along with a photon.\n- **A3 (Interaction).** The information light carries is changed by every piece of matter it meets (absorbed, scattered, shifted in colour) — light never passes through the world untouched.\n- **A4 (Transduction).** An observer can only get light's information through a fixed biological pipeline — eye, nerve, brain — with a limited capacity.\n- **A5 (Temporal construction).** The felt \"now\" and its duration are built from the arriving information stream; felt time moves faster or slower according to how much information arrives per second.",
         "level": null,
         "number": null,
-        "name": "- **A1 (Carrier).** Think of these as the theory's foundation stones — you can argue with them, fair game, but everything else is built on them. Everything we know about far-away events travels to us as a physical signal. For seeing, the signal is light.\n- **A2 (Light-speed travel).** Light travels at light speed on paths where the spacetime \"distance\" measures zero. You cannot catch up to light, so no clock can ride along on a light beam. Saying \"time stands still for a photon\" is a poetic way to say that — and the theory flags it as poetry, not physics.\n- **A3 (Interaction).** Light is changed by the world on the way: absorbed, bounced, bent, recolored. It does not pass through untouched — which is exactly how it manages to carry news.\n- **A4 (Transduction).** Our bodies turn light into nerve signals through a fixed pipeline with real speed limits. We get a compressed version, not the raw flood.\n- **A5 (Temporal construction).** The \"now\" and the felt pace of time are built from the arriving message stream. Rule of thumb: the more information being processed, the more felt time per real second. Written as an equation: $\\frac{d\\tau}{dT} = \\Phi[I(t)]$ — felt time per real time is some function of the bits per second."
+        "name": "- **A1 (Carrier).** All knowledge of distant events is carried by physically travelling signals; for seeing, the signal is light.\n- **A2 (Null propagation).** Light travels on the fastest possible paths through space–time; it has no \"rest frame,\" and there's no clock that rides along with a photon.\n- **A3 (Interaction).** The information light carries is changed by every piece of matter it meets (absorbed, scattered, shifted in colour) — light never passes through the world untouched.\n- **A4 (Transduction).** An observer can only get light's information through a fixed biological pipeline — eye, nerve, brain — with a limited capacity.\n- **A5 (Temporal construction).** The felt \"now\" and its duration are built from the arriving information stream; felt time moves faster or slower according to how much information arrives per second."
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "number": "3",
+   "heading": {
+    "original": {
+     "kind": "heading",
+     "text": "3. Related Frameworks",
+     "level": 2,
+     "number": "3",
+     "name": "Related Frameworks"
+    },
+    "everyone": {
+     "kind": "heading",
+     "text": "3. Related Frameworks",
+     "level": 2,
+     "number": "3",
+     "name": "Related Frameworks"
+    }
+   },
+   "blocks": [],
+   "subsections": [
+    {
+     "number": "3.1",
+     "heading": {
+      "original": {
+       "kind": "heading",
+       "text": "3.1 Physics (established, load-bearing)",
+       "level": 3,
+       "number": "3.1",
+       "name": "Physics (established, load-bearing)"
+      },
+      "everyone": {
+       "kind": "heading",
+       "text": "3.1 Physics (established, load-bearing)",
+       "level": 3,
+       "number": "3.1",
+       "name": "Physics (established, load-bearing)"
+      }
+     },
+     "blocks": [
+      {
+       "original": {
+        "kind": "list",
+        "text": "- **Photons and EM quanta.** The photon is the quantum of the electromagnetic field: massless, spin-1, travelling at speed $c$ in vacuum. Energy $E = hf = \\hbar\\omega$; momentum $p = h/\\lambda$. Photon energy is observer-dependent (Doppler shift) — a preview of relationalism (§3.3).\n- **Null geodesics and light cones.** In special and general relativity, light follows null geodesics with $ds^2 = 0$. The invariant interval along a lightlike path vanishes, so proper time $d\\tau$ is undefined for a photon — there is no inertial rest frame. Describing this as \"time stands still for a photon\" is poetic shorthand, not literal physics (see §9). The past light cone of an event is the set of all spacetime points that could have causally influenced it; the future light cone is the set it could influence. Everything an observer can know lies on or inside her past light cone.\n- **Relative simultaneity.** There is no observer-independent \"now.\" Simultaneity is frame-dependent (Einstein 1905; Minkowski 1908). The \"present\" of the theory is therefore a *constructed* object, not an absolute feature of spacetime — a conclusion the theory embraces rather than resists.\n- **Interaction physics.** Information-bearing photons interact with matter by absorption (photoelectric effect), scattering, and frequency-shifting processes. Two canonical cases:\n  - Compton (1923): $\\lambda' - \\lambda = \\frac{h}{m_e c}(1 - \\cos\\theta)$ — photon scatters off an electron and emerges with longer wavelength (lower energy). The Compton wavelength of the electron is $h/(m_e c) \\approx 2.43 \\times 10^{-12}$ m.\n  - Raman (1928): photon exchanges energy with molecular vibrational/rotational states, shifting frequency by the molecular transition energy.\n  - Creative note: these shifts are light *editing its own story* as it passes through the world — frequency as the medium's fingerprint.\n- **Light-travel delay.** $t = d/c$. Examples: Moon ≈ 1.28 s; Sun ≈ 8.3 min; Andromeda ≈ 2.5 million years. Every telescope is a time machine; the theory generalizes the point to every eye.\n- **Information theory.** Shannon (1948) gave \"information\" an objective, observer-independent measure in bits. The cycle treats the photon stream as a channel: source → channel (null spacetime) → noisy interaction channel → receiver (retina) → decoder (visual cortex). Capacity limits apply at every stage.\n- **Neural encoding.** Phototransduction: photons isomerize retinal chromophores (rhodopsin/cone opsins), triggering a biochemical cascade that hyperpolarizes photoreceptors; retinal ganglion cells convert this into spike trains; the optic nerve, LGN, and primary visual cortex (V1) process the stream. Estimates of retinal throughput range over $10^6$–$10^9$ bits/s depending on stimulus and model (Kelly 1961; Koch et al. 2006), while conscious perceptual access and action selection appear bottlenecked near $10$–$50$ bits/s (Norretranders 1998; Zheng & Meister 2023). This asymmetry — a flood of light entering, a trickle of meaning reaching the self — is one of the theory's key empirical facts.",
+        "level": null,
+        "number": null,
+        "name": "- **Photons and EM quanta.** The photon is the quantum of the electromagnetic field: massless, spin-1, travelling at speed $c$ in vacuum. Energy $E = hf = \\hbar\\omega$; momentum $p = h/\\lambda$. Photon energy is observer-dependent (Doppler shift) — a preview of relationalism (§3.3).\n- **Null geodesics and light cones.** In special and general relativity, light follows null geodesics with $ds^2 = 0$. The invariant interval along a lightlike path vanishes, so proper time $d\\tau$ is undefined for a photon — there is no inertial rest frame. Describing this as \"time stands still for a photon\" is poetic shorthand, not literal physics (see §9). The past light cone of an event is the set of all spacetime points that could have causally influenced it; the future light cone is the set it could influence. Everything an observer can know lies on or inside her past light cone.\n- **Relative simultaneity.** There is no observer-independent \"now.\" Simultaneity is frame-dependent (Einstein 1905; Minkowski 1908). The \"present\" of the theory is therefore a *constructed* object, not an absolute feature of spacetime — a conclusion the theory embraces rather than resists.\n- **Interaction physics.** Information-bearing photons interact with matter by absorption (photoelectric effect), scattering, and frequency-shifting processes. Two canonical cases:\n  - Compton (1923): $\\lambda' - \\lambda = \\frac{h}{m_e c}(1 - \\cos\\theta)$ — photon scatters off an electron and emerges with longer wavelength (lower energy). The Compton wavelength of the electron is $h/(m_e c) \\approx 2.43 \\times 10^{-12}$ m.\n  - Raman (1928): photon exchanges energy with molecular vibrational/rotational states, shifting frequency by the molecular transition energy.\n  - Creative note: these shifts are light *editing its own story* as it passes through the world — frequency as the medium's fingerprint.\n- **Light-travel delay.** $t = d/c$. Examples: Moon ≈ 1.28 s; Sun ≈ 8.3 min; Andromeda ≈ 2.5 million years. Every telescope is a time machine; the theory generalizes the point to every eye.\n- **Information theory.** Shannon (1948) gave \"information\" an objective, observer-independent measure in bits. The cycle treats the photon stream as a channel: source → channel (null spacetime) → noisy interaction channel → receiver (retina) → decoder (visual cortex). Capacity limits apply at every stage.\n- **Neural encoding.** Phototransduction: photons isomerize retinal chromophores (rhodopsin/cone opsins), triggering a biochemical cascade that hyperpolarizes photoreceptors; retinal ganglion cells convert this into spike trains; the optic nerve, LGN, and primary visual cortex (V1) process the stream. Estimates of retinal throughput range over $10^6$–$10^9$ bits/s depending on stimulus and model (Kelly 1961; Koch et al. 2006), while conscious perceptual access and action selection appear bottlenecked near $10$–$50$ bits/s (Norretranders 1998; Zheng & Meister 2023). This asymmetry — a flood of light entering, a trickle of meaning reaching the self — is one of the theory's key empirical facts."
+       },
+       "everyone": {
+        "kind": "list",
+        "text": "- **Photons and EM quanta.** Light comes in individual packets called photons — the smallest possible unit of an electromagnetic field: massless, always moving at the speed of light in a vacuum, and carrying energy tied to its colour. A photon's energy depends on who's looking: if you're moving toward or away from the light, its colour shifts (the Doppler effect) — a hint that what you observe depends on your situation, which we'll return to in §3.3.\n- **Null geodesics and light cones.** In relativity, light follows the most direct possible routes through space–time, and along those routes there is no ticking clock — which is why \"time stands still for a photon\" is poetry, not physics (see §9). Around any event sit two cones: the past light cone (everything that could have caused this event) and the future light cone (everything this event could affect). Everything an observer can know lies on or inside her past light cone.\n- **Relative simultaneity.** There's no \"now\" that everyone shares. Whether two things happened at the same time depends on your frame of reference (Einstein 1905; Minkowski 1908). So the \"present\" in this theory is a *constructed* thing, not an absolute feature of space–time — and the theory embraces that rather than fighting it.\n- **Interaction physics.** Light meets matter and things happen: it can be absorbed, scattered, or have its colour shifted. Two classic examples:\n  - Compton (1923): light bounces off an electron and comes away with longer wavelength (less energy) — a bit like a ball losing speed when it hits something.\n  - Raman (1928): light trades energy with a molecule's vibrations or rotations, shifting its colour by a tell-tale amount.\n  - Creative note: these shifts are light *editing its own story* as it passes through the world — colour as the medium's fingerprint.\n- **Light-travel delay.** Light takes time to get here: Moon ≈ 1.3 seconds; Sun ≈ 8.3 minutes; Andromeda ≈ 2.5 million years. Every telescope is a time machine — and the theory's point is that every eye is too.\n- **Information theory.** Shannon (1948) gave \"information\" an objective, observer-independent measure in bits. The cycle treats the photon stream as a channel: source → channel (space) → noisy interaction channel → receiver (retina) → decoder (visual cortex). Capacity limits apply at every stage.\n- **Neural encoding.** In the retina, light triggers chemical changes in light-sensitive molecules, which start a cascade in the photoreceptor cells; ganglion cells turn that into nerve signals (spike trains); those travel up the optic nerve, through the LGN, into the primary visual cortex (V1). Estimates put the retina's throughput between a million and a billion bits per second depending on the scene and model (Kelly 1961; Koch et al. 2006) — while conscious perception and action selection stagger along near 10–50 bits/s (Norretranders 1998; Zheng & Meister 2023). This asymmetry — a flood of light entering, a trickle of meaning reaching the self — is one of the theory's key empirical facts.",
+        "level": null,
+        "number": null,
+        "name": "- **Photons and EM quanta.** Light comes in individual packets called photons — the smallest possible unit of an electromagnetic field: massless, always moving at the speed of light in a vacuum, and carrying energy tied to its colour. A photon's energy depends on who's looking: if you're moving toward or away from the light, its colour shifts (the Doppler effect) — a hint that what you observe depends on your situation, which we'll return to in §3.3.\n- **Null geodesics and light cones.** In relativity, light follows the most direct possible routes through space–time, and along those routes there is no ticking clock — which is why \"time stands still for a photon\" is poetry, not physics (see §9). Around any event sit two cones: the past light cone (everything that could have caused this event) and the future light cone (everything this event could affect). Everything an observer can know lies on or inside her past light cone.\n- **Relative simultaneity.** There's no \"now\" that everyone shares. Whether two things happened at the same time depends on your frame of reference (Einstein 1905; Minkowski 1908). So the \"present\" in this theory is a *constructed* thing, not an absolute feature of space–time — and the theory embraces that rather than fighting it.\n- **Interaction physics.** Light meets matter and things happen: it can be absorbed, scattered, or have its colour shifted. Two classic examples:\n  - Compton (1923): light bounces off an electron and comes away with longer wavelength (less energy) — a bit like a ball losing speed when it hits something.\n  - Raman (1928): light trades energy with a molecule's vibrations or rotations, shifting its colour by a tell-tale amount.\n  - Creative note: these shifts are light *editing its own story* as it passes through the world — colour as the medium's fingerprint.\n- **Light-travel delay.** Light takes time to get here: Moon ≈ 1.3 seconds; Sun ≈ 8.3 minutes; Andromeda ≈ 2.5 million years. Every telescope is a time machine — and the theory's point is that every eye is too.\n- **Information theory.** Shannon (1948) gave \"information\" an objective, observer-independent measure in bits. The cycle treats the photon stream as a channel: source → channel (space) → noisy interaction channel → receiver (retina) → decoder (visual cortex). Capacity limits apply at every stage.\n- **Neural encoding.** In the retina, light triggers chemical changes in light-sensitive molecules, which start a cascade in the photoreceptor cells; ganglion cells turn that into nerve signals (spike trains); those travel up the optic nerve, through the LGN, into the primary visual cortex (V1). Estimates put the retina's throughput between a million and a billion bits per second depending on the scene and model (Kelly 1961; Koch et al. 2006) — while conscious perception and action selection stagger along near 10–50 bits/s (Norretranders 1998; Zheng & Meister 2023). This asymmetry — a flood of light entering, a trickle of meaning reaching the self — is one of the theory's key empirical facts."
+       }
+      }
+     ]
+    },
+    {
+     "number": "3.2",
+     "heading": {
+      "original": {
+       "kind": "heading",
+       "text": "3.2 Psychology of Time Perception (empirical anchors)",
+       "level": 3,
+       "number": "3.2",
+       "name": "Psychology of Time Perception (empirical anchors)"
+      },
+      "everyone": {
+       "kind": "heading",
+       "text": "3.2 Psychology of Time Perception (empirical anchors)",
+       "level": 3,
+       "number": "3.2",
+       "name": "Psychology of Time Perception (empirical anchors)"
+      }
+     },
+     "blocks": [
+      {
+       "original": {
+        "kind": "list",
+        "text": "- **Specious present.** William James (1890): the felt \"now\" is a short window of immediately sensed duration, not an infinitesimal instant. Modern estimates place the window of experienced presence around 2–3 seconds (Fraisse 1984; Pöppel 1997).\n- **Filled-duration illusion.** Prospective judgments: an interval *filled* with more content is judged longer than an equally long, less filled interval (Wearden 2016).\n- **Oddball effect.** Unexpected, novel, or salient stimuli inflate perceived duration (Eagleman 2008) — consistent with a spike in information processing lengthening felt time.\n- **Prospective vs. retrospective judgment.** When the subject attends to the passage of time, estimates track information processing rate (attentional-gate model: Zakay & Block 1997); retrospective judgments are reconstructions from memory and can compress the same intervals. The theory's hypothesis must therefore specify *prospective* conditions as its primary test bed.\n- **Sensory thresholds.** Critical flicker fusion ≈ 50–60 Hz for human vision; simultaneity windows ≈ 20–30 ms visually, a few ms auditorily. These set the resolution of the perceptual \"frame rate.\"",
+        "level": null,
+        "number": null,
+        "name": "- **Specious present.** William James (1890): the felt \"now\" is a short window of immediately sensed duration, not an infinitesimal instant. Modern estimates place the window of experienced presence around 2–3 seconds (Fraisse 1984; Pöppel 1997).\n- **Filled-duration illusion.** Prospective judgments: an interval *filled* with more content is judged longer than an equally long, less filled interval (Wearden 2016).\n- **Oddball effect.** Unexpected, novel, or salient stimuli inflate perceived duration (Eagleman 2008) — consistent with a spike in information processing lengthening felt time.\n- **Prospective vs. retrospective judgment.** When the subject attends to the passage of time, estimates track information processing rate (attentional-gate model: Zakay & Block 1997); retrospective judgments are reconstructions from memory and can compress the same intervals. The theory's hypothesis must therefore specify *prospective* conditions as its primary test bed.\n- **Sensory thresholds.** Critical flicker fusion ≈ 50–60 Hz for human vision; simultaneity windows ≈ 20–30 ms visually, a few ms auditorily. These set the resolution of the perceptual \"frame rate.\""
+       },
+       "everyone": {
+        "kind": "list",
+        "text": "- **Specious present.** William James (1890): the felt \"now\" is a short window of sensed duration, not a razor-thin instant. Modern estimates put that window around 2–3 seconds (Fraisse 1984; Pöppel 1997).\n- **Filled-duration illusion.** When you're watching time pass, an interval *packed with* more content is judged longer than an equally long but emptier interval (Wearden 2016).\n- **Oddball effect.** Unexpected, novel, or striking stimuli stretch perceived duration (Eagleman 2008) — just what you'd expect if a spike in information processing lengthens felt time.\n- **Prospective vs. retrospective judgment.** When you're paying active attention to time passing, your estimates track how fast information is being processed (attentional-gate model: Zakay & Block 1997). Looking back afterwards, the same interval can feel compressed — memory rebuilds it. So the theory's hypothesis must be tested *prospectively*, while the watching is happening.\n- **Sensory thresholds.** Your eye stops seeing separate flashes above about 50–60 per second; you register two things as \"same time\" within about 20–30 thousandths of a second visually (only a few thousandths for sound). These set the resolution of your perceptual \"frame rate.\"",
+        "level": null,
+        "number": null,
+        "name": "- **Specious present.** William James (1890): the felt \"now\" is a short window of sensed duration, not a razor-thin instant. Modern estimates put that window around 2–3 seconds (Fraisse 1984; Pöppel 1997).\n- **Filled-duration illusion.** When you're watching time pass, an interval *packed with* more content is judged longer than an equally long but emptier interval (Wearden 2016).\n- **Oddball effect.** Unexpected, novel, or striking stimuli stretch perceived duration (Eagleman 2008) — just what you'd expect if a spike in information processing lengthens felt time.\n- **Prospective vs. retrospective judgment.** When you're paying active attention to time passing, your estimates track how fast information is being processed (attentional-gate model: Zakay & Block 1997). Looking back afterwards, the same interval can feel compressed — memory rebuilds it. So the theory's hypothesis must be tested *prospectively*, while the watching is happening.\n- **Sensory thresholds.** Your eye stops seeing separate flashes above about 50–60 per second; you register two things as \"same time\" within about 20–30 thousandths of a second visually (only a few thousandths for sound). These set the resolution of your perceptual \"frame rate.\""
+       }
+      }
+     ]
+    },
+    {
+     "number": "3.3",
+     "heading": {
+      "original": {
+       "kind": "heading",
+       "text": "3.3 Metaphysics (precedents and kin)",
+       "level": 3,
+       "number": "3.3",
+       "name": "Metaphysics (precedents and kin)"
+      },
+      "everyone": {
+       "kind": "heading",
+       "text": "3.3 Metaphysics (precedents and kin)",
+       "level": 3,
+       "number": "3.3",
+       "name": "Metaphysics (precedents and kin)"
+      }
+     },
+     "blocks": [
+      {
+       "original": {
+        "kind": "list",
+        "text": "- **Kant (1781/1787).** Space and time are forms of intuition imposed by the perceiver; we never meet things-in-themselves, only appearances. The Light–Reality Cycle is a modern, physics-constrained descendent: spacetime structure and the phenomenon are jointly constructed from the information stream.\n- **Bergson (1889).** *Duration* (durée) is not clock time; lived time is qualitative, heterogeneous, and irreducible to spatialized instants. The theory agrees: $\\tau$ is built from content, not from the beat of a universal metronome.\n- **Husserl (1905/1928).** The consciousness of inner time has a tripartite structure — retention (just-past), primal impression (now), protention (imminent-next). This is the phenomenology of the *constructed present* that the cycle's Stage 7 must produce.\n- **Whitehead (1929).** Process philosophy: reality is a process of \"actual occasions,\" and perception is \"prehension\" — grasping the past through causal efficacy. A Whiteheadian reading of the cycle: each photon arrival is a prehension of a distant occasion.\n- **Wheeler's \"it from bit\" (1989/1990).** \"Every it — every particle, every field of force, even the spacetime continuum itself — derives its function, its meaning, its very existence from ... answers to yes-or-no questions.\" The ontological claim (2) is \"it from bit\" with a specific carrier (photons) and a specific pipeline (the cycle).\n- **Rovelli (1996; 2018).** Relational quantum mechanics: quantum states are not intrinsic properties of systems but relative to the observer that interacts with them. Time, in Rovelli's later work, is not fundamental — it is what a system with limited information experiences. This is the closest modern physics has come, independently, to the theory's second claim.\n- **Digital physics and informational structural realism** (Zuse; Fredkin; Ladyman & Ross 2007; Floridi 2011). The universe as an information processor; reality as structure that information expresses. The cycle is a *local implementation* claim within that wide family.",
+        "level": null,
+        "number": null,
+        "name": "- **Kant (1781/1787).** Space and time are forms of intuition imposed by the perceiver; we never meet things-in-themselves, only appearances. The Light–Reality Cycle is a modern, physics-constrained descendent: spacetime structure and the phenomenon are jointly constructed from the information stream.\n- **Bergson (1889).** *Duration* (durée) is not clock time; lived time is qualitative, heterogeneous, and irreducible to spatialized instants. The theory agrees: $\\tau$ is built from content, not from the beat of a universal metronome.\n- **Husserl (1905/1928).** The consciousness of inner time has a tripartite structure — retention (just-past), primal impression (now), protention (imminent-next). This is the phenomenology of the *constructed present* that the cycle's Stage 7 must produce.\n- **Whitehead (1929).** Process philosophy: reality is a process of \"actual occasions,\" and perception is \"prehension\" — grasping the past through causal efficacy. A Whiteheadian reading of the cycle: each photon arrival is a prehension of a distant occasion.\n- **Wheeler's \"it from bit\" (1989/1990).** \"Every it — every particle, every field of force, even the spacetime continuum itself — derives its function, its meaning, its very existence from ... answers to yes-or-no questions.\" The ontological claim (2) is \"it from bit\" with a specific carrier (photons) and a specific pipeline (the cycle).\n- **Rovelli (1996; 2018).** Relational quantum mechanics: quantum states are not intrinsic properties of systems but relative to the observer that interacts with them. Time, in Rovelli's later work, is not fundamental — it is what a system with limited information experiences. This is the closest modern physics has come, independently, to the theory's second claim.\n- **Digital physics and informational structural realism** (Zuse; Fredkin; Ladyman & Ross 2007; Floridi 2011). The universe as an information processor; reality as structure that information expresses. The cycle is a *local implementation* claim within that wide family."
+       },
+       "everyone": {
+        "kind": "list",
+        "text": "- **Kant (1781/1787).** Space and time are shapes your mind imposes on experience; we never meet things as they are in themselves, only as appearances. The Light–Reality Cycle is a modern, physics-constrained descendant: space–time structure and the seen world are jointly built from the information stream.\n- **Bergson (1889).** *Duration* is not clock time; lived time is qualitative, uneven, and can't be chopped into identical instants. The theory agrees: felt time is built from content, not from a universal metronome.\n- **Husserl (1905/1928).** Inner time consciousness has three parts: retention (the just-past), the primal impression (the now), and protention (the imminent next). That's the phenomenology of the *constructed present* that the cycle's Stage 7 must produce.\n- **Whitehead (1929).** Process philosophy: reality is a flow of \"actual occasions,\" and perception is \"prehension\" — reaching out and grasping the past through cause and effect. A Whiteheadian reading of the cycle: each photon arrival is a grasp of a distant occasion.\n- **Wheeler's \"it from bit\" (1989/1990).** \"Every it — every particle, every field of force, even the space–time continuum itself — gets its function, meaning, and existence from ... answers to yes-or-no questions.\" Claim (2) is \"it from bit\" with a specific carrier (photons) and a specific pipeline (the cycle).\n- **Rovelli (1996; 2018).** Relational quantum mechanics: a quantum system's state isn't its own private property — it's relative to whoever interacts with it. And time, in Rovelli's later work, isn't fundamental — it's what a system with limited information experiences. That's the closest modern physics has come, independently, to claim (2).\n- **Digital physics and informational structural realism** (Zuse; Fredkin; Ladyman & Ross 2007; Floridi 2011). The universe as an information processor; reality as structure that information expresses. The cycle is a *specific, local version* of that big family of ideas.",
+        "level": null,
+        "number": null,
+        "name": "- **Kant (1781/1787).** Space and time are shapes your mind imposes on experience; we never meet things as they are in themselves, only as appearances. The Light–Reality Cycle is a modern, physics-constrained descendant: space–time structure and the seen world are jointly built from the information stream.\n- **Bergson (1889).** *Duration* is not clock time; lived time is qualitative, uneven, and can't be chopped into identical instants. The theory agrees: felt time is built from content, not from a universal metronome.\n- **Husserl (1905/1928).** Inner time consciousness has three parts: retention (the just-past), the primal impression (the now), and protention (the imminent next). That's the phenomenology of the *constructed present* that the cycle's Stage 7 must produce.\n- **Whitehead (1929).** Process philosophy: reality is a flow of \"actual occasions,\" and perception is \"prehension\" — reaching out and grasping the past through cause and effect. A Whiteheadian reading of the cycle: each photon arrival is a grasp of a distant occasion.\n- **Wheeler's \"it from bit\" (1989/1990).** \"Every it — every particle, every field of force, even the space–time continuum itself — gets its function, meaning, and existence from ... answers to yes-or-no questions.\" Claim (2) is \"it from bit\" with a specific carrier (photons) and a specific pipeline (the cycle).\n- **Rovelli (1996; 2018).** Relational quantum mechanics: a quantum system's state isn't its own private property — it's relative to whoever interacts with it. And time, in Rovelli's later work, isn't fundamental — it's what a system with limited information experiences. That's the closest modern physics has come, independently, to claim (2).\n- **Digital physics and informational structural realism** (Zuse; Fredkin; Ladyman & Ross 2007; Floridi 2011). The universe as an information processor; reality as structure that information expresses. The cycle is a *specific, local version* of that big family of ideas."
+       }
+      },
+      {
+       "original": {
+        "kind": "paragraph",
+        "text": "The theory thus has unusually good lineage: it is phenomenology (Husserl, James) made physical (relativity, QM), made informational (Shannon, Wheeler), made relational (Rovelli).",
+        "level": null,
+        "number": null,
+        "name": "The theory thus has unusually good lineage: it is phenomenology (Husserl, James) made physical (relativity, QM), made informational (Shannon, Wheeler), made relational (Rovelli)."
+       },
+       "everyone": {
+        "kind": "paragraph",
+        "text": "The theory thus has unusually good lineage: it is phenomenology (Husserl, James) made physical (relativity, QM), made informational (Shannon, Wheeler), made relational (Rovelli).",
+        "level": null,
+        "number": null,
+        "name": "The theory thus has unusually good lineage: it is phenomenology (Husserl, James) made physical (relativity, QM), made informational (Shannon, Wheeler), made relational (Rovelli)."
        }
       }
      ]
@@ -618,10 +713,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "list",
-        "text": "- **Photon energy:** $E = hf = \\hbar\\omega$ — energy equals a constant times the wiggle rate. Faster wiggle = more energetic light.\n- **Photon momentum:** $p = h/\\lambda$ — momentum (the \"push\") equals the constant divided by wavelength. Longer wave = gentler push.\n- **Light travel time (vacuum):** $t = d/c$ — time of arrival = distance ÷ light speed.\n- **Minkowski interval:** $ds^2 = c^2 dt^2 - dx^2 - dy^2 - dz^2$; for lightlike paths $ds^2 = 0$ — spacetime has one special kind of \"distance,\" and light always measures it as zero. That's why nothing can ride along with light.\n- **Compton shift (frequency change in scattering):** $\\lambda' - \\lambda = \\frac{h}{m_e c}(1 - \\cos\\theta)$ — when light bounces off an electron at angle $\\theta$, its wavelength grows (it loses energy), and the formula says exactly how much.\n- **Perceived-time hypothesis (A5):** $\\frac{d\\tau}{dT} = \\Phi[I(t)]$, giving felt duration $\\tau = \\int_{T_1}^{T_2} \\Phi[I(t)]\\,dt$ — felt time per real second equals a function of the bits per second your brain is processing. Add up that rate over a real interval and you get the felt duration.\n- **Linear model (simplest nontrivial Φ):** $\\tau = k \\int_{T_1}^{T_2} I(t)\\,dt + \\tau_0$, with $k > 0$ and bounded saturation for large $I$ — felt time is roughly a constant times the total information processed, plus a baseline. More bits → more felt time, up to a ceiling (saturation).",
+        "text": "- **Photon energy:** $E = hf = \\hbar\\omega$\n- **Photon momentum:** $p = h/\\lambda$\n- **Light travel time (vacuum):** $t = d/c$\n- **Minkowski interval:** $ds^2 = c^2 dt^2 - dx^2 - dy^2 - dz^2$; for lightlike paths $ds^2 = 0$\n- **Compton shift (frequency change in scattering):** $\\lambda' - \\lambda = \\frac{h}{m_e c}(1 - \\cos\\theta)$\n- **Perceived-time hypothesis (A5):** $\\frac{d\\tau}{dT} = \\Phi[I(t)]$, giving felt duration $\\tau = \\int_{T_1}^{T_2} \\Phi[I(t)]\\,dt$\n- **Linear model (simplest nontrivial Φ):** $\\tau = k \\int_{T_1}^{T_2} I(t)\\,dt + \\tau_0$, with $k > 0$ and bounded saturation for large $I$",
         "level": null,
         "number": null,
-        "name": "- **Photon energy:** $E = hf = \\hbar\\omega$ — energy equals a constant times the wiggle rate. Faster wiggle = more energetic light.\n- **Photon momentum:** $p = h/\\lambda$ — momentum (the \"push\") equals the constant divided by wavelength. Longer wave = gentler push.\n- **Light travel time (vacuum):** $t = d/c$ — time of arrival = distance ÷ light speed.\n- **Minkowski interval:** $ds^2 = c^2 dt^2 - dx^2 - dy^2 - dz^2$; for lightlike paths $ds^2 = 0$ — spacetime has one special kind of \"distance,\" and light always measures it as zero. That's why nothing can ride along with light.\n- **Compton shift (frequency change in scattering):** $\\lambda' - \\lambda = \\frac{h}{m_e c}(1 - \\cos\\theta)$ — when light bounces off an electron at angle $\\theta$, its wavelength grows (it loses energy), and the formula says exactly how much.\n- **Perceived-time hypothesis (A5):** $\\frac{d\\tau}{dT} = \\Phi[I(t)]$, giving felt duration $\\tau = \\int_{T_1}^{T_2} \\Phi[I(t)]\\,dt$ — felt time per real second equals a function of the bits per second your brain is processing. Add up that rate over a real interval and you get the felt duration.\n- **Linear model (simplest nontrivial Φ):** $\\tau = k \\int_{T_1}^{T_2} I(t)\\,dt + \\tau_0$, with $k > 0$ and bounded saturation for large $I$ — felt time is roughly a constant times the total information processed, plus a baseline. More bits → more felt time, up to a ceiling (saturation)."
+        "name": "- **Photon energy:** $E = hf = \\hbar\\omega$\n- **Photon momentum:** $p = h/\\lambda$\n- **Light travel time (vacuum):** $t = d/c$\n- **Minkowski interval:** $ds^2 = c^2 dt^2 - dx^2 - dy^2 - dz^2$; for lightlike paths $ds^2 = 0$\n- **Compton shift (frequency change in scattering):** $\\lambda' - \\lambda = \\frac{h}{m_e c}(1 - \\cos\\theta)$\n- **Perceived-time hypothesis (A5):** $\\frac{d\\tau}{dT} = \\Phi[I(t)]$, giving felt duration $\\tau = \\int_{T_1}^{T_2} \\Phi[I(t)]\\,dt$\n- **Linear model (simplest nontrivial Φ):** $\\tau = k \\int_{T_1}^{T_2} I(t)\\,dt + \\tau_0$, with $k > 0$ and bounded saturation for large $I$"
        }
       }
      ]
@@ -655,10 +750,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "table",
-        "text": "| Symbol | Meaning (in plain words) |\n| $h$, $\\hbar$ | Planck's constant — the \"exchange rate\" of the quantum world; $\\hbar$ is $h/2\\pi$ |\n| $f$, $\\omega$ | Frequency — how fast the light wiggles ($\\omega$ is the wiggling \"speed\" in radians) |\n| $\\lambda$ | Wavelength — the length of one wiggle |\n| $c$ | Speed of light — about 300,000 km per second |\n| $d$ | Distance the light travels |\n| $ds^2$ | The spacetime interval — spacetime's special ruler |\n| $\\theta$ | Bounce angle in Compton scattering |\n| $m_e$ | Mass of an electron |\n| $T$ | Real elapsed time, as a good clock measures it |\n| $\\tau$ | Felt duration — how long it *seemed* |\n| $I(t)$ | Information throughput at moment $t$ — bits per second arriving in the brain |\n| $\\Phi$ | The map from throughput to felt rate: more bits in, more felt time out, with a ceiling |",
+        "text": "| Symbol | Meaning |\n| $h$, $\\hbar$ | Planck constant; $h/2\\pi$ |\n| $f$, $\\omega$ | Photon frequency; angular frequency |\n| $\\lambda$ | Wavelength |\n| $c$ | Speed of light in vacuum |\n| $d$ | Propagation distance |\n| $ds^2$ | Spacetime interval |\n| $\\theta$ | Photon scattering angle (Compton) |\n| $m_e$ | Electron mass |\n| $T$ | Physical elapsed time (ideal clock) |\n| $\\tau$ | Perceived/felt duration |\n| $I(t)$ | Neural information throughput at time $t$ (bits/s) |\n| $\\Phi$ | Monotone increasing, bounded map from throughput to felt rate |",
         "level": null,
         "number": null,
-        "name": "| Symbol | Meaning (in plain words) |\n| $h$, $\\hbar$ | Planck's constant — the \"exchange rate\" of the quantum world; $\\hbar$ is $h/2\\pi$ |\n| $f$, $\\omega$ | Frequency — how fast the light wiggles ($\\omega$ is the wiggling \"speed\" in radians) |\n| $\\lambda$ | Wavelength — the length of one wiggle |\n| $c$ | Speed of light — about 300,000 km per second |\n| $d$ | Distance the light travels |\n| $ds^2$ | The spacetime interval — spacetime's special ruler |\n| $\\theta$ | Bounce angle in Compton scattering |\n| $m_e$ | Mass of an electron |\n| $T$ | Real elapsed time, as a good clock measures it |\n| $\\tau$ | Felt duration — how long it *seemed* |\n| $I(t)$ | Information throughput at moment $t$ — bits per second arriving in the brain |\n| $\\Phi$ | The map from throughput to felt rate: more bits in, more felt time out, with a ceiling |"
+        "name": "| Symbol | Meaning |\n| $h$, $\\hbar$ | Planck constant; $h/2\\pi$ |\n| $f$, $\\omega$ | Photon frequency; angular frequency |\n| $\\lambda$ | Wavelength |\n| $c$ | Speed of light in vacuum |\n| $d$ | Propagation distance |\n| $ds^2$ | Spacetime interval |\n| $\\theta$ | Photon scattering angle (Compton) |\n| $m_e$ | Electron mass |\n| $T$ | Physical elapsed time (ideal clock) |\n| $\\tau$ | Perceived/felt duration |\n| $I(t)$ | Neural information throughput at time $t$ (bits/s) |\n| $\\Phi$ | Monotone increasing, bounded map from throughput to felt rate |"
        }
       }
      ]
@@ -692,10 +787,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "table",
-        "text": "| Cycle stage | Physical variable | Informational variable | Experiential correlate |\n| Source event | A spacetime event $x^\\mu$ | A message is generated | \"Something happened!\" |\n| Emission | $E = hf$, $p = h/\\lambda$ | The source encodes the message | — |\n| Propagation | Light-speed path, $ds^2 = 0$, delay $d/c$ | Puts arrivals in order | Sequence, waiting, latency |\n| Interaction | Compton/Raman shifts; absorption/scatter | Noise and distortion in the channel | Color, brightness, occlusion |\n| Reception | Photon arrives at the retina | The channel's capacity | Sensitivity limits (flicker at ~60 Hz) |\n| Transduction | Phototransduction cascade; spikes | Information rate $I(t)$ (bits/s) | Brightness, contrast |\n| Encoding | Visual cortex processing | The bottleneck (~10–50 bits/s) | Attention, binding, focus |\n| Perception | — | Integrated information | Present, duration, $\\tau$ |",
+        "text": "| Cycle stage | Physical variable | Informational variable | Experiential correlate |\n| Source event | Spacetime event $x^\\mu$ | Generated signal | \"Something happened\" |\n| Emission | $E = hf$, $p = h/\\lambda$ | Source encoding | — |\n| Propagation | Null geodesic, $ds^2 = 0$, delay $d/c$ | Ordering of arrivals | Sequence, latency |\n| Interaction | Compton/Raman shift; absorption/scatter | Channel noise, distortion | Color, brightness, occlusion |\n| Reception | Photon arrival at retina | Channel capacity | Sensitivity limits (flicker at ~60 Hz) |\n| Transduction | Phototransduction cascade; spike trains | Rate/bits per second: $I(t)$ | Brightness, contrast |\n| Encoding | V1 + cortical processing | Bottleneck (~10–50 bits/s) | Attention, binding |\n| Perception | — | Integrated information | Present, duration, $\\tau$ |",
         "level": null,
         "number": null,
-        "name": "| Cycle stage | Physical variable | Informational variable | Experiential correlate |\n| Source event | A spacetime event $x^\\mu$ | A message is generated | \"Something happened!\" |\n| Emission | $E = hf$, $p = h/\\lambda$ | The source encodes the message | — |\n| Propagation | Light-speed path, $ds^2 = 0$, delay $d/c$ | Puts arrivals in order | Sequence, waiting, latency |\n| Interaction | Compton/Raman shifts; absorption/scatter | Noise and distortion in the channel | Color, brightness, occlusion |\n| Reception | Photon arrives at the retina | The channel's capacity | Sensitivity limits (flicker at ~60 Hz) |\n| Transduction | Phototransduction cascade; spikes | Information rate $I(t)$ (bits/s) | Brightness, contrast |\n| Encoding | Visual cortex processing | The bottleneck (~10–50 bits/s) | Attention, binding, focus |\n| Perception | — | Integrated information | Present, duration, $\\tau$ |"
+        "name": "| Cycle stage | Physical variable | Informational variable | Experiential correlate |\n| Source event | Spacetime event $x^\\mu$ | Generated signal | \"Something happened\" |\n| Emission | $E = hf$, $p = h/\\lambda$ | Source encoding | — |\n| Propagation | Null geodesic, $ds^2 = 0$, delay $d/c$ | Ordering of arrivals | Sequence, latency |\n| Interaction | Compton/Raman shift; absorption/scatter | Channel noise, distortion | Color, brightness, occlusion |\n| Reception | Photon arrival at retina | Channel capacity | Sensitivity limits (flicker at ~60 Hz) |\n| Transduction | Phototransduction cascade; spike trains | Rate/bits per second: $I(t)$ | Brightness, contrast |\n| Encoding | V1 + cortical processing | Bottleneck (~10–50 bits/s) | Attention, binding |\n| Perception | — | Integrated information | Present, duration, $\\tau$ |"
        }
       }
      ]
@@ -731,10 +826,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
      },
      "everyone": {
       "kind": "paragraph",
-      "text": "**The technical text just said:** this kind of theory can't be proved like a geometry theorem, and it can't be tested like a law of physics. What it *can* do is be argued with discipline — and the paper names the five rules of that discipline up front, so the reader always knows what counts as a fair move. Here they are:",
+      "text": "A metaphysical theory can't be proved the way a theorem is proved, nor tested the way a law of physics is tested. It can, however, be *argued* with discipline. The method here has five components:",
       "level": null,
       "number": null,
-      "name": "**The technical text just said:** this kind of theory can't be proved like a geometry theorem, and it can't be tested like a law of physics. What it *can* do is be argued with discipline — and the paper names the five rules of that discipline up front, so the reader always knows what counts as a fair move. Here they are:"
+      "name": "A metaphysical theory can't be proved the way a theorem is proved, nor tested the way a law of physics is tested. It can, however, be *argued* with discipline. The method here has five components:"
      }
     },
     {
@@ -747,10 +842,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
      },
      "everyone": {
       "kind": "list",
-      "text": "- **1. Axiomatic statement.** The theory is stated as explicit postulates (the A1–A5 set from §2.3). If you disagree with the theory, you can point at *exactly* which postulate you reject — nobody has to argue with the whole castle, just with the relevant brick.\n- **2. Internal consistency.** Logical and physical checks: the theory must not contradict established physics (it is built on it), and it must not be self-defeating — its own statement has to be something the theory itself can account for. (A lesson borrowed from [[The Theory]], which spends an entire paper on what happens when a theory can't account for itself.)\n- **3. Empirical anchoring.** Wherever the theory touches measurable ground — time perception, neural coding, relativistic optics — it must line up with real results, *and* produce new predictions you could actually test (§8).\n- **4. Explanatory comparison.** The theory is tested the way theories in metaphysics get tested: against rival world-views (physicalism, idealism, dualism), scored on how simple they are, how well they fit what experience is actually like, and how well they fit the relational picture modern physics keeps producing.\n- **5. Falsifiability grading.** Following Popper, each claim gets a grade for how it *could* be proven wrong. The epistemic claim: highly constrained by experiment. The perceived-time hypothesis: experimentally decidable. The ontological claim: the least testable — it is defended on coherence and explanatory power, not measurement. The paper is explicit about which parts could be killed, and how.",
+      "text": "1. **Axiomatic statement.** The theory is stated as explicit postulates (A1–A5) so that disagreement is locatable.\n1. **Internal consistency.** Logical and physical checks: the theory must not contradict established physics (it is built on it) and must not be self-defeating (for instance, its own statement must be something the theory can account for — a lesson borrowed from [[The Theory]]).\n2. **Empirical anchoring.** Where the theory touches measurable terrain (time perception, neural coding, relativistic optics), it must align with results and generate *new* testable predictions (§8).\n3. **Explanatory comparison.** The theory is compared against rival ontologies (physicalism, idealism, dualism) on parsimony, fit with phenomenology, and fit with relational physics.\n4. **Falsifiability grading.** Following Popper (1963), claims are graded by how they could be falsified: the epistemic claim is highly constrained by experiment; the perceived-time hypothesis is experimentally decidable; the ontological claim is the least empirically constrained component and is defended on coherence and explanatory power rather than measurement.",
       "level": null,
       "number": null,
-      "name": "- **1. Axiomatic statement.** The theory is stated as explicit postulates (the A1–A5 set from §2.3). If you disagree with the theory, you can point at *exactly* which postulate you reject — nobody has to argue with the whole castle, just with the relevant brick.\n- **2. Internal consistency.** Logical and physical checks: the theory must not contradict established physics (it is built on it), and it must not be self-defeating — its own statement has to be something the theory itself can account for. (A lesson borrowed from [[The Theory]], which spends an entire paper on what happens when a theory can't account for itself.)\n- **3. Empirical anchoring.** Wherever the theory touches measurable ground — time perception, neural coding, relativistic optics — it must line up with real results, *and* produce new predictions you could actually test (§8).\n- **4. Explanatory comparison.** The theory is tested the way theories in metaphysics get tested: against rival world-views (physicalism, idealism, dualism), scored on how simple they are, how well they fit what experience is actually like, and how well they fit the relational picture modern physics keeps producing.\n- **5. Falsifiability grading.** Following Popper, each claim gets a grade for how it *could* be proven wrong. The epistemic claim: highly constrained by experiment. The perceived-time hypothesis: experimentally decidable. The ontological claim: the least testable — it is defended on coherence and explanatory power, not measurement. The paper is explicit about which parts could be killed, and how."
+      "name": "1. **Axiomatic statement.** The theory is stated as explicit postulates (A1–A5) so that disagreement is locatable.\n1. **Internal consistency.** Logical and physical checks: the theory must not contradict established physics (it is built on it) and must not be self-defeating (for instance, its own statement must be something the theory can account for — a lesson borrowed from [[The Theory]]).\n2. **Empirical anchoring.** Where the theory touches measurable terrain (time perception, neural coding, relativistic optics), it must align with results and generate *new* testable predictions (§8).\n3. **Explanatory comparison.** The theory is compared against rival ontologies (physicalism, idealism, dualism) on parsimony, fit with phenomenology, and fit with relational physics.\n4. **Falsifiability grading.** Following Popper (1963), claims are graded by how they could be falsified: the epistemic claim is highly constrained by experiment; the perceived-time hypothesis is experimentally decidable; the ontological claim is the least empirically constrained component and is defended on coherence and explanatory power rather than measurement."
      }
     }
    ],
@@ -805,10 +900,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**The technical text just said:** Claim 1 — perception is photon-mediated information — is defended not by argument but by the sheer weight of physiology and optics. This is the claim physics and biology already agree on:",
+        "text": "Claim (1) — perception is light-delivered information — is defended by the sheer weight of physiology and optics:",
         "level": null,
         "number": null,
-        "name": "**The technical text just said:** Claim 1 — perception is photon-mediated information — is defended not by argument but by the sheer weight of physiology and optics. This is the claim physics and biology already agree on:"
+        "name": "Claim (1) — perception is light-delivered information — is defended by the sheer weight of physiology and optics:"
        }
       },
       {
@@ -821,10 +916,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "list",
-        "text": "- Vision dominates human perception; roughly a third of the cortex is dedicated to visual processing. Seeing is not one sense among equals — it's the flagship.\n- The visual realism we enjoy is *exactly* the physical content of electromagnetic information: shape from shading, color from spectral composition, motion from successive photon arrival patterns. What you see *is* what the light says.\n- Every stage of the cycle is well-mapped: phototransduction, ganglion encoding, cortical decoding (Hubel & Wiesel's maps; modern predictive-coding accounts). The wiring diagram exists; it's not speculative.\n- Even the famous seams of vision support the account: blindsight subjects process photonic information unconsciously; the blind spot and saccadic suppression show the cycle is *lossy* — perception is reconstruction under constraint, which is precisely what an information channel predicts. The theory isn't embarrassed by vision's glitches; it predicts them.",
+        "text": "- Vision dominates human perception; roughly a third of the cortex is dedicated to visual processing.\n- The visual realism we enjoy is *exactly* the physical content of electromagnetic information: shape from shading, color from spectral composition, motion from successive photon arrival patterns.\n- Every stage of the cycle is well-mapped: light-triggering in the retina, encoding in nerve cells, decoding in cortex (Hubel & Wiesel's maps; modern predictive-coding accounts).\n- Even the famous seams of vision support the account: blindsight subjects process photonic information unconsciously; the blind spot and saccadic suppression show the cycle is *lossy* — perception is reconstruction under constraint, which is exactly what an information channel predicts.",
         "level": null,
         "number": null,
-        "name": "- Vision dominates human perception; roughly a third of the cortex is dedicated to visual processing. Seeing is not one sense among equals — it's the flagship.\n- The visual realism we enjoy is *exactly* the physical content of electromagnetic information: shape from shading, color from spectral composition, motion from successive photon arrival patterns. What you see *is* what the light says.\n- Every stage of the cycle is well-mapped: phototransduction, ganglion encoding, cortical decoding (Hubel & Wiesel's maps; modern predictive-coding accounts). The wiring diagram exists; it's not speculative.\n- Even the famous seams of vision support the account: blindsight subjects process photonic information unconsciously; the blind spot and saccadic suppression show the cycle is *lossy* — perception is reconstruction under constraint, which is precisely what an information channel predicts. The theory isn't embarrassed by vision's glitches; it predicts them."
+        "name": "- Vision dominates human perception; roughly a third of the cortex is dedicated to visual processing.\n- The visual realism we enjoy is *exactly* the physical content of electromagnetic information: shape from shading, color from spectral composition, motion from successive photon arrival patterns.\n- Every stage of the cycle is well-mapped: light-triggering in the retina, encoding in nerve cells, decoding in cortex (Hubel & Wiesel's maps; modern predictive-coding accounts).\n- Even the famous seams of vision support the account: blindsight subjects process photonic information unconsciously; the blind spot and saccadic suppression show the cycle is *lossy* — perception is reconstruction under constraint, which is exactly what an information channel predicts."
        }
       }
      ]
@@ -858,10 +953,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**The technical text just said:** Claim 2 — reality *consists of* photon-delivered information — is the metaphysical leap, and it takes four steps:",
+        "text": "Claim (2) — reality consists of light-delivered information — is the metaphysical leap. The argument structure:",
         "level": null,
         "number": null,
-        "name": "**The technical text just said:** Claim 2 — reality *consists of* photon-delivered information — is the metaphysical leap, and it takes four steps:"
+        "name": "Claim (2) — reality consists of light-delivered information — is the metaphysical leap. The argument structure:"
        }
       },
       {
@@ -874,10 +969,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "list",
-        "text": "1. **All that can be *known* of the world arrives as information** (that's Claim 1).\n2. **Physics can't supply a \"substance\" behind the information.** Its most relational formulations — the relativity of simultaneity, quantum relationalism — keep finding *invariant structure* (intervals, correlations, probabilities) wherever they look for a thing-in-itself. There is no solid nugget hiding behind the correlations; there are just the correlations.\n3. **Therefore a principled ontology can identify reality with the information-exchange structure itself:** the world is what the cycle delivers, properly understood — including what it would deliver to any possible observer, generalized beyond the human eye.\n4. **This is informational monism restricted to observational channels:** \"being\" is being-in-the-information-stream. And note carefully — a universe without any sensor is *not* a field of appearances; it is a field of actual information-theoretic facts, because the physical legs of the cycle (emission, propagation, interaction) run regardless of whether an eye is waiting at the end.",
+        "text": "1. All that can be *known* of the world arrives as information (claim 1).\n1. Physics, in its most relational formulations (relativity of simultaneity; quantum relationalism), cannot supply an observer-independent \"substance\" behind the information — it supplies *invariant structure*: intervals, correlations, probabilities.\n2. Therefore a principled ontology can identify reality *with* the information exchange structure itself: the world is what the cycle delivers, properly understood (including what would be delivered to any possible observer, generalized beyond the human eye).\n3. This is informational monism restricted to observational channels: \"being\" is being-in-the-information-stream; a universe without any sensor is not a field of appearances — it is a field of *actual information-theoretic facts* still describable by the cycle absent receivers (the physical legs of the cycle run regardless of whether an eye is present).",
         "level": null,
         "number": null,
-        "name": "1. **All that can be *known* of the world arrives as information** (that's Claim 1).\n2. **Physics can't supply a \"substance\" behind the information.** Its most relational formulations — the relativity of simultaneity, quantum relationalism — keep finding *invariant structure* (intervals, correlations, probabilities) wherever they look for a thing-in-itself. There is no solid nugget hiding behind the correlations; there are just the correlations.\n3. **Therefore a principled ontology can identify reality with the information-exchange structure itself:** the world is what the cycle delivers, properly understood — including what it would deliver to any possible observer, generalized beyond the human eye.\n4. **This is informational monism restricted to observational channels:** \"being\" is being-in-the-information-stream. And note carefully — a universe without any sensor is *not* a field of appearances; it is a field of actual information-theoretic facts, because the physical legs of the cycle (emission, propagation, interaction) run regardless of whether an eye is waiting at the end."
+        "name": "1. All that can be *known* of the world arrives as information (claim 1).\n1. Physics, in its most relational formulations (relativity of simultaneity; quantum relationalism), cannot supply an observer-independent \"substance\" behind the information — it supplies *invariant structure*: intervals, correlations, probabilities.\n2. Therefore a principled ontology can identify reality *with* the information exchange structure itself: the world is what the cycle delivers, properly understood (including what would be delivered to any possible observer, generalized beyond the human eye).\n3. This is informational monism restricted to observational channels: \"being\" is being-in-the-information-stream; a universe without any sensor is not a field of appearances — it is a field of *actual information-theoretic facts* still describable by the cycle absent receivers (the physical legs of the cycle run regardless of whether an eye is present)."
        }
       },
       {
@@ -890,10 +985,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**And then it headed off the obvious objection — solipsism:** the theory does *not* collapse into \"the universe exists only in minds.\" Photons propagate and interact whether or not a retina happens to be at the journey's end. The division of labor: the *manifest* world — the only world with content for any observer — is the cycle; the *structural* world is the physics that makes the cycle run. One is the movie, the other is the projector; neither needs the other to *exist*, only to be *watched*.",
+        "text": "The theory therefore does *not* collapse into solipsism or a universe-dependent-on-minds: photons propagate and interact whether or not a retina waits at the end. The ontology is that the *manifest* world — the only world with content for any observer — is the cycle; the *structural* world is the physics that makes the cycle run.",
         "level": null,
         "number": null,
-        "name": "**And then it headed off the obvious objection — solipsism:** the theory does *not* collapse into \"the universe exists only in minds.\" Photons propagate and interact whether or not a retina happens to be at the journey's end. The division of labor: the *manifest* world — the only world with content for any observer — is the cycle; the *structural* world is the physics that makes the cycle run. One is the movie, the other is the projector; neither needs the other to *exist*, only to be *watched*."
+        "name": "The theory therefore does *not* collapse into solipsism or a universe-dependent-on-minds: photons propagate and interact whether or not a retina waits at the end. The ontology is that the *manifest* world — the only world with content for any observer — is the cycle; the *structural* world is the physics that makes the cycle run."
        }
       }
      ]
@@ -927,10 +1022,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**The technical text just said:** relativity kills the absolute now — and the cycle explains why we feel one anyway:",
+        "text": "Relativity kills the absolute now; the cycle explains why we feel one anyway:",
         "level": null,
         "number": null,
-        "name": "**The technical text just said:** relativity kills the absolute now — and the cycle explains why we feel one anyway:"
+        "name": "Relativity kills the absolute now; the cycle explains why we feel one anyway:"
        }
       },
       {
@@ -943,10 +1038,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "list",
-        "text": "- Photon arrivals are ordered by $t = d/c$, but the perceptual system doesn't process them one by one: it integrates arrivals over a window (the specious present, roughly 2–3 seconds; the simultaneity window, ~20–30 ms). Events inside that window co-present — they're felt as simultaneous even if physics says they arrived at different instants. The theory's job is to *match perceived order to received order* — not to match some absolute, universal simultaneity that doesn't exist.\n- The felt \"now\" is the leading edge of that integrated window: retention, primal impression, protention (Husserl's names for just-past, the moment itself, and about-to-happen). The theory supplies the physical bookkeeping underneath: the window is a moving integration over a photon-spike stream — the \"now\" is a mathematical operation, not a mystery.",
+        "text": "- Photon arrivals are ordered by travel time, but the perceptual system integrates arrivals over a window (the specious present, ~2–3 s; simultaneity window ~20–30 ms). Events within that window co-present: the theory's task is to *match perceived order to received order*, not to absolute simultaneity.\n- The felt \"now\" is the leading edge of the integrated window: retention, primal impression, protention (Husserl). The theory supplies the physical bookkeeping underneath: the window is a moving integration over a photon-spike stream.",
         "level": null,
         "number": null,
-        "name": "- Photon arrivals are ordered by $t = d/c$, but the perceptual system doesn't process them one by one: it integrates arrivals over a window (the specious present, roughly 2–3 seconds; the simultaneity window, ~20–30 ms). Events inside that window co-present — they're felt as simultaneous even if physics says they arrived at different instants. The theory's job is to *match perceived order to received order* — not to match some absolute, universal simultaneity that doesn't exist.\n- The felt \"now\" is the leading edge of that integrated window: retention, primal impression, protention (Husserl's names for just-past, the moment itself, and about-to-happen). The theory supplies the physical bookkeeping underneath: the window is a moving integration over a photon-spike stream — the \"now\" is a mathematical operation, not a mystery."
+        "name": "- Photon arrivals are ordered by travel time, but the perceptual system integrates arrivals over a window (the specious present, ~2–3 s; simultaneity window ~20–30 ms). Events within that window co-present: the theory's task is to *match perceived order to received order*, not to absolute simultaneity.\n- The felt \"now\" is the leading edge of the integrated window: retention, primal impression, protention (Husserl). The theory supplies the physical bookkeeping underneath: the window is a moving integration over a photon-spike stream."
        }
       }
      ]
@@ -980,10 +1075,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**The technical text just said:** the most common creative phrasing of the theory — \"the photon's journey is time\" — is now given its precise content. Five points, from physics to illustration:",
+        "text": "The most common creative phrasing of the theory — \"the photon's journey is time\" — is given its precise content:",
         "level": null,
         "number": null,
-        "name": "**The technical text just said:** the most common creative phrasing of the theory — \"the photon's journey is time\" — is now given its precise content. Five points, from physics to illustration:"
+        "name": "The most common creative phrasing of the theory — \"the photon's journey is time\" — is given its precise content:"
        }
       },
       {
@@ -996,10 +1091,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "list",
-        "text": "- **Physical ordering:** arrivals happen in a sequence $\\{t_i\\}$ with $t_i = t_{0i} + d_i/c$ — each message's arrival time is its birth time plus its travel time.\n- **Perceptual integration:** the system samples this ordered stream at its encoding rate $I(t)$ and integrates over the specious window $W$. The stream is read; slightly late, slightly averaged — but read.\n- **Felt rate hypothesis:** $\\frac{d\\tau}{dT} = \\Phi[I(t)]$ — how fast time feels per real second is a function of how many bits per second are being processed.\n- **Everyday illustration — lightning and thunder:** the light arrives nearly instantly; the pressure wave lags about 3 seconds per kilometer of distance. We perceive the flash \"now\" and the thunder \"now, plus delay\" — but they're the *same event*. Our sense of a gap between flash and thunder is precisely an information-arrival gap, not a physical separation of the event from itself. The cycle reads the same story twice, at two carrier speeds.\n- **Astronomical illustration:** the Sun is seen as it was 8.3 minutes ago; Andromeda as it was 2.5 million years ago. Star maps are not images of a single \"now\" — they are a montage of *delivered pasts*. The night sky is the cycle's canonical artifact: a collage of different eras, all arriving tonight.",
+        "text": "- Physical ordering: arrival sequence where each arrival time = original time + travel time.\n- Perceptual integration: the system samples this ordered stream at its encoding rate and integrates over the specious window.\n- Felt rate hypothesis (A5): felt time per real second is a function of information throughput.\n- Everyday illustration: a lightning flash and its thunder — the light arrives nearly instantly; the pressure wave lags ~3 s per km of distance. We perceive the flash \"now\" and the thunder \"now plus delay\"; both are the same event. The *ordering* is physically enforced by carrier speed — and our sense of a temporal gap between flash and thunder is precisely an information-arrival gap, not a physical separation of the event from itself. The cycle reads the same story twice, at two carrier speeds.\n- Astronomical illustration: the Sun is seen as it was 8.3 minutes ago; Andromeda as it was 2.5 million years ago. Star maps are not images of a single \"now\" — they are a montage of *delivered pasts*. The night sky is the cycle's canonical artifact.",
         "level": null,
         "number": null,
-        "name": "- **Physical ordering:** arrivals happen in a sequence $\\{t_i\\}$ with $t_i = t_{0i} + d_i/c$ — each message's arrival time is its birth time plus its travel time.\n- **Perceptual integration:** the system samples this ordered stream at its encoding rate $I(t)$ and integrates over the specious window $W$. The stream is read; slightly late, slightly averaged — but read.\n- **Felt rate hypothesis:** $\\frac{d\\tau}{dT} = \\Phi[I(t)]$ — how fast time feels per real second is a function of how many bits per second are being processed.\n- **Everyday illustration — lightning and thunder:** the light arrives nearly instantly; the pressure wave lags about 3 seconds per kilometer of distance. We perceive the flash \"now\" and the thunder \"now, plus delay\" — but they're the *same event*. Our sense of a gap between flash and thunder is precisely an information-arrival gap, not a physical separation of the event from itself. The cycle reads the same story twice, at two carrier speeds.\n- **Astronomical illustration:** the Sun is seen as it was 8.3 minutes ago; Andromeda as it was 2.5 million years ago. Star maps are not images of a single \"now\" — they are a montage of *delivered pasts*. The night sky is the cycle's canonical artifact: a collage of different eras, all arriving tonight."
+        "name": "- Physical ordering: arrival sequence where each arrival time = original time + travel time.\n- Perceptual integration: the system samples this ordered stream at its encoding rate and integrates over the specious window.\n- Felt rate hypothesis (A5): felt time per real second is a function of information throughput.\n- Everyday illustration: a lightning flash and its thunder — the light arrives nearly instantly; the pressure wave lags ~3 s per km of distance. We perceive the flash \"now\" and the thunder \"now plus delay\"; both are the same event. The *ordering* is physically enforced by carrier speed — and our sense of a temporal gap between flash and thunder is precisely an information-arrival gap, not a physical separation of the event from itself. The cycle reads the same story twice, at two carrier speeds.\n- Astronomical illustration: the Sun is seen as it was 8.3 minutes ago; Andromeda as it was 2.5 million years ago. Star maps are not images of a single \"now\" — they are a montage of *delivered pasts*. The night sky is the cycle's canonical artifact."
        }
       }
      ]
@@ -1033,10 +1128,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "list",
-        "text": "- **Retina → consciousness: $\\sim10^7$–$10^9$ bits/s into the eye, $\\sim10$–$50$ bits/s into conscious action selection** (Zheng & Meister 2023). A firehose into a drinking straw — always was.\n- **Implication:** the lived present is an *extremely compressed summary* of the photonic stream. And this is not a defect of the theory — it is a prediction of it. The \"now\" is the highest-value compression of the arriving information, and perceived rate $\\Phi[I]$ should track the *processed* small stream, not the raw large one. That gives the theory a concrete, testable handle — which is exactly what §8 goes and builds.",
+        "text": "- Retina → consciousness: millions to billions of bits/s into the eye, ~10–50 bits/s into conscious action selection (Zheng & Meister 2023).\n- Implication: the lived present is an *extremely compressed summary* of the photonic stream. This is not a defect of the theory — it is a prediction of it. The \"now\" is the highest-value compression of the arriving information, and perceived rate should track the *processed* small stream, not the raw large one. This gives the theory a concrete, testable handle (§8).",
         "level": null,
         "number": null,
-        "name": "- **Retina → consciousness: $\\sim10^7$–$10^9$ bits/s into the eye, $\\sim10$–$50$ bits/s into conscious action selection** (Zheng & Meister 2023). A firehose into a drinking straw — always was.\n- **Implication:** the lived present is an *extremely compressed summary* of the photonic stream. And this is not a defect of the theory — it is a prediction of it. The \"now\" is the highest-value compression of the arriving information, and perceived rate $\\Phi[I]$ should track the *processed* small stream, not the raw large one. That gives the theory a concrete, testable handle — which is exactly what §8 goes and builds."
+        "name": "- Retina → consciousness: millions to billions of bits/s into the eye, ~10–50 bits/s into conscious action selection (Zheng & Meister 2023).\n- Implication: the lived present is an *extremely compressed summary* of the photonic stream. This is not a defect of the theory — it is a prediction of it. The \"now\" is the highest-value compression of the arriving information, and perceived rate should track the *processed* small stream, not the raw large one. This gives the theory a concrete, testable handle (§8)."
        }
       }
      ]
@@ -1092,10 +1187,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "quote",
-        "text": "**Hypothesis H1 (Perceived rate tracks throughput) — in one plain sentence:** when you're paying attention to time passing, the speed at which time feels like it's flowing is set by how much information your brain is processing — more bits per second, more felt time per real second. (The technical version: under prospective conditions, the felt rate $\\frac{d\\tau}{dT}$ increases monotonically with neural information throughput $I(t)$, and saturates at high rates: $\\frac{d\\tau}{dT} = \\Phi[I(t)]$ with $\\Phi$ increasing and saturating.)",
+        "text": "✳️***Explained:*** **Hypothesis H1 (Perceived rate tracks throughput).** When you're watching time pass, the felt rate of time is a steadily rising (but saturating) function of how much information your brain is processing: more information per second → time feels as if it's moving faster or fuller.",
         "level": null,
         "number": null,
-        "name": "**Hypothesis H1 (Perceived rate tracks throughput) — in one plain sentence:** when you're paying attention to time passing, the speed at which time feels like it's flowing is set by how much information your brain is processing — more bits per second, more felt time per real second. (The technical version: under prospective conditions, the felt rate $\\frac{d\\tau}{dT}$ increases monotonically with neural information throughput $I(t)$, and saturates at high rates: $\\frac{d\\tau}{dT} = \\Phi[I(t)]$ with $\\Phi$ increasing and saturating.)"
+        "name": "✳️***Explained:*** **Hypothesis H1 (Perceived rate tracks throughput).** When you're watching time pass, the felt rate of time is a steadily rising (but saturating) function of how much information your brain is processing: more information per second → time feels as if it's moving faster or fuller."
        }
       }
      ]
@@ -1129,10 +1224,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "list",
-        "text": "- **H1a — Filling stretches.** Intervals filled with more visual information are prospectively judged longer. (The filled-duration illusion — this is an established result, and H1 simply *absorbs* it as a special case.)\n- **H1b — Bottleneck flattening.** When processed throughput is clamped — monotony, dark adaptation, meditative stillness, sedation — felt duration compresses toward a baseline drift. Time doesn't stop; it idles.\n- **H1c — Novelty spikes.** Sudden information spikes — oddballs, sudden onsets — inflate local felt duration. (The oddball effect: the crash or the kiss that \"lasts an eternity\" — an established anchor, again absorbed by H1.)\n- **H1d — Latency pooling.** Simultaneity judgments depend on coding/arrival windows, so physically asynchronous arrivals within ~20–30 ms are felt as co-present. The \"now\" has a tolerance, and it's measured in milliseconds.",
+        "text": "- **H1a (Filling stretches):** Intervals filled with more visual information are judged longer while you watch them (the filled-duration illusion — an established finding H1 absorbs).\n- **H1b (Bottleneck flattening):** When processed throughput is clamped (monotony, dark adaptation, meditative stillness, sedation), felt duration compresses toward a baseline drift.\n- **H1c (Novelty spikes):** Sudden information spikes (surprises, onsets) inflate local felt duration (the oddball effect — an established finding).\n- **H1d (Latency pooling):** Simultaneity judgments depend on coding/arrival windows, so physically asynchronous arrivals within ~20–30 ms are felt as co-present.",
         "level": null,
         "number": null,
-        "name": "- **H1a — Filling stretches.** Intervals filled with more visual information are prospectively judged longer. (The filled-duration illusion — this is an established result, and H1 simply *absorbs* it as a special case.)\n- **H1b — Bottleneck flattening.** When processed throughput is clamped — monotony, dark adaptation, meditative stillness, sedation — felt duration compresses toward a baseline drift. Time doesn't stop; it idles.\n- **H1c — Novelty spikes.** Sudden information spikes — oddballs, sudden onsets — inflate local felt duration. (The oddball effect: the crash or the kiss that \"lasts an eternity\" — an established anchor, again absorbed by H1.)\n- **H1d — Latency pooling.** Simultaneity judgments depend on coding/arrival windows, so physically asynchronous arrivals within ~20–30 ms are felt as co-present. The \"now\" has a tolerance, and it's measured in milliseconds."
+        "name": "- **H1a (Filling stretches):** Intervals filled with more visual information are judged longer while you watch them (the filled-duration illusion — an established finding H1 absorbs).\n- **H1b (Bottleneck flattening):** When processed throughput is clamped (monotony, dark adaptation, meditative stillness, sedation), felt duration compresses toward a baseline drift.\n- **H1c (Novelty spikes):** Sudden information spikes (surprises, onsets) inflate local felt duration (the oddball effect — an established finding).\n- **H1d (Latency pooling):** Simultaneity judgments depend on coding/arrival windows, so physically asynchronous arrivals within ~20–30 ms are felt as co-present."
        }
       }
      ]
@@ -1166,10 +1261,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**The technical text just said:** H1 is not ad hoc — it's the natural factor that unifies (a) filled-duration, (b) oddball, (c) the attentional-gate account of time perception (Zakay & Block: we notice time more when we're attending to it), and (d) the familiar observation that time \"speeds up\" in routine, low-novelty life — low $I(t)$ compresses $\\tau$, both prospectively and in memory. In plain words: these aren't four separate quirks of the psychology lab; they're four signatures of one information-driven temporal construction. The theory's contribution is the *frame* that makes them one thing.",
+        "text": "H1 is not made up to fit the facts: it is the natural factor unifying (a) filled-duration, (b) oddball, (c) attentional-gate (Zakay & Block), (d) the observation that time \"speeds up\" in routine (low-novelty) life — low information flow → compressed felt time both looking back and while it happens. The theory contributes the *frame*: these are not accidents of psychology but signatures of an information-driven temporal construction.",
         "level": null,
         "number": null,
-        "name": "**The technical text just said:** H1 is not ad hoc — it's the natural factor that unifies (a) filled-duration, (b) oddball, (c) the attentional-gate account of time perception (Zakay & Block: we notice time more when we're attending to it), and (d) the familiar observation that time \"speeds up\" in routine, low-novelty life — low $I(t)$ compresses $\\tau$, both prospectively and in memory. In plain words: these aren't four separate quirks of the psychology lab; they're four signatures of one information-driven temporal construction. The theory's contribution is the *frame* that makes them one thing."
+        "name": "H1 is not made up to fit the facts: it is the natural factor unifying (a) filled-duration, (b) oddball, (c) attentional-gate (Zakay & Block), (d) the observation that time \"speeds up\" in routine (low-novelty) life — low information flow → compressed felt time both looking back and while it happens. The theory contributes the *frame*: these are not accidents of psychology but signatures of an information-driven temporal construction."
        }
       }
      ]
@@ -1205,10 +1300,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
      },
      "everyone": {
       "kind": "paragraph",
-      "text": "**The technical text just said:** every prediction is stated with its experimental paradigm and its expected result under H1 — and every one of them is falsifiable. Any single experiment that comes back the other way damages the hypothesis. Here's the scoreboard:",
+      "text": "Each prediction is stated with its experimental paradigm and the expected result under H1; each is falsifiable.",
       "level": null,
       "number": null,
-      "name": "**The technical text just said:** every prediction is stated with its experimental paradigm and its expected result under H1 — and every one of them is falsifiable. Any single experiment that comes back the other way damages the hypothesis. Here's the scoreboard:"
+      "name": "Each prediction is stated with its experimental paradigm and the expected result under H1; each is falsifiable."
      }
     },
     {
@@ -1237,10 +1332,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
      },
      "everyone": {
       "kind": "paragraph",
-      "text": "**And then it graded its own claims:** the epistemic claim (1) is already massively confirmed by physiology. The perceived-time hypothesis (H1) is the empirically live core — this is where the theory can actually be wounded. The ontological claim (2) is defended by §6.2's argument and is the component least constrained by experiment — a symmetry the theory explicitly acknowledges. Popper's grading system from §5 doing its job.",
+      "text": "The epistemic claim (1) is already massively confirmed by physiology. The perceived-time hypothesis (H1) is the empirically live core. The ontological claim (2) is defended on §6.2's argument structure and is the component least constrained by experiment — a symmetry the theory explicitly acknowledges (Popper-graded falsifiability, §5.5).",
       "level": null,
       "number": null,
-      "name": "**And then it graded its own claims:** the epistemic claim (1) is already massively confirmed by physiology. The perceived-time hypothesis (H1) is the empirically live core — this is where the theory can actually be wounded. The ontological claim (2) is defended by §6.2's argument and is the component least constrained by experiment — a symmetry the theory explicitly acknowledges. Popper's grading system from §5 doing its job."
+      "name": "The epistemic claim (1) is already massively confirmed by physiology. The perceived-time hypothesis (H1) is the empirically live core. The ontological claim (2) is defended on §6.2's argument structure and is the component least constrained by experiment — a symmetry the theory explicitly acknowledges (Popper-graded falsifiability, §5.5)."
      }
     }
    ],
@@ -1295,10 +1390,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**The technical text just said:** if the cycle is right, the manifest world is an *information process*, not a stage on which matter performs. Photons are the medium's messengers; the visual field is the decoded message. This is a qualified informational monism — one careful middle path between physicalism (\"it's all dumb matter\") and idealism (\"it's all mind\"). Physical (structural) reality is whatever the cycle's physics describes; manifest reality is its decoded output; and there is no third substance hiding behind the curtain. The world is *real structure* — not mind-made — and *essentially informational* — not dumb stuff.",
+        "text": "If the cycle is right, the manifest world is an *information process*, not a stage on which matter performs. Photons are the medium's messengers; the visual field is the decoded message. This is a qualified informational monism: physical (structural) reality is whatever the cycle's physics describes; manifest reality is its decoded output; there is no third substance. The theory thus offers a middle path between physicalism and idealism: the world is *real structure* (not mind-made) and *essentially informational* (not dumb stuff).",
         "level": null,
         "number": null,
-        "name": "**The technical text just said:** if the cycle is right, the manifest world is an *information process*, not a stage on which matter performs. Photons are the medium's messengers; the visual field is the decoded message. This is a qualified informational monism — one careful middle path between physicalism (\"it's all dumb matter\") and idealism (\"it's all mind\"). Physical (structural) reality is whatever the cycle's physics describes; manifest reality is its decoded output; and there is no third substance hiding behind the curtain. The world is *real structure* — not mind-made — and *essentially informational* — not dumb stuff."
+        "name": "If the cycle is right, the manifest world is an *information process*, not a stage on which matter performs. Photons are the medium's messengers; the visual field is the decoded message. This is a qualified informational monism: physical (structural) reality is whatever the cycle's physics describes; manifest reality is its decoded output; there is no third substance. The theory thus offers a middle path between physicalism and idealism: the world is *real structure* (not mind-made) and *essentially informational* (not dumb stuff)."
        }
       }
      ]
@@ -1332,10 +1427,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**The technical text just said:** every photon arrival is a fossil of its source. To see Andromeda is to interact with a state billions of years old — the past is not a psychological shadow but something *actively surfacing*, arriving at your retina as news. On this view, the past light cone is the region of reality currently legible to an observer: an elegant reconciliation of eternalist spacetime (the light cone exists, all of it, always) with lived presentism (the legible slice moves as the observer moves). The past doesn't fade; it *arrives*.",
+        "text": "Every photon arrival is a fossil of its source. To see Andromeda is to interact with a state billions of years old; the past is not a psychological shadow but something *actively surfacing*. On this view, the past light cone is the region of reality currently legible to an observer — an elegant reconciliation of eternalist spacetime (the light cone exists) with lived presentism (the legible slice moves as the observer moves).",
         "level": null,
         "number": null,
-        "name": "**The technical text just said:** every photon arrival is a fossil of its source. To see Andromeda is to interact with a state billions of years old — the past is not a psychological shadow but something *actively surfacing*, arriving at your retina as news. On this view, the past light cone is the region of reality currently legible to an observer: an elegant reconciliation of eternalist spacetime (the light cone exists, all of it, always) with lived presentism (the legible slice moves as the observer moves). The past doesn't fade; it *arrives*."
+        "name": "Every photon arrival is a fossil of its source. To see Andromeda is to interact with a state billions of years old; the past is not a psychological shadow but something *actively surfacing*. On this view, the past light cone is the region of reality currently legible to an observer — an elegant reconciliation of eternalist spacetime (the light cone exists) with lived presentism (the legible slice moves as the observer moves)."
        }
       }
      ]
@@ -1369,10 +1464,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**The technical text just said:** relativity made simultaneity observer-relative; quantum mechanics made the state relative to the observing system (Rovelli). Both are statements *about information exchange*, not about minds. The cycle inherits this and fills in what \"observer-dependent\" means: not \"reality is a psychological whim,\" but \"reality is channel-structured\" — and channels exist wherever interactions occur, with or without brains. The observer in \"observer-dependence\" is a measurement device, not a mind.",
+        "text": "Relativity made simultaneity observer-relative; quantum mechanics made the state relative to the observing system (Rovelli). Both are statements *about information exchange*, not about minds. The cycle inherits this: observer-dependence is a physical fact about channels, not a psychological whim. \"Reality is observer-dependent\" here means \"reality is channel-structured,\" and channels exist wherever interactions occur — with or without brains.",
         "level": null,
         "number": null,
-        "name": "**The technical text just said:** relativity made simultaneity observer-relative; quantum mechanics made the state relative to the observing system (Rovelli). Both are statements *about information exchange*, not about minds. The cycle inherits this and fills in what \"observer-dependent\" means: not \"reality is a psychological whim,\" but \"reality is channel-structured\" — and channels exist wherever interactions occur, with or without brains. The observer in \"observer-dependence\" is a measurement device, not a mind."
+        "name": "Relativity made simultaneity observer-relative; quantum mechanics made the state relative to the observing system (Rovelli). Both are statements *about information exchange*, not about minds. The cycle inherits this: observer-dependence is a physical fact about channels, not a psychological whim. \"Reality is observer-dependent\" here means \"reality is channel-structured,\" and channels exist wherever interactions occur — with or without brains."
        }
       }
      ]
@@ -1406,10 +1501,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "**The technical text just said:** Wheeler named the principle — \"it from bit\" — and the cycle supplies an implementation. The \"bit\" enters through the photon stream: every \"it\" we see arrived as flux, and the flux is the ontology. Where Wheeler was programmatic — a slogan awaiting architecture — the cycle is architectural: a floor plan with stages, speeds, and bottlenecks.",
+        "text": "Wheeler's \"it from bit\" named the principle; the cycle supplies an implementation: the \"bit\" enters through the photon stream — every \"it\" we see arrived as flux, and the flux is the ontology. Where Wheeler was programmatic, the cycle is architectural.",
         "level": null,
         "number": null,
-        "name": "**The technical text just said:** Wheeler named the principle — \"it from bit\" — and the cycle supplies an implementation. The \"bit\" enters through the photon stream: every \"it\" we see arrived as flux, and the flux is the ontology. Where Wheeler was programmatic — a slogan awaiting architecture — the cycle is architectural: a floor plan with stages, speeds, and bottlenecks."
+        "name": "Wheeler's \"it from bit\" named the principle; the cycle supplies an implementation: the \"bit\" enters through the photon stream — every \"it\" we see arrived as flux, and the flux is the ontology. Where Wheeler was programmatic, the cycle is architectural."
        }
       }
      ]
@@ -1443,10 +1538,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "list",
-        "text": "- **The technical text just said three honest limits, stated before the critics find them — first:** the theory does **not** explain consciousness's *presence* — why the compression is *felt* at all. It explains the *structure* of conscious time, on the assumption that conscious experience exists. The hard problem is bracketed, not dissolved.\n- The theory does not decide presentism vs. eternalism wholesale; it is compatible with both — and that compatibility is itself informative, because it tells you the theory's weight rests on the *structure of arriving information*, not on which side of that old debate you prefer.\n- The theory is not a theory of everything; it is a theory of the *observational relationship* between world and perceiver. [[The Theory]] and [[The Unified Theory of Everyone]] pursue the wider unification; the cycle can be read as their localized, empirically anchored branch.",
+        "text": "- The theory does **not** explain consciousness's *presence* (why compression is felt at all). It explains the *structure* of conscious time, on the assumption that conscious experience exists.\n- The theory does not decide presentism vs. eternalism wholesale; it is compatible with both, and that compatibility is itself informative.\n- The theory is not a theory of everything; it is a theory of the *observational relationship* between world and perceiver. [[The Theory]] and [[The Unified Theory of Everyone]] pursue the wider unification; the cycle can be read as their localized, empirically anchored branch.",
         "level": null,
         "number": null,
-        "name": "- **The technical text just said three honest limits, stated before the critics find them — first:** the theory does **not** explain consciousness's *presence* — why the compression is *felt* at all. It explains the *structure* of conscious time, on the assumption that conscious experience exists. The hard problem is bracketed, not dissolved.\n- The theory does not decide presentism vs. eternalism wholesale; it is compatible with both — and that compatibility is itself informative, because it tells you the theory's weight rests on the *structure of arriving information*, not on which side of that old debate you prefer.\n- The theory is not a theory of everything; it is a theory of the *observational relationship* between world and perceiver. [[The Theory]] and [[The Unified Theory of Everyone]] pursue the wider unification; the cycle can be read as their localized, empirically anchored branch."
+        "name": "- The theory does **not** explain consciousness's *presence* (why compression is felt at all). It explains the *structure* of conscious time, on the assumption that conscious experience exists.\n- The theory does not decide presentism vs. eternalism wholesale; it is compatible with both, and that compatibility is itself informative.\n- The theory is not a theory of everything; it is a theory of the *observational relationship* between world and perceiver. [[The Theory]] and [[The Unified Theory of Everyone]] pursue the wider unification; the cycle can be read as their localized, empirically anchored branch."
        }
       }
      ]
@@ -1454,20 +1549,20 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
    ]
   },
   {
-   "number": "11",
+   "number": "10",
    "heading": {
     "original": {
      "kind": "heading",
-     "text": "11. Limitations and Open Questions",
+     "text": "10. Limitations and Open Questions",
      "level": 2,
-     "number": "11",
+     "number": "10",
      "name": "Limitations and Open Questions"
     },
     "everyone": {
      "kind": "heading",
-     "text": "11. Limitations and Open Questions",
+     "text": "10. Limitations and Open Questions",
      "level": 2,
-     "number": "11",
+     "number": "10",
      "name": "Limitations and Open Questions"
     }
    },
@@ -1482,30 +1577,30 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
      },
      "everyone": {
       "kind": "list",
-      "text": "1. **Consciousness's presence — the first open door, named in advance.** The theory models the *structure* of conscious time but has nothing to say about why there is felt experience at all. The hard problem is not dissolved; it is bracketed — set aside, labeled, respected.\n2. **Ontological undecidability.** Claim (2) is not experimentally decidable in principle; its defense is coherence-based. Readers who demand an empirical forced choice will find the theory's ontology underdetermined — as all ontologies are, including physicalism's. You can't experiment your way to it; you can only see whether it holds together.\n3. **Model imprecision.** The function $\\Phi$ is currently specified only up to \"increasing and saturating\" — its exact shape is unknown. Measurement of the sensory bottleneck (Zheng & Meister 2023) suggests $I(t)$ should be measured post-attentional-gating, but the operational definition requires experimental iteration. The equation is an open research program, not a finished instrument.\n4. **Generalization burden.** The extension beyond vision (O1) is sketched, not developed. A full theory needs a formal \"phonon cycle\" for audition and a unified multichannel information-integration account. Sound and touch got the outline; they still need the book.\n5. **Relativistic position of the \"constructed now.\"** The felt present is a bio-local construction; the theory has not given a full account of how multiple observers' constructed presents relate across frames. Coordination, not cosmology.\n6. **The creative/physical boundary.** Poetic formulations (\"time stands still\") must remain flagged; drift across the boundary is the theory's characteristic failure mode. Its author's own [[The Theory]] warns against unnoticed boundary crossings — the operational-boundary problem. The most likely way this theory goes wrong is by letting its poetry smuggle in physics without a ticket.",
+      "text": "1. **Consciousness's presence.** The theory models the *structure* of conscious time but has nothing to say about why there is felt experience at all (the hard problem is not dissolved; it is bracketed).\n1. **Ontological undecidability.** Claim (2) is not experimentally decidable in principle; its defense is coherence-based. Readers who require empirical forced choice will find the theory's ontology underdetermined — as all ontologies are, including physicalism's.\n1. **Model imprecision.** The link from information flow to felt time is currently unspecified beyond \"rises, then saturates.\" Measurement of the sensory bottleneck (Zheng & Meister 2023) suggests information flow should be measured after attention has filtered it, but the exact operational definition requires experimental iteration.\n1. **Generalization burden.** The extension beyond vision (O1) is sketched, not developed. A full theory needs a formal \"sound cycle\" for hearing and a unified multichannel information-integration account.\n1. **Relativistic position of the \"constructed now.\"** The felt present is a bio-local construction; the theory has not given a full account of how multiple observers' constructed presents relate across frames (coordination, not cosmology).\n1. **The creative/physical boundary.** Poetic formulations (\"time stands still\") must remain flagged; drift across the boundary is the theory's characteristic failure mode — its author's own [[The Theory]] warns against unnoticed boundary crossings (the operational-boundary problem).",
       "level": null,
       "number": null,
-      "name": "1. **Consciousness's presence — the first open door, named in advance.** The theory models the *structure* of conscious time but has nothing to say about why there is felt experience at all. The hard problem is not dissolved; it is bracketed — set aside, labeled, respected.\n2. **Ontological undecidability.** Claim (2) is not experimentally decidable in principle; its defense is coherence-based. Readers who demand an empirical forced choice will find the theory's ontology underdetermined — as all ontologies are, including physicalism's. You can't experiment your way to it; you can only see whether it holds together.\n3. **Model imprecision.** The function $\\Phi$ is currently specified only up to \"increasing and saturating\" — its exact shape is unknown. Measurement of the sensory bottleneck (Zheng & Meister 2023) suggests $I(t)$ should be measured post-attentional-gating, but the operational definition requires experimental iteration. The equation is an open research program, not a finished instrument.\n4. **Generalization burden.** The extension beyond vision (O1) is sketched, not developed. A full theory needs a formal \"phonon cycle\" for audition and a unified multichannel information-integration account. Sound and touch got the outline; they still need the book.\n5. **Relativistic position of the \"constructed now.\"** The felt present is a bio-local construction; the theory has not given a full account of how multiple observers' constructed presents relate across frames. Coordination, not cosmology.\n6. **The creative/physical boundary.** Poetic formulations (\"time stands still\") must remain flagged; drift across the boundary is the theory's characteristic failure mode. Its author's own [[The Theory]] warns against unnoticed boundary crossings — the operational-boundary problem. The most likely way this theory goes wrong is by letting its poetry smuggle in physics without a ticket."
+      "name": "1. **Consciousness's presence.** The theory models the *structure* of conscious time but has nothing to say about why there is felt experience at all (the hard problem is not dissolved; it is bracketed).\n1. **Ontological undecidability.** Claim (2) is not experimentally decidable in principle; its defense is coherence-based. Readers who require empirical forced choice will find the theory's ontology underdetermined — as all ontologies are, including physicalism's.\n1. **Model imprecision.** The link from information flow to felt time is currently unspecified beyond \"rises, then saturates.\" Measurement of the sensory bottleneck (Zheng & Meister 2023) suggests information flow should be measured after attention has filtered it, but the exact operational definition requires experimental iteration.\n1. **Generalization burden.** The extension beyond vision (O1) is sketched, not developed. A full theory needs a formal \"sound cycle\" for hearing and a unified multichannel information-integration account.\n1. **Relativistic position of the \"constructed now.\"** The felt present is a bio-local construction; the theory has not given a full account of how multiple observers' constructed presents relate across frames (coordination, not cosmology).\n1. **The creative/physical boundary.** Poetic formulations (\"time stands still\") must remain flagged; drift across the boundary is the theory's characteristic failure mode — its author's own [[The Theory]] warns against unnoticed boundary crossings (the operational-boundary problem)."
      }
     }
    ],
    "subsections": []
   },
   {
-   "number": "12",
+   "number": "11",
    "heading": {
     "original": {
      "kind": "heading",
-     "text": "12. Conclusion",
+     "text": "11. Conclusion",
      "level": 2,
-     "number": "12",
+     "number": "11",
      "name": "Conclusion"
     },
     "everyone": {
      "kind": "heading",
-     "text": "12. Conclusion",
+     "text": "11. Conclusion",
      "level": 2,
-     "number": "12",
+     "number": "11",
      "name": "Conclusion"
     }
    },
@@ -1520,10 +1615,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
      },
      "everyone": {
       "kind": "paragraph",
-      "text": "**The technical text just said:** and here is the whole thing in three lines: we know the world because the world sends messengers; the world, in its manifest aspect, is what the messengers deliver; and the flow of time we feel is the rate at which those deliveries arrive and are decoded. A cycle — source, light, eye, mind — spinning once per lived moment.",
+      "text": "The Light–Reality Cycle claims: we know the world because the world sends messengers; the world, in its manifest aspect, is what the messengers deliver; and the flow of time we feel is the rate at which those deliveries arrive and are decoded.",
       "level": null,
       "number": null,
-      "name": "**The technical text just said:** and here is the whole thing in three lines: we know the world because the world sends messengers; the world, in its manifest aspect, is what the messengers deliver; and the flow of time we feel is the rate at which those deliveries arrive and are decoded. A cycle — source, light, eye, mind — spinning once per lived moment."
+      "name": "The Light–Reality Cycle claims: we know the world because the world sends messengers; the world, in its manifest aspect, is what the messengers deliver; and the flow of time we feel is the rate at which those deliveries arrive and are decoded."
      }
     },
     {
@@ -1536,10 +1631,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
      },
      "everyone": {
       "kind": "paragraph",
-      "text": "**And then it weighed its own three claims:** the epistemic claim is secured by science — no controversy there. The temporal hypothesis is offered to psychophysics with explicit, falsifiable predictions — the part that can be wounded. The ontological claim is argued as the perceptual metaphysics of a relational universe — a universe whose physics (relativity, quantum relationalism, information theory) increasingly reads like the theory's own grammar.",
+      "text": "The epistemic claim is secured by science; the temporal hypothesis is offered to psychophysics with explicit falsifiable predictions; the ontological claim is argued as the perceptual metaphysics of a relational universe — a universe whose physics (relativity, quantum relationalism, information theory) increasingly reads like the theory's own grammar.",
       "level": null,
       "number": null,
-      "name": "**And then it weighed its own three claims:** the epistemic claim is secured by science — no controversy there. The temporal hypothesis is offered to psychophysics with explicit, falsifiable predictions — the part that can be wounded. The ontological claim is argued as the perceptual metaphysics of a relational universe — a universe whose physics (relativity, quantum relationalism, information theory) increasingly reads like the theory's own grammar."
+      "name": "The epistemic claim is secured by science; the temporal hypothesis is offered to psychophysics with explicit falsifiable predictions; the ontological claim is argued as the perceptual metaphysics of a relational universe — a universe whose physics (relativity, quantum relationalism, information theory) increasingly reads like the theory's own grammar."
      }
     },
     {
@@ -1552,10 +1647,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
      },
      "everyone": {
       "kind": "paragraph",
-      "text": "**And then it made the honest disclaimer:** it is not proved. It is not meant to be proved. It is offered the way a theory of reality in metaphysics should be offered: as a coherent, elegant, physics-respecting, phenomenology-honoring account — one that lets the wonder through. Proof is for mathematics; this is a way of *seeing*.",
+      "text": "It is not proved. It is not meant to be proved. It is offered the way a theory of reality in metaphysics should be offered: as a coherent, elegant, physics-respecting, phenomenology-honoring account — one that lets the wonder through.",
       "level": null,
       "number": null,
-      "name": "**And then it made the honest disclaimer:** it is not proved. It is not meant to be proved. It is offered the way a theory of reality in metaphysics should be offered: as a coherent, elegant, physics-respecting, phenomenology-honoring account — one that lets the wonder through. Proof is for mathematics; this is a way of *seeing*."
+      "name": "It is not proved. It is not meant to be proved. It is offered the way a theory of reality in metaphysics should be offered: as a coherent, elegant, physics-respecting, phenomenology-honoring account — one that lets the wonder through."
      }
     },
     {
@@ -1568,10 +1663,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
      },
      "everyone": {
       "kind": "paragraph",
-      "text": "**And the final image:** for time is not a river, and the now is not a point. The now is a lit window in the arriving light.",
+      "text": "For time is not a river, and the now is not a point. The now is a lit window in the arriving light.",
       "level": null,
       "number": null,
-      "name": "**And the final image:** for time is not a river, and the now is not a point. The now is a lit window in the arriving light."
+      "name": "For time is not a river, and the now is not a point. The now is a lit window in the arriving light."
      }
     },
     {
@@ -1621,11 +1716,11 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
       "name": "1. Compton, A. H. (1923). A quantum theory of the scattering of X-rays by light elements. *Physical Review*, 21(5), 483–502.\n2. Eagleman, D. M. (2008). Human time perception and its illusions. *Current Opinion in Neurobiology*, 18(2), 131–136.\n3. Einstein, A. (1905). Zur Elektrodynamik bewegter Körper. *Annalen der Physik*, 17, 891–921.\n4. Einstein, A. (1949). Autobiographical notes. In P. A. Schilpp (Ed.), *Albert Einstein: Philosopher-Scientist*. Open Court.\n5. Floridi, L. (2011). *The Philosophy of Information*. Oxford University Press.\n6. Fraisse, P. (1984). Perception and estimation of time. *Annual Review of Psychology*, 35, 1–36.\n7. Husserl, E. (1928/1991). *On the Phenomenology of the Consciousness of Internal Time* (J. B. Brough, Trans.). Kluwer.\n8. James, W. (1890). *The Principles of Psychology* (Vol. 1) — \"The Perception of Time.\" Holt.\n9. Kant, I. (1781/1787). *Critique of Pure Reason* (N. K. Smith, Trans.). Macmillan.\n10. Kelly, D. H. (1961). Visual response to time-dependent stimuli. I. Amplitude sensitivity measurements. *Journal of the Optical Society of America*, 51(4), 422–429.\n11. Koch, K., McLean, J., Segev, R., Freed, M. A., Berry, M. J., Balasubramanian, V., & Sterling, P. (2006). How much the eye tells the brain. *Current Biology*, 16(14), 1428–1434.\n12. Ladyman, J., & Ross, D. (2007). *Every Thing Must Go: Metaphysics Naturalized*. Oxford University Press.\n13. Minkowski, H. (1908). Raum und Zeit. *Physikalische Zeitschrift*, 10, 104–111.\n14. Norretranders, T. (1998). *The User Illusion: Cutting Consciousness Down to Size*. Viking.\n15. Pöppel, E. (1997). A hierarchical model of time perception. *Trends in Cognitive Sciences*, 1(2), 56–61.\n16. Popper, K. (1963). *Conjectures and Refutations*. Routledge & Kegan Paul.\n17. Raman, C. V., & Krishnan, K. S. (1928). A new type of secondary radiation. *Nature*, 121, 501–502.\n18. Rovelli, C. (1996). Relational quantum mechanics. *International Journal of Theoretical Physics*, 35(8), 1637–1678.\n19. Rovelli, C. (2018). *The Order of Time*. Riverhead.\n20. Shannon, C. E. (1948). A mathematical theory of communication. *Bell System Technical Journal*, 27, 379–423, 623–656.\n21. Wearden, J. (2016). *The Psychology of Time Perception*. Palgrave Macmillan.\n22. Wheeler, J. A. (1990). Information, physics, quantum: The search for links. In W. Zurek (Ed.), *Complexity, Entropy, and the Physics of Information*. Addison-Wesley.\n23. Whitehead, A. N. (1929). *Process and Reality*. Macmillan.\n24. Zakay, D., & Block, R. A. (1997). Temporal cognition. *Current Directions in Psychological Science*, 6(1), 12–16.\n25. Zheng, N., & Meister, M. (2023). The unbearable slowness of being: Why do we live at 10 bits/s? *Neuron*, 111(11), 1704–1713."
      },
      "everyone": {
-      "kind": "quote",
-      "text": "The same references as the full technical version.",
+      "kind": "list",
+      "text": "1. Compton, A. H. (1923). A quantum theory of the scattering of X-rays by light elements. *Physical Review*, 21(5), 483–502.\n2. Eagleman, D. M. (2008). Human time perception and its illusions. *Current Opinion in Neurobiology*, 18(2), 131–136.\n3. Einstein, A. (1905). Zur Elektrodynamik bewegter Körper. *Annalen der Physik*, 17, 891–921.\n4. Einstein, A. (1949). Autobiographical notes. In P. A. Schilpp (Ed.), *Albert Einstein: Philosopher-Scientist*. Open Court.\n5. Floridi, L. (2011). *The Philosophy of Information*. Oxford University Press.\n6. Fraisse, P. (1984). Perception and estimation of time. *Annual Review of Psychology*, 35, 1–36.\n7. Husserl, E. (1928/1991). *On the Phenomenology of the Consciousness of Internal Time* (J. B. Brough, Trans.). Kluwer.\n8. James, W. (1890). *The Principles of Psychology* (Vol. 1) — \"The Perception of Time.\" Holt.\n9. Kant, I. (1781/1787). *Critique of Pure Reason* (N. K. Smith, Trans.). Macmillan.\n10. Kelly, D. H. (1961). Visual response to time-dependent stimuli. I. Amplitude sensitivity measurements. *Journal of the Optical Society of America*, 51(4), 422–429.\n11. Koch, K., McLean, J., Segev, R., Freed, M. A., Berry, M. J., Balasubramanian, V., & Sterling, P. (2006). How much the eye tells the brain. *Current Biology*, 16(14), 1428–1434.\n12. Ladyman, J., & Ross, D. (2007). *Every Thing Must Go: Metaphysics Naturalized*. Oxford University Press.\n13. Minkowski, H. (1908). Raum und Zeit. *Physikalische Zeitschrift*, 10, 104–111.\n14. Norretranders, T. (1998). *The User Illusion: Cutting Consciousness Down to Size*. Viking.\n15. Pöppel, E. (1997). A hierarchical model of time perception. *Trends in Cognitive Sciences*, 1(2), 56–61.\n16. Popper, K. (1963). *Conjectures and Refutations*. Routledge & Kegan Paul.\n17. Raman, C. V., & Krishnan, K. S. (1928). A new type of secondary radiation. *Nature*, 121, 501–502.\n18. Rovelli, C. (1996). Relational quantum mechanics. *International Journal of Theoretical Physics*, 35(8), 1637–1678.\n19. Rovelli, C. (2018). *The Order of Time*. Riverhead.\n20. Shannon, C. E. (1948). A mathematical theory of communication. *Bell System Technical Journal*, 27, 379–423, 623–656.\n21. Wearden, J. (2016). *The Psychology of Time Perception*. Palgrave Macmillan.\n22. Wheeler, J. A. (1990). Information, physics, quantum: The search for links. In W. Zurek (Ed.), *Complexity, Entropy, and the Physics of Information*. Addison-Wesley.\n23. Whitehead, A. N. (1929). *Process and Reality*. Macmillan.\n24. Zakay, D., & Block, R. A. (1997). Temporal cognition. *Current Directions in Psychological Science*, 6(1), 12–16.\n25. Zheng, N., & Meister, M. (2023). The unbearable slowness of being: Why do we live at 10 bits/s? *Neuron*, 111(11), 1704–1713.",
       "level": null,
       "number": null,
-      "name": "The same references as the full technical version."
+      "name": "1. Compton, A. H. (1923). A quantum theory of the scattering of X-rays by light elements. *Physical Review*, 21(5), 483–502.\n2. Eagleman, D. M. (2008). Human time perception and its illusions. *Current Opinion in Neurobiology*, 18(2), 131–136.\n3. Einstein, A. (1905). Zur Elektrodynamik bewegter Körper. *Annalen der Physik*, 17, 891–921.\n4. Einstein, A. (1949). Autobiographical notes. In P. A. Schilpp (Ed.), *Albert Einstein: Philosopher-Scientist*. Open Court.\n5. Floridi, L. (2011). *The Philosophy of Information*. Oxford University Press.\n6. Fraisse, P. (1984). Perception and estimation of time. *Annual Review of Psychology*, 35, 1–36.\n7. Husserl, E. (1928/1991). *On the Phenomenology of the Consciousness of Internal Time* (J. B. Brough, Trans.). Kluwer.\n8. James, W. (1890). *The Principles of Psychology* (Vol. 1) — \"The Perception of Time.\" Holt.\n9. Kant, I. (1781/1787). *Critique of Pure Reason* (N. K. Smith, Trans.). Macmillan.\n10. Kelly, D. H. (1961). Visual response to time-dependent stimuli. I. Amplitude sensitivity measurements. *Journal of the Optical Society of America*, 51(4), 422–429.\n11. Koch, K., McLean, J., Segev, R., Freed, M. A., Berry, M. J., Balasubramanian, V., & Sterling, P. (2006). How much the eye tells the brain. *Current Biology*, 16(14), 1428–1434.\n12. Ladyman, J., & Ross, D. (2007). *Every Thing Must Go: Metaphysics Naturalized*. Oxford University Press.\n13. Minkowski, H. (1908). Raum und Zeit. *Physikalische Zeitschrift*, 10, 104–111.\n14. Norretranders, T. (1998). *The User Illusion: Cutting Consciousness Down to Size*. Viking.\n15. Pöppel, E. (1997). A hierarchical model of time perception. *Trends in Cognitive Sciences*, 1(2), 56–61.\n16. Popper, K. (1963). *Conjectures and Refutations*. Routledge & Kegan Paul.\n17. Raman, C. V., & Krishnan, K. S. (1928). A new type of secondary radiation. *Nature*, 121, 501–502.\n18. Rovelli, C. (1996). Relational quantum mechanics. *International Journal of Theoretical Physics*, 35(8), 1637–1678.\n19. Rovelli, C. (2018). *The Order of Time*. Riverhead.\n20. Shannon, C. E. (1948). A mathematical theory of communication. *Bell System Technical Journal*, 27, 379–423, 623–656.\n21. Wearden, J. (2016). *The Psychology of Time Perception*. Palgrave Macmillan.\n22. Wheeler, J. A. (1990). Information, physics, quantum: The search for links. In W. Zurek (Ed.), *Complexity, Entropy, and the Physics of Information*. Addison-Wesley.\n23. Whitehead, A. N. (1929). *Process and Reality*. Macmillan.\n24. Zakay, D., & Block, R. A. (1997). Temporal cognition. *Current Directions in Psychological Science*, 6(1), 12–16.\n25. Zheng, N., & Meister, M. (2023). The unbearable slowness of being: Why do we live at 10 bits/s? *Neuron*, 111(11), 1704–1713."
      }
     }
    ],
@@ -1633,10 +1728,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
   }
  ],
  "meta": {
-  "built": "2026-09-16",
+  "built": "2026-09-23",
   "sources": {
-   "original": "The Light–Reality Cycle - Photon Pathways and Perceived Time - Draft v.1 (Technical).md",
-   "everyone": "The Light–Reality Cycle - Photon Pathways and Perceived Time - Draft v.2 (For Everyone).md"
+   "original": "The Light–Reality Cycle - Photon Pathways and Perceived Time - Draft v.3 (Re-worked Technical).md",
+   "everyone": "The Light–Reality Cycle - Photon Pathways and Perceived Time - Draft v.4 (Re-worked Explained).md"
   },
   "aligner": "M0 build_bundle.py (Needleman-Wunsch, header-anchored)"
  }

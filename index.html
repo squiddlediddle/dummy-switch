@@ -317,8 +317,8 @@ function makeQuote(text) {
   el.innerHTML = mdInline(text);
   return el;
 }
-function makeHeading(item) {
-  var sideObj = item.o;
+function makeHeading(item, sideObj) {
+  sideObj = sideObj || item.o;
   if (!sideObj) return null;
   var el = document.createElement(item.level === 3 ? "h3" : "h2");
   el.textContent = sideObj.text;
@@ -400,9 +400,11 @@ function makeParagraph(text) {
   return el;
 }
 
-// structural blocks (title, headings) always stay in the original voice;
-// everything else follows the per-block "explained" flag when set.
-function isStructural(item) { return item.kind === "title" || item.kind === "heading"; }
+// structural blocks (the title) always stay in the original voice; everything
+// else follows the per-block "explained" flag when set. Section headings never
+// click anyway (their text is identical on both sides); a content block that
+// is rendered as a heading-style flow map (e.g. the LRC cycle line) CAN toggle.
+function isStructural(item) { return item.kind === "title"; }
 function isToggleable(item) {
   // only blocks whose "for everyone" version actually differs are clickable —
   // identical blocks (and structural ones) stay plain
@@ -417,7 +419,7 @@ function buildEl(item, i) {
   var el;
   switch (sideObj.kind) {
     case "title":    el = makeTitle(sideObj); break;
-    case "heading":  el = makeHeading(item); break;
+    case "heading":  el = makeHeading(item, sideObj); break;
     case "quote":    el = makeQuote(sideObj.text); break;
     case "callout":  el = makeCallout(sideObj.text); break;
     case "list":     el = makeList(sideObj.text); break;

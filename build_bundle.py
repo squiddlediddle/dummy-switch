@@ -16,6 +16,11 @@ Alignment strategy:
      into its best match — extra paragraphs on either side become gaps
      instead of breaking the mapping.
 
+Explained-edition format: the "everyone" draft is a block-for-block twin of
+the technical one; blocks that really differ carry a leading ✳️***Explained:***
+marker, which is stripped at build time. Unmarked blocks stay verbatim on
+both sides (the reader keeps them unclickable).
+
 Output (one file per paper, named by its id):
   structure-<id>.json  the bundle (human-inspectable; this is the spec)
   bundle-<id>.js       window.PAPER_BUNDLES["<id>"] = {...} (loads via
@@ -41,8 +46,8 @@ FINALS = BASE / "finals"
 OUT = Path(__file__).resolve().parent
 
 DEFAULTS = [
-    str(next(FINALS.glob("*Draft v.1 (Technical).md"))),
-    str(next(FINALS.glob("*Draft v.2 (For Everyone).md"))),
+    str(next(FINALS.glob("*Draft v.3 (Re-worked Technical).md"))),
+    str(next(FINALS.glob("*Draft v.4 (Re-worked Explained).md"))),
 ]
 
 SKIPPED_SECTIONS = {"Document Control", "Working Titles"}
@@ -50,7 +55,10 @@ SKIPPED_SECTIONS = {"Document Control", "Working Titles"}
 # Sections to exclude from the bundle, matched by exact number ("6.4") or by
 # normalized heading text ("testable predictions"). The source drafts stay
 # untouched — edit this set (or pass --drop on the command line) and rebuild.
-DROP_SECTIONS = {"3", "10", "continuation", "keywords"}  # 3 Related Frameworks, 10 Objections and Responses (O1-O8), Continuation, Keywords
+# The re-worked v3/v4 pair template keeps EVERY numbered section (including
+# 3 Related Frameworks and 10 Limitations and Open Questions); only an
+# unnumbered "Keywords" tail is auto-dropped.
+DROP_SECTIONS = {"keywords"}
 
 DEFAULT_AUTHOR = "Squid"
 DEFAULT_ID = "light-reality-cycle"
@@ -69,6 +77,24 @@ def normalize(text: str) -> str:
     t = re.sub(r"[—–-]", " ", t)
     t = re.sub(r"\s+", " ", t)
     return t.strip()
+
+
+# Explained-edition format (draft v.4 of the template): blocks whose "for
+# everyone" rendering really differs carry a leading ✳️***Explained:*** marker.
+# It is build-time only — stripped here so the blue panel shows the plain
+# explanation text (the panel already IS the "explained" signal). Unmarked
+# blocks stay verbatim on both sides and are not clickable in the reader.
+# Matches the marker after an optional bullet/number prefix ("- ", "1. ") or
+# a blockquote prefix ("> "), and tolerates 1–3 asterisks on either side.
+MARKER_RE = re.compile(
+    r"^(\s*(?:>\s*)?(?:[-*]|\d+\.)\s+)?✳️\*{1,3}[Ee]xplained:\*{1,3}\s*",
+    re.MULTILINE,
+)
+
+
+def strip_markers(text: str) -> str:
+    """Remove ✳️***Explained:*** markers, keeping any list bullet/number."""
+    return MARKER_RE.sub(lambda m: m.group(1) or "", text)
 
 
 def dice(a: str, b: str) -> float:
@@ -271,18 +297,25 @@ def build_sections(blocks):
     for b in blocks:
         if in_header:
             if b.kind == "heading":
-                if normalize(b.text) == "document control":
-                    in_header = False
-                    continue
                 if header["title"] is None:
                     header["title"] = b.text
-                elif header["subtitle"] is None:
+                    continue
+                if header["subtitle"] is None:
                     header["subtitle"] = b.text
-                else:
+                    continue
+                if header["tagline"] is None:
                     header["tagline"] = b.text
+                    continue
+                # the 4th heading ends the title block and starts the
+                # sections — old drafts have "Document Control" here (a
+                # section that is later skipped), new v3/v4 drafts have
+                # "Abstract" or "1. Introduction" directly. Fall through.
+                in_header = False
             elif b.kind == "quote" and not header["epigraph"]:
                 header["epigraph"] = b.text
-            continue
+                continue
+            else:
+                continue
 
         if b.kind == "heading" and b.level == 2:
             name = normalize(b.name) if b.name else ""
@@ -504,7 +537,8 @@ def main():
     DROP_SECTIONS.update(d.strip().lower() for d in args.drop)
 
     ta = Path(args.original).read_text(encoding="utf-8")
-    tb = Path(args.everyone).read_text(encoding="utf-8")
+    # the "for everyone" side may carry ✳️***Explained:*** markers — strip them
+    tb = strip_markers(Path(args.everyone).read_text(encoding="utf-8"))
 
     bundle, ha, hb, dropped_sections = build_bundle(ta, tb)
     if args.id:
