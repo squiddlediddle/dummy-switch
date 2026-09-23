@@ -1,9 +1,9 @@
-/* The Dummy Switch — service worker
+﻿/* The Dummy Switch — service worker
    Cache-first for local assets; stale-while-revalidate for CDN (KaTeX).
    Note: only active on http/https (not file://), and service workers
    require a secure context — so it kicks in on the hosted share link. */
 
-var CACHE = "dummy-switch-v10";
+var CACHE = "dummy-switch-v11";
 var LOCAL = [
   "./",
   "./index.html",

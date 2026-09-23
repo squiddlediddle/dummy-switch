@@ -162,15 +162,29 @@
   .explained pre, .explained blockquote, .explained table, .explained .callout { margin: 0; }
   .explained .callout { background: var(--code-bg); }
 
-  /* explained panels carry a small star so the reader can tell at a glance
-     which blocks are explained — the drafted ✳️***Explained:*** markers are
-     stripped at build time, and the reader adds its own clean signal instead.
-     Plain ✳ (no emoji variation selector) so it renders in the text color */
-  p.explained::before, li.explained::before,
-  ul.explained::before, ol.explained::before, blockquote.explained::before {
-    content: "\2733\00a0";  /* ✳ + non-breaking space */
-    font-weight: 700;
-    font-style: normal;
+  /* the explained prefix echoes the drafted ✳️***Explained:*** markers —
+     a white square badge with the blue ✳, then a bold "Explained:" label.
+     The badge color is the literal brand blue, NOT var(--accent), because
+     --accent is redefined to white inside panels. Inline for paragraphs,
+     a lead line for containers (lists, quotes, headings) */
+  .exlab { font-weight: 700; font-style: normal; white-space: nowrap; }
+  .exlab .exstar {
+    display: inline-block;
+    width: 1.05em;
+    height: 1.05em;
+    background: #ffffff;
+    color: #3d88d8;
+    text-align: center;
+    line-height: 1.1em;
+    font-size: .9em;
+    vertical-align: -.12em;
+    margin-right: .5em;
+  }
+  ul.explained > .exlab, ol.explained > .exlab,
+  blockquote.explained > .exlab, h2.explained > .exlab, h3.explained > .exlab {
+    display: block;
+    margin: 0 0 .35em;
+    vertical-align: baseline;
   }
 
   blockquote {
@@ -449,7 +463,23 @@ function buildEl(item, i) {
     default:         el = makeParagraph(sideObj.text); break;
   }
   if (isToggleable(item)) el.className += " toggleable";
-  if (state.explained[i] && item.e) el.className += " explained";
+  if (state.explained[i] && item.e) {
+    el.className += " explained";
+    // prefix the panel with the ✳ badge + "Explained:" label; skipped for
+    // table/code/callout where an inline injection would break the structure
+    // (none of the current papers produce explained blocks of those kinds)
+    var k = item.e.kind;
+    if (k !== "table" && k !== "code" && k !== "callout") {
+      var lab = document.createElement("span");
+      lab.className = "exlab";
+      var badge = document.createElement("b");
+      badge.className = "exstar";
+      badge.textContent = "\u2733"; /* ✳ */
+      lab.appendChild(badge);
+      lab.appendChild(document.createTextNode(" Explained: "));
+      el.insertBefore(lab, el.firstChild);
+    }
+  }
   return el;
 }
 
