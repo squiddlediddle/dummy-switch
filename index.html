@@ -216,7 +216,6 @@
 
 <script src="bundle-light-reality-cycle.js"></script>
 <script src="bundle-the-theory.js"></script>
-<script src="bundle-rubiks-hypercube.js"></script>
 <!-- add one <script src="bundle-<id>.js"></script> per paper (build with build_bundle.py) -->
 <script>
 "use strict";
@@ -254,6 +253,9 @@ function flatten(B) {
   if (B.epigraph && (B.epigraph.original || B.epigraph.everyone)) {
     items.push({ kind: "quote", o: side("quote", B.epigraph.original), e: side("quote", B.epigraph.everyone) });
   }
+  (B.lead || []).forEach(function (p) {
+    if (p.original || p.everyone) items.push({ kind: pairKind(p), o: p.original, e: p.everyone });
+  });
   B.sections.forEach(function (sec) {
     items.push({ kind: "heading", level: 2, o: sec.heading.original, e: sec.heading.everyone });
     sec.blocks.forEach(function (p) { items.push({ kind: pairKind(p), o: p.original, e: p.everyone }); });

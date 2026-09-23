@@ -288,7 +288,7 @@ def build_sections(blocks):
     document header: the first three headings in order become title,
     subtitle and tagline; the first quote becomes the epigraph.
     """
-    header = {"title": None, "subtitle": None, "tagline": None, "epigraph": ""}
+    header = {"title": None, "subtitle": None, "tagline": None, "epigraph": "", "lead": []}
     sections = []
     current = None
     skipping = False
@@ -315,6 +315,11 @@ def build_sections(blocks):
                 header["epigraph"] = b.text
                 continue
             else:
+                # Blocks between the title block / epigraph and the first
+                # real section heading (e.g. the Nothing Title callout in
+                # the Theory) are "lead" blocks — kept and rendered as
+                # regular blocks right after the epigraph.
+                header["lead"].append(b)
                 continue
 
         if b.kind == "heading" and b.level == 2:
@@ -487,6 +492,8 @@ def build_bundle(text_a: str, text_b: str):
         "subtitle": {"original": header_a["subtitle"], "everyone": header_b["subtitle"]},
         "tagline": {"original": header_a["tagline"], "everyone": header_b["tagline"]},
         "epigraph": {"original": header_a["epigraph"], "everyone": header_b["epigraph"]},
+        "lead": [{"original": block_side(a), "everyone": block_side(b)}
+                 for a, b in align_blocks(header_a["lead"], header_b["lead"])],
         "author": meta_a.get("author") or meta_b.get("author") or DEFAULT_AUTHOR,
         "sections": bundle_sections,
     }, header_a, header_b, dropped
@@ -497,6 +504,14 @@ def stats(bundle):
     gaps_o = 0
     gaps_e = 0
     both = 0
+    for p in bundle.get("lead", []):
+        total_pairs += 1
+        if p["original"] is None:
+            gaps_o += 1
+        if p["everyone"] is None:
+            gaps_e += 1
+        if p["original"] is not None and p["everyone"] is not None:
+            both += 1
     for sec in bundle["sections"]:
         for unit in [sec] + sec.get("subsections", []):
             for p in unit["blocks"]:

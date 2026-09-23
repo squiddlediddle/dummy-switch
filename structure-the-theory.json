@@ -16,6 +16,24 @@
   "original": "\"A Theory of Everything must account for itself, the unknown, and everything in between — all of reality. It must describe the map, the mapmaker, and the blank spaces past the map's edge.\"",
   "everyone": "\"A Theory of Everything must account for itself, the unknown, and everything in between — all of reality. It must describe the map, the mapmaker, and the blank spaces past the map's edge.\""
  },
+ "lead": [
+  {
+   "original": {
+    "kind": "callout",
+    "text": "[!example] Nothing Title.\nOriginally titled ∅ (previously \"Nothing\"; later \"A Theory of Every Nothing\" — until I discovered even more nothing and expanded the scope).\n\nThe working title remains **The Theory** — on the theory that no title could be less presumptuous for a theory of everything, and none more.",
+    "level": null,
+    "number": null,
+    "name": "[!example] Nothing Title.\nOriginally titled ∅ (previously \"Nothing\"; later \"A Theory of Every Nothing\" — until I discovered even more nothing and expanded the scope).\n\nThe working title remains **The Theory** — on the theory that no title could be less presumptuous for a theory of everything, and none more."
+   },
+   "everyone": {
+    "kind": "callout",
+    "text": "[!example] Nothing Title.\nOriginally titled ∅ (previously \"Nothing\"; later \"A Theory of Every Nothing\" — until I discovered even more nothing and expanded the scope).\n\nThe working title remains **The Theory** — on the theory that no title could be less presumptuous for a theory of everything, and none more.",
+    "level": null,
+    "number": null,
+    "name": "[!example] Nothing Title.\nOriginally titled ∅ (previously \"Nothing\"; later \"A Theory of Every Nothing\" — until I discovered even more nothing and expanded the scope).\n\nThe working title remains **The Theory** — on the theory that no title could be less presumptuous for a theory of everything, and none more."
+   }
+  }
+ ],
  "author": "Squid",
  "sections": [
   {
