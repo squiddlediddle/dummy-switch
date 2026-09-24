@@ -60,12 +60,12 @@
   /* the badge counter and the share button are white pills with blue ink,
      flipped against the blue bar; the ☰ home button keeps its plain
      bordered look (transparent, white border/icon) */
-  #topbar button.badge, #topbar #shareBtn {
+  #topbar button.badge, #topbar #topBtn {
     padding: 3px 10px; border-radius: 999px;
     background: #fff; color: var(--accent);
     border: none; font-weight: 600; white-space: nowrap;
   }
-  #topbar button.badge:hover, #topbar #shareBtn:hover { filter: brightness(.97); }
+  #topbar button.badge:hover, #topbar #topBtn:hover { filter: brightness(.97); }
   #topbar button {
     background: transparent; color: #fff;
     border: 1px solid rgba(255, 255, 255, .55); border-radius: 8px;
@@ -248,13 +248,13 @@
   <span class="app">The Nerd Switch</span>
   <button id="homeBtn" title="Library">☰</button>
   <span class="spacer"></span>
-  <button id="shareBtn" title="Share">⤴</button>
+  <button id="topBtn" title="Back to top">↑</button>
   <button id="badge" class="badge" title="Click: turn off all explanations — or when none are on, turn them all on">Original</button>
 </header>
 
 <main id="container">
   <div id="doc"></div>
-  <div id="library" class="hidden"><h1>Library</h1><p class="howto">Every outlined block has two voices: the original, and the plain-English version. Click a block to switch it — click again to switch back. The badge in the top bar counts how many you have open; click it to clear them all (or open everything at once).</p><div id="libList"></div></div>
+  <div id="library" class="hidden"><p class="howto">Every outlined block has two voices: the original, and the plain-English version. Click a block to switch it — click again to switch back. The badge in the top bar counts how many you have open; click it to clear them all (or open everything at once).</p><h1>Library</h1><div id="libList"></div></div>
 </main>
 
 <script src="bundle-light-reality-cycle.js"></script>
@@ -718,37 +718,10 @@ container.addEventListener("scroll", function () {
 });
 window.addEventListener("beforeunload", saveProgress);
 
-/* share: Web Share API on phones, clipboard fallback on desktop */
-function flash(msg) {
-  var t = document.createElement("div");
-  t.textContent = msg;
-  t.style.cssText = "position:fixed;left:50%;transform:translateX(-50%);bottom:86px;"
-    + "background:var(--accent);color:var(--accent-ink);padding:8px 14px;"
-    + "border-radius:999px;font:13px system-ui,sans-serif;z-index:40;";
-  document.body.appendChild(t);
-  setTimeout(function () { t.remove(); }, 1400);
-}
-document.getElementById("shareBtn").addEventListener("click", function () {
-  var b = state.bundle;
-  if (!b) { flash("Open a paper first"); return; }
-  var url;
-  try {
-    url = location.protocol === "file:" ? location.href : location.pathname + "?p=" + b.id;
-  } catch (e) { url = location.href; }
-  var data = {
-    title: document.title,
-    text: b.title.original + " — read it in two voices, original and for everyone:",
-    url: url
-  };
-  if (navigator.share) {
-    navigator.share(data).catch(function () {});
-  } else if (navigator.clipboard) {
-    navigator.clipboard.writeText(location.href).then(function () {
-      flash("Link copied");
-    }).catch(function () {});
-  } else {
-    flash(location.href);
-  }
+/* back to top: scroll the reading container to the top */
+document.getElementById("topBtn").addEventListener("click", function () {
+  try { container.scrollTo({ top: 0, behavior: "smooth" }); }
+  catch (e) { container.scrollTop = 0; }
 });
 
 /* BUILD:SW-START */
