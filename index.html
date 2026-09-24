@@ -111,13 +111,6 @@
   .lib-card .subtitle { margin: 0 0 .25em; color: var(--muted); font-size: .95em; }
   .lib-empty { color: var(--muted); font-style: italic; }
 
-  /* the library (home) page itself sits on the blue accent — cards stay
-     white against it */
-  body.lib { background: var(--accent); }
-  body.lib #library h1 { color: rgba(255, 255, 255, .9); }
-  body.lib .lib-card { border-color: rgba(255, 255, 255, .35); }
-  body.lib .lib-empty { color: #fff; }
-
   .doc-title h1 { font-size: 1.9em; line-height: 1.15; margin: 0 0 .2em; }
 .doc-title h2 { font-size: 1.25em; font-weight: 600; color: var(--muted); margin: 0 0 .1em; }
 
@@ -636,7 +629,6 @@ function showLibrary() {
   state.els = [];
   doc.classList.add("hidden");
   library.classList.remove("hidden");
-  document.body.classList.add("lib");
   document.title = "The Nerd Switch";
   container.scrollTop = 0;
   updateBadge();
@@ -645,7 +637,6 @@ function showLibrary() {
 function hideLibrary() {
   library.classList.add("hidden");
   doc.classList.remove("hidden");
-  document.body.classList.remove("lib");
 }
 
 function openBundle(id) {
