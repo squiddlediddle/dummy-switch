@@ -19,6 +19,22 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
 
 <style>
+  /* Literata variable font (OFL) — latin subset. The single-file share
+     inlines this as a data URI (build_share.py) so it works offline. */
+  @font-face {
+    font-family: "Literata";
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url("fonts/literata-var-latin.woff2") format("woff2");
+  }
+
+  /* the two font stacks the whole app uses — change them here */
+  :root {
+    --font-serif: "Literata", Georgia, "Times New Roman", serif;
+    --font-ui: system-ui, -apple-system, sans-serif;
+  }
+
   /* Original (blue) — light (default) */
   :root {
     --bg: #f4f4fa;
@@ -38,7 +54,7 @@
   body {
     background: var(--bg);
     color: var(--ink);
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-serif);
     font-size: var(--fs);
     line-height: 1.65;
   }
@@ -52,7 +68,7 @@
     /* light drop shadow under the bar so it reads as slightly raised
        (~10px blur, low opacity — content scrolls beneath it) */
     box-shadow: 0 3px 12px rgba(0, 0, 0, .10);
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: var(--font-ui);
     font-size: 13px;
   }
   #topbar .app { font-weight: 700; letter-spacing: .02em; white-space: nowrap; color: #fff; }
@@ -94,7 +110,7 @@
     padding: 2.2rem 1.4rem 8rem;
   }
   #library h1 {
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: var(--font-ui);
     font-size: .8em; font-weight: 700; color: var(--muted);
     text-transform: uppercase; letter-spacing: .08em;
     margin: 0 0 1.2em;
@@ -103,7 +119,7 @@
     display: block; width: 100%; text-align: left;
     background: var(--card); border: 1px solid var(--line);
     padding: 1.1rem 1.3rem; margin: 0 0 1rem; cursor: pointer;
-    font-family: Georgia, "Times New Roman", serif; color: var(--ink);
+    font-family: var(--font-serif); color: var(--ink);
   }
   .lib-card:hover { border-color: var(--accent); }
   .lib-card h2 { margin: 0 0 .1em; border: none; font-size: 1.25em; }
@@ -113,7 +129,7 @@
 
   /* short how-to tip above the paper cards */
   #library .howto {
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: var(--font-ui);
     font-size: .85em; color: var(--muted);
     line-height: 1.55;
     background: var(--card);
@@ -213,7 +229,7 @@
   }
   .callout .clabel {
     display: inline-block; margin-bottom: .35em;
-    font-family: system-ui, sans-serif; font-weight: 700; font-size: .8em;
+    font-family: var(--font-ui); font-weight: 700; font-size: .8em;
     color: var(--accent); text-transform: uppercase; letter-spacing: .06em;
   }
   ul, ol { margin: 0 0 1em; padding-left: 1.6em; }

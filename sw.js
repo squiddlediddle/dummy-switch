@@ -3,7 +3,7 @@
    Note: only active on http/https (not file://), and service workers
    require a secure context — so it kicks in on the hosted share link. */
 
-var CACHE = "nerd-switch-v19";
+var CACHE = "nerd-switch-v20";
 var LOCAL = [
   "./",
   "./index.html",
@@ -14,7 +14,8 @@ var LOCAL = [
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/favicon.png",
-  "./icons/favicon-red.png"
+  "./icons/favicon-red.png",
+  "./fonts/literata-var-latin.woff2"
 ];
 
 self.addEventListener("install", function (event) {

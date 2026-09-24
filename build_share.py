@@ -17,6 +17,7 @@ Usage:
 """
 
 import argparse
+import base64
 import re
 from pathlib import Path
 
@@ -34,10 +35,21 @@ def build(out: Path):
         html,
     )
 
-    # 2. drop PWA assets that can't exist in a single file
+    # 2. inline local fonts referenced by @font-face src url("fonts/...") —
+    #    as data URIs, so the single file keeps its fonts offline too
+    html = re.sub(
+        r'url\("fonts/([^"]+\.woff2)"\)\s*format\("woff2"\)',
+        lambda m: ('url("data:font/woff2;base64,'
+                   + base64.b64encode((ROOT / "fonts" / m.group(1))
+                                      .read_bytes()).decode("ascii")
+                   + '") format("woff2")'),
+        html,
+    )
+
+    # 3. drop PWA assets that can't exist in a single file
     html = re.sub(r"\s*<!-- BUILD:PWA-START -->[\s\S]*?<!-- BUILD:PWA-END -->", "", html)
 
-    # 3. drop the service-worker registration (needs a server + HTTPS anyway)
+    # 4. drop the service-worker registration (needs a server + HTTPS anyway)
     html = re.sub(r"\s*/\* BUILD:SW-START \*/[\s\S]*?/\* BUILD:SW-END \*/", "", html)
 
     if re.search(r'src="bundle-[A-Za-z0-9_-]+\.js"', html):
