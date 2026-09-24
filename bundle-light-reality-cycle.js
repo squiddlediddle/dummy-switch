@@ -304,10 +304,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "paragraph",
-        "text": "Reality-for-an-observer is generated in a cycle. In its most compressed form:",
+        "text": "Reality-for-an-observer is generated in a cycle. In its most compressed technical form:",
         "level": null,
         "number": null,
-        "name": "Reality-for-an-observer is generated in a cycle. In its most compressed form:"
+        "name": "Reality-for-an-observer is generated in a cycle. In its most compressed technical form:"
        }
       },
       {
@@ -320,10 +320,10 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
        },
        "everyone": {
         "kind": "quote",
-        "text": "Emission → travel through space → interaction with matter → reception → transduction → encoding (bits/s) → subjective time (hypothesis: perceived rate follows information throughput)",
+        "text": "Emission → propagation (null geodesics; $ds^2=0$) → interaction (inelastic scattering; Compton/Raman) → reception → transduction → encoding (bits/s) → subjective time (hypothesis: perceived rate ∝ information throughput)",
         "level": null,
         "number": null,
-        "name": "Emission → travel through space → interaction with matter → reception → transduction → encoding (bits/s) → subjective time (hypothesis: perceived rate follows information throughput)"
+        "name": "Emission → propagation (null geodesics; $ds^2=0$) → interaction (inelastic scattering; Compton/Raman) → reception → transduction → encoding (bits/s) → subjective time (hypothesis: perceived rate ∝ information throughput)"
        }
       },
       {
@@ -344,11 +344,11 @@ window.PAPER_BUNDLES["light-reality-cycle"] = {
       },
       {
        "original": {
-        "kind": "heading",
-        "text": "Source event ==→== photons emitted ==→== propagate through space–time (null paths) ==→== interact with matter (absorb/scatter/shift) ==→== reach detector/observer ==→== neural transduction ==→== perceived \"present\"/duration",
-        "level": 1,
+        "kind": "paragraph",
+        "text": "**Source event ==→== photons emitted ==→== propagate through space–time (null paths) ==→== interact with matter (absorb/scatter/shift) ==→== reach detector/observer ==→== neural transduction ==→== perceived \"present\"/duration**",
+        "level": null,
         "number": null,
-        "name": "Source event ==→== photons emitted ==→== propagate through space–time (null paths) ==→== interact with matter (absorb/scatter/shift) ==→== reach detector/observer ==→== neural transduction ==→== perceived \"present\"/duration"
+        "name": "**Source event ==→== photons emitted ==→== propagate through space–time (null paths) ==→== interact with matter (absorb/scatter/shift) ==→== reach detector/observer ==→== neural transduction ==→== perceived \"present\"/duration**"
        },
        "everyone": {
         "kind": "paragraph",

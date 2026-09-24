@@ -37,7 +37,7 @@
 
   /* Original (blue) — light (default) */
   :root {
-    --bg: #f4f4fa;
+    --bg: #e2e2e7;
     --ink: #3d3d3d;
     --muted: #3d3d3d;
     --card: #ffffff;
@@ -67,7 +67,7 @@
     border-bottom: none;
     /* light drop shadow under the bar so it reads as slightly raised
        (~10px blur, low opacity — content scrolls beneath it) */
-    box-shadow: 0 3px 12px rgba(0, 0, 0, .10);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
     font-family: var(--font-ui);
     font-size: 13px;
   }
@@ -160,8 +160,11 @@
      pointer cursor and the badge still mark it as revertible). Hover just
      thickens the line. Outlines don't participate in layout, so the
      zero-shift guarantee is unaffected. */
-  .toggleable:not(.explained) { outline: 1px solid var(--accent); outline-offset: 3px; }
-  .toggleable:not(.explained):hover { outline-width: 2px; }
+  /* clickable boxes: white outline (2px so it reads on the grey app
+     background), blue on hover — the explained panels themselves have
+     no outline */
+  .toggleable:not(.explained) { outline: 2px solid #ffffff; outline-offset: 3px; }
+  .toggleable:not(.explained):hover { outline: 2px solid var(--accent); }
   .explained {
     --bg: #3d88d8;
     --ink: #ffffff;
