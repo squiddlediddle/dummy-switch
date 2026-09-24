@@ -111,6 +111,18 @@
   .lib-card .subtitle { margin: 0 0 .25em; color: var(--muted); font-size: .95em; }
   .lib-empty { color: var(--muted); font-style: italic; }
 
+  /* short how-to tip above the paper cards */
+  #library .howto {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: .85em; color: var(--muted);
+    line-height: 1.55;
+    background: var(--card);
+    border: 1px dashed var(--line);
+    border-radius: 10px;
+    padding: .7em 1em;
+    margin: 0 0 1.4em;
+  }
+
   .doc-title h1 { font-size: 1.9em; line-height: 1.15; margin: 0 0 .2em; }
 .doc-title h2 { font-size: 1.25em; font-weight: 600; color: var(--muted); margin: 0 0 .1em; }
 
@@ -242,7 +254,7 @@
 
 <main id="container">
   <div id="doc"></div>
-  <div id="library" class="hidden"><h1>Library</h1><div id="libList"></div></div>
+  <div id="library" class="hidden"><h1>Library</h1><p class="howto">Every outlined block has two voices: the original, and the plain-English version. Click a block to switch it — click again to switch back. The badge in the top bar counts how many you have open; click it to clear them all (or open everything at once).</p><div id="libList"></div></div>
 </main>
 
 <script src="bundle-light-reality-cycle.js"></script>
@@ -321,18 +333,26 @@ function renderMath(src) {
 }
 
 function mdInline(text) {
-  var t = esc(text);
+  // pull inline math out of the RAW text BEFORE escaping: KaTeX must
+  // receive unescaped LaTeX — esc() would turn a prime (' -> &#39;) and
+  // any &, <, >, " into entities and KaTeX would choke on them
+  var math = [];
+  var t = text.replace(/\$([^$\n]+)\$/g, function (m, src) {
+    math.push(src);
+    return "\u0000M" + (math.length - 1) + "\u0000";
+  });
+  t = esc(t);
   // wikilinks: [[Title]] -> Title ; [[Title|alias]] -> alias
   t = t.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, function (m, a, b) { return "<b>" + (b || a) + "</b>"; });
   // markdown links: [text](url) -> text
   t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1");
-  // math $...$
-  t = t.replace(/\$([^$\n]+)\$/g, function (m, src) { return renderMath(src); });
   // inline code
   t = t.replace(/`([^`]+)`/g, "<code>$1</code>");
   // bold then italic
   t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
   t = t.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+  // reinject typeset math last so KaTeX's HTML never passes the markdown passes
+  t = t.replace(/\u0000M(\d+)\u0000/g, function (m, n) { return renderMath(math[+n]); });
   return t;
 }
 
@@ -527,8 +547,21 @@ function render() {
 }
 
 function applyKatexDiffs() {
-  // KaTeX replaces math spans it rendered; nothing needed here since we
-  // render math inline at build time. Kept for parity/future use.
+  // Boot renders can run before the deferred KaTeX script has loaded, so
+  // they fall back to [raw] placeholders. Once KaTeX is in, upgrade those
+  // spans in place to real typeset math (the DOM text node already decoded
+  // the entities, so the placeholder source is clean LaTeX again).
+  if (!window.katex) return;
+  var raws = doc.querySelectorAll(".math-raw");
+  if (!raws.length) return;
+  for (var i = raws.length - 1; i >= 0; i--) {
+    var el = raws[i];
+    var m = el.textContent.match(/^\[([\s\S]*)\]$/);
+    if (!m) continue;
+    var fresh = document.createElement("span");
+    fresh.innerHTML = renderMath(m[1]);
+    el.parentNode.replaceChild(fresh, el);
+  }
 }
 
 /* ------------------------------------------------------------------ */
@@ -612,7 +645,7 @@ function buildLibrary() {
     // it (the subtitle) on its own line, then the author. The LRC keeps the
     // dash + period of its displayed form; future papers fall back to their
     // bundle subtitle.
-    var sub = { "light-reality-cycle": "– Photon Pathways and Perceived Time." }[id]
+    var sub = { "light-reality-cycle": "Photon Pathways and Perceived Time." }[id]
       || (b.subtitle && (b.subtitle.original || b.subtitle.everyone)) || "";
     card.innerHTML =
         "<h2>" + esc(b.title.original) + "</h2>"
@@ -739,6 +772,12 @@ function boot() {
   if (BUNDLES[wanted]) openBundle(wanted);
   else showLibrary();
 }
+
+/* KaTeX is a deferred script, so the boot render may beat it to the page;
+   upgrade any fallback [raw] math spans once the library is in */
+window.addEventListener("load", function () {
+  if (window.katex) applyKatexDiffs();
+});
 
 boot();
 

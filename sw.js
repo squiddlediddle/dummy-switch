@@ -3,7 +3,7 @@
    Note: only active on http/https (not file://), and service workers
    require a secure context — so it kicks in on the hosted share link. */
 
-var CACHE = "nerd-switch-v14";
+var CACHE = "nerd-switch-v15";
 var LOCAL = [
   "./",
   "./index.html",
