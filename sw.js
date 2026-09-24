@@ -1,9 +1,9 @@
-﻿/* The Dummy Switch — service worker
+﻿/* The Nerd Switch — service worker
    Cache-first for local assets; stale-while-revalidate for CDN (KaTeX).
    Note: only active on http/https (not file://), and service workers
    require a secure context — so it kicks in on the hosted share link. */
 
-var CACHE = "dummy-switch-v11";
+var CACHE = "nerd-switch-v12";
 var LOCAL = [
   "./",
   "./index.html",
@@ -26,7 +26,13 @@ self.addEventListener("install", function (event) {
 });
 
 self.addEventListener("activate", function (event) {
-  event.waitUntil(self.clients.claim());
+  // prune caches from older versions / previous names on activation
+  event.waitUntil(
+    caches.keys().then(function (names) {
+      return Promise.all(names.filter(function (n) { return n !== CACHE; })
+        .map(function (n) { return caches.delete(n); }));
+    }).then(function () { self.clients.claim(); })
+  );
 });
 
 self.addEventListener("fetch", function (event) {

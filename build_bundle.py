@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-M0 — Bundle Builder for The Dummy Switch
+M0 — Bundle Builder for The Nerd Switch
 ========================================
 Converts a pair of aligned Markdown documents (original + "for everyone")
 into a paper bundle: structure.json + browser-ready bundle.js.
@@ -541,7 +541,7 @@ def section_report(bundle):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Build a Dummy Switch paper bundle.")
+    ap = argparse.ArgumentParser(description="Build a Nerd Switch paper bundle.")
     ap.add_argument("original", nargs="?", default=DEFAULTS[0])
     ap.add_argument("everyone", nargs="?", default=DEFAULTS[1])
     ap.add_argument("--out", default=str(OUT))

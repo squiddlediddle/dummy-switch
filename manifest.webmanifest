@@ -1,6 +1,6 @@
 {
-  "name": "The Dummy Switch",
-  "short_name": "Dummy Switch",
+  "name": "The Nerd Switch",
+  "short_name": "Nerd Switch",
   "description": "Papers in two voices: the scientist's and everybody else's. Read the original or the for-everyone version and toggle between them without losing your place.",
   "start_url": "./index.html",
   "scope": "./",

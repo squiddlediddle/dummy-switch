@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-The Dummy Switch — single-file share build.
+The Nerd Switch — single-file share build.
 
 Inlines the whole reader (HTML + JS + the pre-loaded thesis bundle) into
 ONE self-contained HTML file that works anywhere:

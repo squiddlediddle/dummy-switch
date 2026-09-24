@@ -10,9 +10,9 @@
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Dummy Switch">
+<meta name="apple-mobile-web-app-title" content="Nerd Switch">
 <!-- BUILD:PWA-END -->
-<title>The Dummy Switch</title>
+<title>The Nerd Switch</title>
 
 <!-- KaTeX from CDN. If offline, the reader falls back to raw $...$ text. -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
@@ -47,26 +47,29 @@
     position: sticky; top: 0; z-index: 20;
     display: flex; align-items: center; gap: 10px;
     padding: calc(8px + env(safe-area-inset-top)) 14px 8px;
-    background: var(--card);
-    border-bottom: 1px solid var(--line);
+    background: var(--accent);
+    border-bottom: none;
     font-family: system-ui, -apple-system, sans-serif;
     font-size: 13px;
   }
-  #topbar .app { font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
+  #topbar .app { font-weight: 700; letter-spacing: .02em; white-space: nowrap; color: #fff; }
   #topbar .spacer { flex: 1; }
-  #topbar button.badge {
+  /* the badge counter and the share button are white pills with blue ink,
+     flipped against the blue bar; the ☰ home button keeps its plain
+     bordered look (transparent, white border/icon) */
+  #topbar button.badge, #topbar #shareBtn {
     padding: 3px 10px; border-radius: 999px;
-    background: var(--accent); color: var(--accent-ink);
+    background: #fff; color: var(--accent);
     border: none; font-weight: 600; white-space: nowrap;
   }
-  #topbar button.badge:hover { filter: brightness(1.1); }
+  #topbar button.badge:hover, #topbar #shareBtn:hover { filter: brightness(.97); }
   #topbar button {
-    background: transparent; color: var(--muted);
-    border: 1px solid var(--line); border-radius: 8px;
+    background: transparent; color: #fff;
+    border: 1px solid rgba(255, 255, 255, .55); border-radius: 8px;
     padding: 4px 10px; cursor: pointer; font-size: 13px;
   }
-  #topbar button:hover { color: var(--ink); border-color: var(--muted); }
-  #topbar button.badge:hover { color: var(--accent-ink); border-color: var(--accent); }
+  #topbar button:hover { color: #fff; border-color: #fff; }
+  #topbar button.badge:hover { color: var(--accent); border-color: var(--accent); }
 
   #container {
     height: calc(100vh - 46px);
@@ -102,15 +105,15 @@
   .lib-card:hover { border-color: var(--accent); }
   .lib-card h2 { margin: 0 0 .1em; border: none; font-size: 1.25em; }
   .lib-card .byline { margin: 0 0 .7em; color: var(--muted); font-size: .92em; }
-  .lib-card .voices { display: flex; flex-direction: column; gap: .35em; font-size: .85em; color: var(--muted); }
-  .chip {
-    display: inline-block; font-family: system-ui, sans-serif;
-    font-size: .72em; font-weight: 700; padding: 1px 8px;
-    border-radius: 999px; margin-right: 6px; vertical-align: 1px;
-  }
-  .chip.o { background: #3d88d8; color: #fff; }
-  .chip.e { background: #d83d3d; color: #fff; }
+  .lib-card .subtitle { margin: 0 0 .25em; color: var(--muted); font-size: .95em; }
   .lib-empty { color: var(--muted); font-style: italic; }
+
+  /* the library (home) page itself sits on the blue accent — cards stay
+     white against it */
+  body.lib { background: var(--accent); }
+  body.lib #library h1 { color: rgba(255, 255, 255, .9); }
+  body.lib .lib-card { border-color: rgba(255, 255, 255, .35); }
+  body.lib .lib-empty { color: #fff; }
 
   .doc-title h1 { font-size: 1.9em; line-height: 1.15; margin: 0 0 .2em; }
 .doc-title h2 { font-size: 1.25em; font-weight: 600; color: var(--muted); margin: 0 0 .1em; }
@@ -234,7 +237,7 @@
 <body>
 
 <header id="topbar">
-  <span class="app">The Dummy Switch</span>
+  <span class="app">The Nerd Switch</span>
   <button id="homeBtn" title="Library">☰</button>
   <span class="spacer"></span>
   <button id="shareBtn" title="Share">⤴</button>
@@ -609,15 +612,16 @@ function buildLibrary() {
     var b = BUNDLES[id];
     var card = document.createElement("button");
     card.className = "lib-card";
+    // the card shows the paper's full title: main title, then the rest of
+    // it (the subtitle) on its own line, then the author. The LRC keeps the
+    // dash + period of its displayed form; future papers fall back to their
+    // bundle subtitle.
+    var sub = { "light-reality-cycle": "– Photon Pathways and Perceived Time." }[id]
+      || (b.subtitle && (b.subtitle.original || b.subtitle.everyone)) || "";
     card.innerHTML =
         "<h2>" + esc(b.title.original) + "</h2>"
-      + (b.author ? "<p class=\"byline\">by " + esc(b.author) + "</p>" : "")
-      + "<div class=\"voices\">"
-      + "<span><span class=\"chip o\">Original</span>"
-      + esc((b.tagline && b.tagline.original) || "") + "</span>"
-      + "<span><span class=\"chip e\">Everyone</span>"
-      + esc((b.tagline && b.tagline.everyone) || "") + "</span>"
-      + "</div>";
+      + (sub ? "<p class=\"subtitle\">" + esc(sub) + "</p>" : "")
+      + (b.author ? "<p class=\"byline\">by " + esc(b.author) + "</p>" : "");
     card.addEventListener("click", function () { openBundle(id); });
     libList.appendChild(card);
   });
@@ -629,7 +633,8 @@ function showLibrary() {
   state.els = [];
   doc.classList.add("hidden");
   library.classList.remove("hidden");
-  document.title = "The Dummy Switch";
+  document.body.classList.add("lib");
+  document.title = "The Nerd Switch";
   container.scrollTop = 0;
   updateBadge();
 }
@@ -637,6 +642,7 @@ function showLibrary() {
 function hideLibrary() {
   library.classList.add("hidden");
   doc.classList.remove("hidden");
+  document.body.classList.remove("lib");
 }
 
 function openBundle(id) {
@@ -648,7 +654,7 @@ function openBundle(id) {
   try { localStorage.setItem(LAST_KEY, b.id); } catch (e) {}
   var prog = null;
   try { prog = JSON.parse(localStorage.getItem(PROG_KEY) || "null"); } catch (e) {}
-  document.title = "The Dummy Switch — " + b.title.original;
+  document.title = "The Nerd Switch — " + b.title.original;
   hideLibrary();
   state.explained = {};
   (prog && prog.x || []).forEach(function (i) {

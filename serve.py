@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-The Dummy Switch — local phone-test server.
+The Nerd Switch — local phone-test server.
 
 Usage:
     python serve.py            # serve the prototype on port 8000 (all interfaces)
@@ -31,7 +31,7 @@ QR_PAGE = """<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Scan to open — Dummy Switch</title>
+<title>Scan to open — Nerd Switch</title>
 <style>
   body { font-family: system-ui, sans-serif; background: #faf8f4; color: #1e1c18;
          display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -44,7 +44,7 @@ QR_PAGE = """<!DOCTYPE html>
 </head>
 <body>
   <h1>Scan with your phone camera</h1>
-  <p>Opens the Dummy Switch reader on your local network.<br>Both devices must be on the same Wi‑Fi.</p>
+  <p>Opens the Nerd Switch reader on your local network.<br>Both devices must be on the same Wi‑Fi.</p>
   <div id="q"></div>
   <p style="margin-top:20px">Or type: <br><code>URL</code></p>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -115,7 +115,7 @@ def selftest(port: int):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Serve the Dummy Switch prototype on your LAN.")
+    ap = argparse.ArgumentParser(description="Serve the Nerd Switch prototype on your LAN.")
     ap.add_argument("--port", type=int, default=8000)
     ap.add_argument("--qr", action="store_true", help="open a QR-code helper page for the phone")
     ap.add_argument("--selftest", action="store_true", help="request every route and exit")
@@ -129,7 +129,7 @@ def main():
     lan_url = f"http://{ip}:{args.port}/"
 
     print("─" * 60)
-    print("The Dummy Switch — phone test server")
+    print("The Nerd Switch — phone test server")
     print("─" * 60)
     print(f"  on this computer : {local_url}")
     print(f"  on your phone    : {lan_url}   (same Wi-Fi required)")

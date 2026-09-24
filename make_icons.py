@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-Generate PWA icons for The Dummy Switch (no dependencies).
+Generate PWA icons for The Nerd Switch (no dependencies).
 
 The mark: a circle split in two voices — ink left, paper right —
 with the accent color of the voice as the background tile. The
