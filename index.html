@@ -190,11 +190,14 @@
   .explained .callout { background: var(--code-bg); }
 
   /* the explained prefix echoes the drafted ✳️***Explained:*** markers —
-     a white square badge with the blue ✳, then a bold "Explained:" label.
-     The badge color is the literal brand blue, NOT var(--accent), because
-     --accent is redefined to white inside panels. Inline for paragraphs,
-     a lead line for containers (lists, quotes, headings) */
-  .exlab { font-weight: 700; font-style: normal; white-space: nowrap; }
+     a white square ✳ badge, then a bold italic "Explained:" label. The gap
+     between the badge and the label is a single typed space (the text node
+     below), so the whole prefix reads "✳️ Explained:" with the explanation
+     starting right after it on the same line. The badge color is the literal
+     brand blue, NOT var(--accent), because --accent is redefined to white
+     inside panels. Inline everywhere; for lists it is injected into the
+     first list item (see buildEl). */
+  .exlab { font-weight: 700; font-style: italic; white-space: nowrap; }
   .exlab .exstar {
     display: inline-block;
     width: 1.05em;
@@ -205,13 +208,6 @@
     line-height: 1.1em;
     font-size: .9em;
     vertical-align: -.12em;
-    margin-right: .5em;
-  }
-  ul.explained > .exlab, ol.explained > .exlab,
-  blockquote.explained > .exlab, h2.explained > .exlab, h3.explained > .exlab {
-    display: block;
-    margin: 0 0 .35em;
-    vertical-align: baseline;
   }
 
   blockquote {
@@ -500,9 +496,12 @@ function buildEl(item, i) {
   if (isToggleable(item)) el.className += " toggleable";
   if (state.explained[i] && item.e) {
     el.className += " explained";
-    // prefix the panel with the ✳ badge + "Explained:" label; skipped for
-    // table/code/callout where an inline injection would break the structure
-    // (none of the current papers produce explained blocks of those kinds)
+    // prefix the panel with the ✳ badge + "Explained:" label — always
+    // inline with the following text: for list blocks the label goes into
+    // the FIRST item so "✳️ Explained: first item…" stays on one line.
+    // Skipped for table/code/callout where an inline injection would break
+    // the structure (none of the current papers produce explained blocks
+    // of those kinds).
     var k = item.e.kind;
     if (k !== "table" && k !== "code" && k !== "callout") {
       var lab = document.createElement("span");
@@ -512,7 +511,9 @@ function buildEl(item, i) {
       badge.textContent = "\u2733"; /* ✳ */
       lab.appendChild(badge);
       lab.appendChild(document.createTextNode(" Explained: "));
-      el.insertBefore(lab, el.firstChild);
+      var host = el;
+      if (k === "list" && el.firstElementChild) host = el.firstElementChild;
+      host.insertBefore(lab, host.firstChild);
     }
   }
   return el;
