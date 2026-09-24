@@ -49,6 +49,9 @@
     padding: calc(8px + env(safe-area-inset-top)) 14px 8px;
     background: var(--accent);
     border-bottom: none;
+    /* light drop shadow under the bar so it reads as slightly raised
+       (~10px blur, low opacity — content scrolls beneath it) */
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .10);
     font-family: system-ui, -apple-system, sans-serif;
     font-size: 13px;
   }
