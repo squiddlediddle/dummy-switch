@@ -86,6 +86,11 @@
     background: #fff; color: var(--accent);
     border: none; font-weight: 600; white-space: nowrap;
   }
+  /* ▲ rather than ↑: the thin arrow glyph all but vanished against the white
+     pill at 13px. A solid triangle keeps its weight, and the extra size/line
+     height give it some presence. line-height 1 keeps the pill from growing
+     (the bar is a fixed 46px — see the #topbar comment). */
+  #topbar #topBtn { font-size: 13px; line-height: 1; padding: 4px 12px 3px; }
   #topbar button.badge:hover, #topbar #topBtn:hover { filter: brightness(.97); }
   #topbar button {
     background: transparent; color: #fff;
@@ -305,8 +310,8 @@
   <span class="app">The Nerd Switch</span>
   <button id="homeBtn" title="Library">☰</button>
   <span class="spacer"></span>
-  <button id="topBtn" title="Back to top">↑</button>
-  <button id="badge" class="badge" title="Click: turn off all explanations — or when none are on, turn them all on">Original</button>
+  <button id="badge" class="badge" title="Turn off every explained box">Original</button>
+  <button id="topBtn" title="Back to top">▲</button>
 </header>
 
 <main id="container">
@@ -639,27 +644,27 @@ function saveProgress() {
   localStorage.setItem(PROG_KEY, JSON.stringify({ i: t.index, x: x }));
 }
 
-function updateBadge() {
+function countExplained() {
   var n = 0;
   Object.keys(state.explained).forEach(function (k) { if (state.explained[k]) n++; });
-  var b = document.getElementById("badge");
-  if (!state.bundle) { b.classList.add("hidden"); return; }
-  b.classList.remove("hidden");
-  b.textContent = n ? (n + " explained") : "Original";
+  return n;
 }
 
-/* badge click: if anything is explained, explain nothing; if nothing is
-   explained, explain every toggleable block */
-function toggleAll() {
+/* The badge is an *action*, not a state readout: it turns every explained box
+   off. With nothing explained there is nothing to turn off, so it hides
+   entirely — it only exists once at least one block has been switched over. */
+function updateBadge() {
+  var n = countExplained();
+  var b = document.getElementById("badge");
+  if (!state.bundle || n === 0) { b.classList.add("hidden"); return; }
+  b.classList.remove("hidden");
+  b.textContent = "Turn off " + n + " explained";
+}
+
+/* badge click: turn every explained block back to the original voice */
+function clearExplained() {
   if (!state.bundle) return;
-  var n = 0;
-  Object.keys(state.explained).forEach(function (k) { if (state.explained[k]) n++; });
   state.explained = {};
-  if (n === 0) {
-    state.items.forEach(function (item, i) {
-      if (isToggleable(item)) state.explained[i] = true;
-    });
-  }
   updateBadge();
   saveProgress();
   render();
@@ -771,7 +776,7 @@ doc.addEventListener("click", function (ev) {
   }
 });
 document.getElementById("homeBtn").addEventListener("click", showLibrary);
-document.getElementById("badge").addEventListener("click", toggleAll);
+document.getElementById("badge").addEventListener("click", clearExplained);
 
 var scrollT = null;
 container.addEventListener("scroll", function () {
@@ -820,7 +825,8 @@ boot();
 window.ds = {
   state: state,
   toggleItem: toggleItem,
-  toggleAll: toggleAll,
+  clearExplained: clearExplained,
+  countExplained: countExplained,
   isToggleable: isToggleable,
   isStructural: isStructural,
   sideFor: sideFor,
