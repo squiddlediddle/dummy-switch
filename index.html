@@ -78,25 +78,29 @@
   }
   #topbar .app { font-weight: 700; letter-spacing: .02em; white-space: nowrap; color: #fff; }
   #topbar .spacer { flex: 1; }
-  /* the badge counter and the share button are white pills with blue ink,
-     flipped against the blue bar; the ☰ home button keeps its plain
-     bordered look (transparent, white border/icon) */
-  #topbar button.badge, #topbar #topBtn {
+  /* The badge is the one white pill: blue ink flipped against the blue bar.
+     Both icon buttons (☰ home, △ to-top) instead take the plain bordered look
+     below — bar blue showing through, 1px white outline, white glyph — so the
+     two of them read as a matched pair, and to-top needs no rule of its own:
+     it inherits this one, so the boxes cannot drift apart. Its triangle is the
+     outlined U+25B3, not the solid U+25B2, to match ☰'s line-drawn look. */
+  #topbar button.badge {
     padding: 3px 10px; border-radius: 999px;
     background: #fff; color: var(--accent);
     border: none; font-weight: 600; white-space: nowrap;
   }
-  /* ▲ rather than ↑: the thin arrow glyph all but vanished against the white
-     pill at 13px. A solid triangle keeps its weight, and the extra size/line
-     height give it some presence. line-height 1 keeps the pill from growing
-     (the bar is a fixed 46px — see the #topbar comment). */
-  #topbar #topBtn { font-size: 13px; line-height: 1; padding: 4px 12px 3px; }
-  #topbar button.badge:hover, #topbar #topBtn:hover { filter: brightness(.97); }
+  #topbar button.badge:hover { filter: brightness(.97); }
   #topbar button {
     background: transparent; color: #fff;
     border: 1px solid rgba(255, 255, 255, .55); border-radius: 8px;
     padding: 4px 10px; cursor: pointer; font-size: 13px;
   }
+  /* Pin the line box for the icon buttons so ☰ and △ come out the same height
+     even though each glyph falls back to a different font with its own metrics
+     — left on `normal` the two boxes differed by 1px. 17px is exactly the line
+     box homeBtn already had, so its appearance is unchanged. The badge pill is
+     excluded and keeps `normal`. */
+  #topbar button:not(.badge) { line-height: 17px; }
   #topbar button:hover { color: #fff; border-color: #fff; }
   #topbar button.badge:hover { color: var(--accent); border-color: var(--accent); }
 
@@ -311,7 +315,7 @@
   <button id="homeBtn" title="Library">☰</button>
   <span class="spacer"></span>
   <button id="badge" class="badge" title="Turn off every explained box">Original</button>
-  <button id="topBtn" title="Back to top">▲</button>
+  <button id="topBtn" title="Back to top">△</button>
 </header>
 
 <main id="container">
