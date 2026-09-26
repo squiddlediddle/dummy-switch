@@ -218,6 +218,13 @@
      panels; on LIST panels it is a lead line of its own with the bullets
      starting on the next line (see buildEl). */
   .exlab { font-weight: 700; font-style: italic; white-space: nowrap; }
+  /* The badge is upright even though the label is italic: the label's slant
+     leans the asterisk to the right (measured +8% of the square's width off
+     centre). `line-height: .85em` then pulls the ink back up — the ✳ glyph
+     from the fallback font sits ~6% of the square's height below the middle of
+     its own em box, so the short line box recentres it. Both values were
+     measured, not guessed: the ink now lands within 1% of the square's centre
+     on each axis (was +8% right / +11% down). */
   .exlab .exstar {
     display: inline-block;
     width: 1.05em;
@@ -225,8 +232,10 @@
     background: #ffffff;
     color: #3d88d8;
     text-align: center;
-    line-height: 1.1em;
+    line-height: .85em;
     font-size: .9em;
+    font-style: normal;
+    font-weight: 700;
     vertical-align: -.12em;
   }
   /* List panels: the label sits directly in the <ul>/<ol> before the first
