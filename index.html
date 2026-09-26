@@ -212,11 +212,11 @@
   /* the explained prefix echoes the drafted ✳️***Explained:*** markers —
      a white square ✳ badge, then a bold italic "Explained:" label. The gap
      between the badge and the label is a single typed space (the text node
-     below), so the whole prefix reads "✳️ Explained:" with the explanation
-     starting right after it on the same line. The badge color is the literal
-     brand blue, NOT var(--accent), because --accent is redefined to white
-     inside panels. Inline everywhere; for lists it is injected into the
-     first list item (see buildEl). */
+     below), so the whole prefix reads "✳️ Explained:". The badge color is the
+     literal brand blue, NOT var(--accent), because --accent is redefined to
+     white inside panels. Inline with the text for paragraph / quote / heading
+     panels; on LIST panels it is a lead line of its own with the bullets
+     starting on the next line (see buildEl). */
   .exlab { font-weight: 700; font-style: italic; white-space: nowrap; }
   .exlab .exstar {
     display: inline-block;
@@ -228,6 +228,17 @@
     line-height: 1.1em;
     font-size: .9em;
     vertical-align: -.12em;
+  }
+  /* List panels: the label sits directly in the <ul>/<ol> before the first
+     <li>, so `display: block` gives it its own line and the first bullet
+     drops one line down. The -1.6em margin cancels the list indent that
+     positions the item text, so the prefix starts at the same 8px from the
+     panel's left edge as a paragraph panel's label instead of sitting out at
+     the item-text column. (A span among the <li>s draws no marker, so the
+     prefix line carries no bullet.) */
+  ul.explained > .exlab, ol.explained > .exlab {
+    display: block;
+    margin-left: -1.6em;
   }
 
   blockquote {
@@ -516,12 +527,14 @@ function buildEl(item, i) {
   if (isToggleable(item)) el.className += " toggleable";
   if (state.explained[i] && item.e) {
     el.className += " explained";
-    // prefix the panel with the ✳ badge + "Explained:" label — always
-    // inline with the following text: for list blocks the label goes into
-    // the FIRST item so "✳️ Explained: first item…" stays on one line.
-    // Skipped for table/code/callout where an inline injection would break
-    // the structure (none of the current papers produce explained blocks
-    // of those kinds).
+    // prefix the panel with the ✳ badge + "Explained:" label. Inline with
+    // the text for paragraph / quote / heading panels, but for LIST panels
+    // the label is injected as the panel's own first child, BEFORE the
+    // first <li>, so it gets a lead line to itself and the first bullet
+    // starts one line down (a span sitting directly in the <ul> draws no
+    // marker, so the prefix line stays clean). Skipped for table/code/callout
+    // where an injection would break the structure (none of the current
+    // papers produce explained blocks of those kinds).
     var k = item.e.kind;
     if (k !== "table" && k !== "code" && k !== "callout") {
       var lab = document.createElement("span");
@@ -531,9 +544,7 @@ function buildEl(item, i) {
       badge.textContent = "\u2733"; /* ✳ */
       lab.appendChild(badge);
       lab.appendChild(document.createTextNode(" Explained: "));
-      var host = el;
-      if (k === "list" && el.firstElementChild) host = el.firstElementChild;
-      host.insertBefore(lab, host.firstChild);
+      el.insertBefore(lab, el.firstChild);
     }
   }
   return el;
