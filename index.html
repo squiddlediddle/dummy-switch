@@ -238,7 +238,16 @@
      from the fallback font sits ~6% of the square's height below the middle of
      its own em box, so the short line box recentres it. Both values were
      measured, not guessed: the ink now lands within 1% of the square's centre
-     on each axis (was +8% right / +11% down). */
+     on each axis (was +8% right / +11% down).
+
+     `vertical-align` lines the badge up with the WORD it sits next to, not with
+     the line box. At -.12em the ✳ ink measured 2.94px *below* the middle of
+     "Explained:" (cap top to baseline) — the box hung under the baseline and
+     the mark read as dropped. .07em puts the ink on that cap middle: measured
+     5.38px above the baseline against a 5.31px cap middle, i.e. 0.06px out. The
+     target is the INK, not the box: `line-height` above leaves the mark ~1.6px
+     above the square's own centre on purpose, so centring the square on the
+     word would push the mark visibly high. */
   .exlab .exstar {
     display: inline-block;
     width: 1.05em;
@@ -250,7 +259,7 @@
     font-size: .9em;
     font-style: normal;
     font-weight: 700;
-    vertical-align: -.12em;
+    vertical-align: .07em;
   }
   /* List panels: the label sits directly in the <ul>/<ol> before the first
      <li>, so `display: block` gives it its own line and the first bullet
