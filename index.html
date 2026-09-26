@@ -182,10 +182,27 @@
   }
   /* a few px of air around the text of explained paragraphs/lists: the
      negative margins cancel the added padding exactly, so the text and the
-     flow keep their positions — only the blue box grows outward */
+     flow keep their positions — only the blue box grows outward.
+     The sides are set individually (NOT the `padding` shorthand) because a
+     shorthand would also reset padding-left, and for lists that padding is
+     the bullet indent — see the list rule below. */
   p.explained, ul.explained, ol.explained {
-    padding: 5px 8px;
+    padding-top: 5px;
+    padding-right: 8px;
+    padding-bottom: 5px;
     margin: -5px -8px calc(1em - 5px);
+  }
+  p.explained { padding-left: 8px; }
+  /* Lists: keep the 1.6em indent (that's what positions the item text) and
+     widen it by the same 8px the negative margin moved the box left, so the
+     text stays put while the blue grows leftwards — far enough that the
+     bullet/number markers, which browsers draw in the padding area just
+     outside the text, land INSIDE the panel instead of hanging off its left
+     edge. Nested lists keep the plain 1.6em (the outer panel already covers
+     them and they must not inherit the widened indent). */
+  ul.explained, ol.explained { padding-left: calc(1.6em + 8px); }
+  ul.explained ul, ul.explained ol, ol.explained ul, ol.explained ol {
+    padding-left: 1.6em;
   }
 
   /* explained blocks that already carry their own padding keep it */
