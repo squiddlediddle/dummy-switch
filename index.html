@@ -79,11 +79,10 @@
   #topbar .app { font-weight: 700; letter-spacing: .02em; white-space: nowrap; color: #fff; }
   #topbar .spacer { flex: 1; }
   /* The badge is the one white pill: blue ink flipped against the blue bar.
-     Both icon buttons (☰ home, △ to-top) instead take the plain bordered look
-     below — bar blue showing through, 1px white outline, white glyph — so the
-     two of them read as a matched pair, and to-top needs no rule of its own:
-     it inherits this one, so the boxes cannot drift apart. Its triangle is the
-     outlined U+25B3, not the solid U+25B2, to match ☰'s line-drawn look. */
+     The home button instead takes the plain bordered look below — bar blue
+     showing through, 1px white outline, white glyph. The to-top control used to
+     sit here as well, matched to ☰ as a pair; it now floats bottom-right in the
+     Elfsight "Example 1" skin further down, and needs no rule of its own here. */
   #topbar button.badge {
     padding: 3px 10px; border-radius: 999px;
     background: #fff; color: var(--accent);
@@ -95,12 +94,35 @@
     border: 1px solid rgba(255, 255, 255, .55); border-radius: 8px;
     padding: 4px 10px; cursor: pointer; font-size: 13px;
   }
-  /* Pin the line box for the icon buttons so ☰ and △ come out the same height
-     even though each glyph falls back to a different font with its own metrics
-     — left on `normal` the two boxes differed by 1px. 17px is exactly the line
-     box homeBtn already had, so its appearance is unchanged. The badge pill is
-     excluded and keeps `normal`. */
+  /* Pin the line box for the icon button so ☰ keeps its exact height — its
+     glyph falls back to a font with its own metrics, and 17px is the line box it
+     already had, so its appearance is unchanged. The badge pill is excluded and
+     keeps `normal`. */
   #topbar button:not(.badge) { line-height: 17px; }
+  /* Elfsight Back to Top "Example 1", read off the live widget rather than
+     guessed: a white pill, 1px rgba(0,0,0,.3) outline, 8px radius, #141414 ink,
+     their exact up-arrow path and a "TO TOP" label. The example floats — "placed
+     in the bottom right corner, the Floating type helps it always stay in
+     sight" — so this is fixed bottom-right and out of the nav bar, which is back
+     to a single icon. The widget's own box is 100x35: 3px of vertical padding
+     under a 27px arrow plus the 1px border gives that same 35px here. The
+     offsets are the widget's 12px, plus the device safe area so the pill clears
+     the home indicator. It belongs to the reading view, so it carries the app's
+     `.hidden` class from the markup and only appears while a paper is open. */
+  #topBtn {
+    position: fixed; z-index: 30;
+    right: calc(12px + env(safe-area-inset-right));
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    display: inline-flex; align-items: center;
+    padding: 3px 8px;
+    background: #fff; color: #141414;
+    border: 1px solid rgba(0, 0, 0, .3); border-radius: 8px;
+    font-family: var(--font-ui);
+    font-size: 12px; font-weight: 700; line-height: 1; white-space: nowrap;
+    cursor: pointer;
+  }
+  #topBtn .btt-arrow { width: 27px; height: 27px; flex: none; fill: currentColor; }
+  #topBtn:hover { background: #f3f3f3; border-color: rgba(0, 0, 0, .45); }
   #topbar button:hover { color: #fff; border-color: #fff; }
   #topbar button.badge:hover { color: var(--accent); border-color: var(--accent); }
 
@@ -115,7 +137,12 @@
     margin: 0 auto;
     padding: 2.2rem 1.4rem 8rem;
   }
-  #doc.hidden, #library.hidden, #badge.hidden { display: none; }
+  /* Two independent reasons the pill can be off screen, kept as two classes so
+   neither can clobber the other: `.hidden` = the library is showing (M29),
+   `.at-top` = the reader is at the top of a paper, where there is nothing to
+   scroll back from (M30). The pill needs BOTH cleared to be visible. */
+#doc.hidden, #library.hidden, #badge.hidden,
+#topBtn.hidden, #topBtn.at-top { display: none; }
 
   /* library (paper picker) */
   #library {
@@ -158,7 +185,11 @@
 
   .doc-title .byline { font-size: .95em; color: var(--muted); margin: 0 0 1.2em; }
 
-  .doc-title h3 { font-size: 1em; font-style: italic; color: var(--accent); margin: 0 0 1.2em; }
+  /* The byline is the last line of the title block (h1 > h2 > h3 > byline), so
+     the tagline now only needs the same small step down as the lines above it —
+     its old 1.2em used to separate it from the body, which is the byline's job
+     now, and that is what keeps the four lines reading as one block. */
+  .doc-title h3 { font-size: 1em; font-style: italic; color: var(--accent); margin: 0 0 .2em; }
   h2, h3 { line-height: 1.3; margin: 1.8em 0 .6em; }
   h2 { font-size: 1.35em; padding-bottom: .25em; border-bottom: 1px solid var(--line); }
   h3 { font-size: 1.1em; }
@@ -174,10 +205,10 @@
      pointer cursor and the badge still mark it as revertible). Hover just
      thickens the line. Outlines don't participate in layout, so the
      zero-shift guarantee is unaffected. */
-  /* clickable boxes: white outline (2px so it reads on the grey app
-     background), blue on hover — the explained panels themselves have
-     no outline */
-  .toggleable:not(.explained) { outline: 2px solid #ffffff; outline-offset: 3px; }
+  /* clickable boxes: 1px white outline (enough to read on the grey app
+     background without ringing every block), 2px accent on hover — the
+     explained panels themselves have no outline */
+  .toggleable:not(.explained) { outline: 1px solid #ffffff; outline-offset: 3px; }
   .toggleable:not(.explained):hover { outline: 2px solid var(--accent); }
   .explained {
     --bg: #3d88d8;
@@ -324,13 +355,17 @@
   <button id="homeBtn" title="Library">☰</button>
   <span class="spacer"></span>
   <button id="badge" class="badge" title="Turn off every explained box">Original</button>
-  <button id="topBtn" title="Back to top">△</button>
 </header>
 
 <main id="container">
   <div id="doc"></div>
   <div id="library" class="hidden"><p class="howto">Every outlined block has an explanation. Click to switch; click again to switch back.</p><h1>Library</h1><div id="libList"></div></div>
 </main>
+
+<!-- `hidden` from the markup, not from JS: the app boots to the library, and a
+     pill that only un-hides when a paper opens must never flash on the way there.
+     openBundle() -> hideLibrary() takes the class off. -->
+<button id="topBtn" class="hidden" title="Back to top"><svg class="btt-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m7.997 10 3.515-3.79a.672.672 0 0 1 .89-.076l.086.075L16 10l-3 .001V18h-2v-7.999L7.997 10z"/></svg><span>TO TOP</span></button>
 
 <script src="bundle-light-reality-cycle.js"></script>
 <script src="bundle-the-theory.js"></script>
@@ -436,8 +471,8 @@ function makeTitle(sideObj) {
   el.className = "doc-title";
   el.innerHTML = "<h1>" + esc(sideObj.title) + "</h1>"
     + (sideObj.subtitle ? "<h2>" + esc(sideObj.subtitle) + "</h2>" : "")
-    + (sideObj.author ? "<p class=\"byline\">by " + esc(sideObj.author) + "</p>" : "")
-    + (sideObj.tagline ? "<h3>" + esc(sideObj.tagline) + "</h3>" : "");
+    + (sideObj.tagline ? "<h3>" + esc(sideObj.tagline) + "</h3>" : "")
+    + (sideObj.author ? "<p class=\"byline\">by " + esc(sideObj.author) + "</p>" : "");
   return el;
 }
 function makeQuote(text) {
@@ -588,6 +623,7 @@ function buildEl(item, i) {
 
 var container = document.getElementById("container");
 var doc = document.getElementById("doc");
+var topBtn = document.getElementById("topBtn");
 
 function topVisible() {
   // returns {index, offset} of the item nearest the top of the viewport
@@ -624,6 +660,10 @@ function render() {
   while (!target && k >= 0) { target = state.els[--k]; }
   if (target) container.scrollTop = target.offsetTop + anchor.offset;
   else container.scrollTop = 0;
+  // Reopen where you left off can be anywhere in the paper, so re-decide the
+  // to-top pill here rather than trusting the scroll event that this
+  // assignment will (or, under virtual time, will not) deliver.
+  updateTopBtn();
 }
 
 function applyKatexDiffs() {
@@ -742,14 +782,20 @@ function showLibrary() {
   state.els = [];
   doc.classList.add("hidden");
   library.classList.remove("hidden");
+  topBtn.classList.add("hidden");
   document.title = "The Nerd Switch";
   container.scrollTop = 0;
+  updateTopBtn();
   updateBadge();
 }
 
 function hideLibrary() {
   library.classList.add("hidden");
   doc.classList.remove("hidden");
+  // The floating to-top pill belongs to the reading view, so it rides the same
+  // switch as the document: hidden on the library, back when a paper is open.
+  topBtn.classList.remove("hidden");
+  updateTopBtn();
 }
 
 function openBundle(id) {
@@ -793,6 +839,9 @@ document.getElementById("badge").addEventListener("click", clearExplained);
 
 var scrollT = null;
 container.addEventListener("scroll", function () {
+  // not debounced: the pill has to track the finger, while saving reading
+  // progress on a timer is fine to lag behind
+  updateTopBtn();
   if (scrollT) return;
   scrollT = setTimeout(function () { scrollT = null; saveProgress(); }, 180);
 });
@@ -803,6 +852,20 @@ document.getElementById("topBtn").addEventListener("click", function () {
   try { container.scrollTo({ top: 0, behavior: "smooth" }); }
   catch (e) { container.scrollTop = 0; }
 });
+
+/* How far down the paper the reader has to be before the pill earns its place.
+   200px is roughly the height of the title block, so it appears once the title
+   has scrolled behind you and the body text is what you are actually reading —
+   at the top it would be a button with nothing to do. */
+var TOPBTN_AFTER = 200;
+
+/* Only ever mirrors the scroll position. Called on open as well as on scroll,
+   because a paper reopens at its *saved* position and so can legitimately come
+   back already past the threshold — assuming "start hidden" there would hide a
+   pill the reader is a long way down the page. */
+function updateTopBtn() {
+  topBtn.classList.toggle("at-top", container.scrollTop <= TOPBTN_AFTER);
+}
 
 /* BUILD:SW-START */
 if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
