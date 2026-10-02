@@ -35,19 +35,74 @@
     --font-ui: system-ui, -apple-system, sans-serif;
   }
 
-  /* Original (blue) — light (default) */
+  /* ------------------------------------------------------------------
+     THEME. Two mirrored states, switched by data-theme="invert" on <html>.
+     A (the default) is a near-black page carrying near-white cards; B is
+     the same scheme turned over — near-white page, near-black cards. The
+     how-to line above the library switches them (see initTheme).
+
+     The palette came off the UXtheme01 reference, which turned out to be
+     achromatic: #ffffff, #e5e5e5, #161616 and tints, with no accent colour
+     anywhere in it (0.20% of pixels clear 0.35 saturation, all of them
+     compression ringing). So --accent is unchanged and still the only colour
+     in the app, which now means it shows up *only* on the blue explained
+     panel and the callout label — it reads louder for being the lone colour.
+
+     Two surfaces exist because --card was doing two jobs. On the library it
+     IS the card. Inside a paper it was also the background of pre and
+     .callout, where a near-white slab on a near-black page reads as a hole
+     punched in the text rather than a raised panel. --surface is that second
+     job, kept a hair off the page colour in both states.
+
+     Every ink/background pair below is measured, not eyeballed: the tightest
+     is 4.72:1 (muted on bg in state B) where AA wants 4.5. The --muted greys
+     are deliberately not #787878 — the obvious "mid grey", and a 4.42:1 fail
+     on near-white. */
   :root {
-    --bg: #e2e2e7;
-    --ink: #3d3d3d;
-    --muted: #3d3d3d;
-    --card: #ffffff;
+    /* A — default */
+    --bg: #161616;
+    --ink: #f2f2f2;
+    --muted: #a0a0a0;
+    --surface: #1f1f1f;
+    --card: #fcfcfc;
+    --card-ink: #161616;
+    --card-muted: #6e6e6e;
+    --card-line: #e2e2e2;
+    --icon-bg: #ececec;
+    --line: #333333;
+    --chrome: #161616;
+    --chrome-ink: #ffffff;
+    --chrome-line: rgba(255, 255, 255, .92);
+    --chrome-edge: rgba(255, 255, 255, .55);
+    --outline: #f2f2f2;
     --accent: #3d88d8;
     --accent-ink: #ffffff;
-    --line: #e4e0d6;
-    --code-bg: #e4e7f1b2;
-    --quote-bg: #ffffff;
-    --quote-ink: #3d3d3d;
+    --code-bg: rgba(255, 255, 255, .10);
+    --quote-bg: #1f1f1f;
+    --quote-ink: #f2f2f2;
     --fs: 17px;
+  }
+
+  /* B — the mirror. Only the tokens that change are listed. */
+  :root[data-theme="invert"] {
+    --bg: #f6f6f6;
+    --ink: #161616;
+    --muted: #6e6e6e;
+    --surface: #ffffff;
+    --card: #161616;
+    --card-ink: #fcfcfc;
+    --card-muted: #a8a8a8;
+    --card-line: #2e2e2e;
+    --icon-bg: #2d2d2d;
+    --line: #dddddd;
+    --chrome: #ffffff;
+    --chrome-ink: #161616;
+    --chrome-line: rgba(22, 22, 22, .18);
+    --chrome-edge: rgba(22, 22, 22, .38);
+    --outline: #161616;
+    --code-bg: rgba(22, 22, 22, .07);
+    --quote-bg: #ffffff;
+    --quote-ink: #161616;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; height: 100%; }
@@ -63,35 +118,42 @@
     position: sticky; top: 0; z-index: 20;
     display: flex; align-items: center; gap: 10px;
     padding: calc(8px + env(safe-area-inset-top)) 14px 8px;
-    background: var(--accent);
+    background: var(--chrome);
     border-bottom: none;
-    /* Three layers, top to bottom: the blue bar, a 1px white line along its
-       bottom edge, then the drop shadow. The white line is an *inset* shadow
+    /* Three layers, top to bottom: the bar itself, a 1px line along its
+       bottom edge, then the drop shadow. That line is an *inset* shadow
        rather than `border-bottom` on purpose — the bar is exactly 46px tall
        and #container is sized `calc(100dvh - 46px)`, so a real border would
        make the bar 47px and push the page 1px past the viewport. Inset paints
        inside the bar (no reflow), and the outer shadow still draws below the
-       bar, so the line sits between the blue and the shadow. */
-    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, .92), 0 4px 14px rgba(0, 0, 0, .25);
+       bar, so the line sits between the bar and the shadow. The bar was blue;
+       it is now the theme's --chrome, so it is near-black in state A and
+       near-white in state B, and the hairline has to flip with it — a white
+       1px line is invisible on a white bar. Hence --chrome-line rather than
+       the white it used to be. */
+    box-shadow: inset 0 -1px 0 var(--chrome-line), 0 4px 14px rgba(0, 0, 0, .25);
     font-family: var(--font-ui);
     font-size: 13px;
   }
-  #topbar .app { font-weight: 700; letter-spacing: .02em; white-space: nowrap; color: #fff; }
+  #topbar .app { font-weight: 700; letter-spacing: .02em; white-space: nowrap; color: var(--chrome-ink); }
   #topbar .spacer { flex: 1; }
-  /* The badge is the one white pill: blue ink flipped against the blue bar.
-     The home button instead takes the plain bordered look below — bar blue
-     showing through, 1px white outline, white glyph. The to-top control used to
-     sit here as well, matched to ☰ as a pair; it now floats bottom-right in the
-     Elfsight "Example 1" skin further down, and needs no rule of its own here. */
+  /* The badge is the one pill on the bar, and it now flips against the bar
+     rather than staying blue: white pill / blue text was 3.76:1, and the same
+     blue on the state's near-black bar is 2.60:1, so neither direction passed
+     AA at this size. --chrome-ink on --chrome is 18.1:1 in both states and
+     needs no per-state rule. The home button takes the plain bordered look
+     below. The to-top control used to sit here as well, matched to ☰ as a
+     pair; it now floats bottom-right in the Elfsight "Example 1" skin further
+     down, and needs no rule of its own here. */
   #topbar button.badge {
     padding: 3px 10px; border-radius: 999px;
-    background: #fff; color: var(--accent);
+    background: var(--chrome-ink); color: var(--chrome);
     border: none; font-weight: 600; white-space: nowrap;
   }
   #topbar button.badge:hover { filter: brightness(.97); }
   #topbar button {
-    background: transparent; color: #fff;
-    border: 1px solid rgba(255, 255, 255, .55); border-radius: 8px;
+    background: transparent; color: var(--chrome-ink);
+    border: 1px solid var(--chrome-edge); border-radius: 8px;
     padding: 4px 10px; cursor: pointer; font-size: 13px;
   }
   /* Pin the line box for the icon button so ☰ keeps its exact height — its
@@ -123,7 +185,7 @@
   }
   #topBtn .btt-arrow { width: 27px; height: 27px; flex: none; fill: currentColor; }
   #topBtn:hover { background: #f3f3f3; border-color: rgba(0, 0, 0, .45); }
-  #topbar button:hover { color: #fff; border-color: #fff; }
+  #topbar button:hover { color: var(--chrome-ink); border-color: var(--chrome-ink); }
   #topbar button.badge:hover { color: var(--accent); border-color: var(--accent); }
 
   #container {
@@ -157,28 +219,57 @@
     margin: 0 0 1.2em;
   }
   .lib-card {
-    display: block; width: 100%; text-align: left;
-    background: var(--card); border: 1px solid var(--line);
-    padding: 1.1rem 1.3rem; margin: 0 0 1rem; cursor: pointer;
-    font-family: var(--font-serif); color: var(--ink);
+    display: flex; align-items: center; gap: 1rem;
+    width: 100%; text-align: left;
+    background: var(--card); border: 1px solid var(--card-line);
+    padding: 20px; margin: 0 0 1rem; cursor: pointer;
+    font-family: var(--font-serif); color: var(--card-ink);
   }
-  .lib-card:hover { border-color: var(--accent); }
+  /* Hover takes the card's own ink, not --outline: on a near-white card in
+     state A the outline is near-white too, so "highlight the border" would
+     have nothing to show. --card-ink is the one colour guaranteed to contrast
+     with the card it sits on, and it inverts for free. */
+  .lib-card:hover { border-color: var(--card-ink); }
+  /* The icon slot: a plain rounded square sitting 20px in from the card's left
+     edge (the card's padding), with the title/subtitle/author in a column to
+     its right. Deliberately empty — it is a placeholder for artwork, and
+     nothing should pose as artwork that isn't. `flex: none` keeps it from
+     being squeezed by a long title; min-width: 0 on the text column is what
+     actually lets a long word wrap instead of widening the card. */
+  .lib-card .lib-icon {
+    flex: none;
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    background: var(--icon-bg);
+  }
+  .lib-card .lib-text { min-width: 0; }
   .lib-card h2 { margin: 0 0 .1em; border: none; font-size: 1.25em; }
-  .lib-card .byline { margin: 0 0 .7em; color: var(--muted); font-size: .92em; }
-  .lib-card .subtitle { margin: 0 0 .25em; color: var(--muted); font-size: .95em; }
+  .lib-card .byline { margin: 0 0 .7em; color: var(--card-muted); font-size: .92em; }
+  .lib-card .subtitle { margin: 0 0 .25em; color: var(--card-muted); font-size: .95em; }
   .lib-empty { color: var(--muted); font-style: italic; }
 
-  /* short how-to tip above the paper cards */
+  /* The how-to tip above the paper cards is also the theme switch. It keeps
+     its sentence and gains a button role: near-black fill with a thin
+     near-white outline in state A, mirroring in state B, which is why it
+     borrows --chrome / --chrome-ink rather than --card — a card-coloured hint
+     would sit on a near-white card and read as part of the list.
+     :focus-visible matters here for the first time, since the element is now
+     reachable by keyboard; the accent ring is the one colour allowed to
+     signal state on this surface. */
   #library .howto {
+    display: block; width: 100%; text-align: left;
     font-family: var(--font-ui);
-    font-size: .85em; color: var(--muted);
+    font-size: .85em; color: var(--chrome-ink);
     line-height: 1.55;
-    background: var(--card);
-    border: 1px dashed var(--line);
+    background: var(--chrome);
+    border: 1px solid var(--chrome-ink);
     border-radius: 10px;
     padding: .7em 1em;
     margin: 0 0 1.4em;
+    cursor: pointer;
   }
+  #library .howto:hover { background: var(--chrome-ink); color: var(--chrome); }
+  #library .howto:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
   .doc-title h1 { font-size: 1.9em; line-height: 1.15; margin: 0 0 .2em; }
 .doc-title h2 { font-size: 1.25em; font-weight: 600; color: var(--muted); margin: 0 0 .1em; }
@@ -208,7 +299,12 @@
   /* clickable boxes: 1px white outline (enough to read on the grey app
      background without ringing every block), 2px accent on hover — the
      explained panels themselves have no outline */
-  .toggleable:not(.explained) { outline: 1px solid #ffffff; outline-offset: 3px; }
+  /* The "switchable block" marker. Was a fixed #ffffff, which is only ever
+     visible on a dark page — the theme made state B a near-white page, so
+     this had to become the state token or every togglable block would lose
+     its outline in exactly the mode that advertises toggling them.
+     .explained is excluded: it carries its own blue panel. */
+  .toggleable:not(.explained) { outline: 1px solid var(--outline); outline-offset: 3px; }
   .toggleable:not(.explained):hover { outline: 2px solid var(--accent); }
   .explained {
     --bg: #3d88d8;
@@ -313,7 +409,7 @@
   .callout {
     margin: 1em 0;
     padding: .8em 1em;
-    background: var(--card);
+    background: var(--surface);
     /* border: 1px solid var(--line); */
     /* border-radius: 10px; */
   }
@@ -328,7 +424,7 @@
   th, td { border: 1px solid var(--line); padding: .45em .6em; text-align: left; vertical-align: top; }
   th { background: var(--code-bg); }
   pre {
-    background: var(--card);
+    background: var(--surface);
     /* border: 1px solid var(--line); */
     padding: .9em 1em;
     /* border-radius: 10px; */
@@ -359,7 +455,7 @@
 
 <main id="container">
   <div id="doc"></div>
-  <div id="library" class="hidden"><p class="howto">Every outlined block has an explanation. Click to switch; click again to switch back.</p><h1>Library</h1><div id="libList"></div></div>
+  <div id="library" class="hidden"><button type="button" id="themeBtn" class="howto" aria-pressed="false">Every outlined block has an explanation. Click to switch; click again to switch back.</button><h1>Library</h1><div id="libList"></div></div>
 </main>
 
 <!-- `hidden` from the markup, not from JS: the app boots to the library, and a
@@ -768,10 +864,16 @@ function buildLibrary() {
     // bundle subtitle.
     var sub = { "light-reality-cycle": "Photon Pathways and Perceived Time." }[id]
       || (b.subtitle && (b.subtitle.original || b.subtitle.everyone)) || "";
+    // The icon slot comes first, then a text column beside it (M33). The
+    // button is display:flex, so the title/subtitle/author need wrapping in
+    // one child for them to sit as a group to the right of the square.
     card.innerHTML =
-        "<h2>" + esc(b.title.original) + "</h2>"
+        "<span class=\"lib-icon\" aria-hidden=\"true\"></span>"
+      + "<span class=\"lib-text\">"
+      + "<h2>" + esc(b.title.original) + "</h2>"
       + (sub ? "<p class=\"subtitle\">" + esc(sub) + "</p>" : "")
-      + (b.author ? "<p class=\"byline\">by " + esc(b.author) + "</p>" : "");
+      + (b.author ? "<p class=\"byline\">by " + esc(b.author) + "</p>" : "")
+      + "</span>";
     card.addEventListener("click", function () { openBundle(id); });
     libList.appendChild(card);
   });
@@ -877,7 +979,38 @@ if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
 /* BUILD:SW-END */
 
 /* boot */
+/* Theme toggle (M33). The two states live in CSS behind
+   data-theme="invert" on <html>; this just flips the attribute and remembers
+   the choice, the same way LAST_KEY is handled — a plain try/catch because
+   localStorage throws outright in some privacy modes and a missing theme is
+   not worth breaking boot over. Default is state A (no attribute), so a
+   first-time visitor with no stored value gets the near-black page. */
+var THEME_KEY = "ds.theme";
+
+function applyTheme(name) {
+  if (name === "invert") document.documentElement.setAttribute("data-theme", "invert");
+  else document.documentElement.removeAttribute("data-theme");
+  var b = document.getElementById("themeBtn");
+  // aria-pressed carries the state for screen readers, since the visible
+  // label is the same sentence in both states.
+  if (b) b.setAttribute("aria-pressed", name === "invert" ? "true" : "false");
+}
+
+function initTheme() {
+  var stored = "";
+  try { stored = localStorage.getItem(THEME_KEY) || ""; } catch (e) {}
+  applyTheme(stored === "invert" ? "invert" : "");
+  var btn = document.getElementById("themeBtn");
+  if (!btn) return;
+  btn.addEventListener("click", function () {
+    var next = document.documentElement.getAttribute("data-theme") === "invert" ? "" : "invert";
+    applyTheme(next);
+    try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
+  });
+}
+
 function boot() {
+  initTheme();
   buildLibrary();
 
   // deep link wins (?p=<id>), then the last-opened paper, then the library

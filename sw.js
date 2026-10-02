@@ -3,7 +3,11 @@
    Note: only active on http/https (not file://), and service workers
    require a secure context — so it kicks in on the hosted share link. */
 
-var CACHE = "nerd-switch-v34";
+// v35: the M33 theme rewrite of index.html. Local assets are cache-FIRST
+// (see fetch()), so an installed PWA would have kept serving v34's markup
+// — the old light tokens, no theme button — with no way to notice. Bumping
+// the name makes activate() prune v34 and addAll the new index.html.
+var CACHE = "nerd-switch-v35";
 var LOCAL = [
   "./",
   "./index.html",
