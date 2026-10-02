@@ -57,7 +57,16 @@
      Every ink/background pair below is measured, not eyeballed: the tightest
      is 4.72:1 (muted on bg in state B) where AA wants 4.5. The --muted greys
      are deliberately not #787878 — the obvious "mid grey", and a 4.42:1 fail
-     on near-white. */
+     on near-white.
+
+     The --nav-* family is deliberately NOT mirrored. The top bar is chrome,
+     not content: it holds the app name and the home control at every scroll
+     position and on every paper, and letting it turn over meant a white bar
+     sitting on a near-black paper while the page underneath inverted. Those
+     four tokens are declared once here and never repeated in the state B
+     block, so the bar keeps the near-black of state A in both themes. The
+     hint button below the nav still uses --chrome and still inverts — that
+     one is content, and it is the control doing the inverting. */
   :root {
     /* A — default */
     --bg: #161616;
@@ -68,12 +77,18 @@
     --card-ink: #161616;
     --card-muted: #6e6e6e;
     --card-line: #e2e2e2;
-    --icon-bg: #ececec;
+    --icon-bg: #161616;
     --line: #333333;
     --chrome: #161616;
     --chrome-ink: #ffffff;
     --chrome-line: rgba(255, 255, 255, .92);
     --chrome-edge: rgba(255, 255, 255, .55);
+    /* Nav is fixed in both states — see the note above the block. Values are
+       state A's, kept here so the top bar reads as one unchanging surface. */
+    --nav: #161616;
+    --nav-ink: #ffffff;
+    --nav-line: rgba(255, 255, 255, .92);
+    --nav-edge: rgba(255, 255, 255, .55);
     --outline: #f2f2f2;
     --accent: #3d88d8;
     --accent-ink: #ffffff;
@@ -93,7 +108,7 @@
     --card-ink: #fcfcfc;
     --card-muted: #a8a8a8;
     --card-line: #2e2e2e;
-    --icon-bg: #2d2d2d;
+    --icon-bg: #f2f2f2;
     --line: #dddddd;
     --chrome: #ffffff;
     --chrome-ink: #161616;
@@ -118,7 +133,7 @@
     position: sticky; top: 0; z-index: 20;
     display: flex; align-items: center; gap: 10px;
     padding: calc(8px + env(safe-area-inset-top)) 14px 8px;
-    background: var(--chrome);
+    background: var(--nav);
     border-bottom: none;
     /* Three layers, top to bottom: the bar itself, a 1px line along its
        bottom edge, then the drop shadow. That line is an *inset* shadow
@@ -127,33 +142,31 @@
        make the bar 47px and push the page 1px past the viewport. Inset paints
        inside the bar (no reflow), and the outer shadow still draws below the
        bar, so the line sits between the bar and the shadow. The bar was blue;
-       it is now the theme's --chrome, so it is near-black in state A and
-       near-white in state B, and the hairline has to flip with it — a white
-       1px line is invisible on a white bar. Hence --chrome-line rather than
-       the white it used to be. */
-    box-shadow: inset 0 -1px 0 var(--chrome-line), 0 4px 14px rgba(0, 0, 0, .25);
+       it is now near-black via --nav, which does not change with the theme,
+       so this hairline is near-white in both states and can stay a constant. */
+    box-shadow: inset 0 -1px 0 var(--nav-line), 0 4px 14px rgba(0, 0, 0, .25);
     font-family: var(--font-ui);
     font-size: 13px;
   }
-  #topbar .app { font-weight: 700; letter-spacing: .02em; white-space: nowrap; color: var(--chrome-ink); }
+  #topbar .app { font-weight: 700; letter-spacing: .02em; white-space: nowrap; color: var(--nav-ink); }
   #topbar .spacer { flex: 1; }
-  /* The badge is the one pill on the bar, and it now flips against the bar
-     rather than staying blue: white pill / blue text was 3.76:1, and the same
-     blue on the state's near-black bar is 2.60:1, so neither direction passed
-     AA at this size. --chrome-ink on --chrome is 18.1:1 in both states and
-     needs no per-state rule. The home button takes the plain bordered look
-     below. The to-top control used to sit here as well, matched to ☰ as a
-     pair; it now floats bottom-right in the Elfsight "Example 1" skin further
-     down, and needs no rule of its own here. */
+  /* The badge is the one pill on the bar, and it flips against the bar rather
+     than staying blue: white pill / blue text was 3.76:1, and the same blue on
+     a near-black bar is 2.60:1, so neither direction passed AA at this size.
+     --nav-ink on --nav is 18.1:1 and, like the bar itself, holds in both
+     states. The home button takes the plain bordered look below. The to-top
+     control used to sit here as well, matched to ☰ as a pair; it now floats
+     bottom-right in the Elfsight "Example 1" skin further down, and needs no
+     rule of its own here. */
   #topbar button.badge {
     padding: 3px 10px; border-radius: 999px;
-    background: var(--chrome-ink); color: var(--chrome);
+    background: var(--nav-ink); color: var(--nav);
     border: none; font-weight: 600; white-space: nowrap;
   }
   #topbar button.badge:hover { filter: brightness(.97); }
   #topbar button {
-    background: transparent; color: var(--chrome-ink);
-    border: 1px solid var(--chrome-edge); border-radius: 8px;
+    background: transparent; color: var(--nav-ink);
+    border: 1px solid var(--nav-edge); border-radius: 8px;
     padding: 4px 10px; cursor: pointer; font-size: 13px;
   }
   /* Pin the line box for the icon button so ☰ keeps its exact height — its
@@ -185,8 +198,14 @@
   }
   #topBtn .btt-arrow { width: 27px; height: 27px; flex: none; fill: currentColor; }
   #topBtn:hover { background: #f3f3f3; border-color: rgba(0, 0, 0, .45); }
-  #topbar button:hover { color: var(--chrome-ink); border-color: var(--chrome-ink); }
-  #topbar button.badge:hover { color: var(--accent); border-color: var(--accent); }
+  #topbar button:hover { color: var(--nav-ink); border-color: var(--nav-ink); }
+  /* Pre-existing hover: the pill used to be white-on-blue by default, so
+     re-stating --accent here was a visual no-op. Now that the pill inverts to
+     near-black ink it would turn the hover into blue text on a near-white
+     pill — 3.76:1, the exact pairing the badge rules above exist to avoid.
+     Kept in step with the bar's own ink instead; the brightness filter on the
+     pill is what still signals the hover. */
+  #topbar button.badge:hover { color: var(--nav-ink); border-color: var(--nav-ink); }
 
   #container {
     height: calc(100vh - 46px);
@@ -235,7 +254,12 @@
      its right. Deliberately empty — it is a placeholder for artwork, and
      nothing should pose as artwork that isn't. `flex: none` keeps it from
      being squeezed by a long title; min-width: 0 on the text column is what
-     actually lets a long word wrap instead of widening the card. */
+     actually lets a long word wrap instead of widening the card.
+     The fill is near-black in state A rather than the pale #ececec it
+     started on: at 56px the light square was so close to the card it read as
+     a smudge, not a slot. Pinned to the card's own ink in each state, so it
+     stays the darkest thing on a near-white card and the lightest on a
+     near-black one — 17.6:1 against the card both ways. */
   .lib-card .lib-icon {
     flex: none;
     width: 56px; height: 56px;
@@ -255,7 +279,10 @@
      would sit on a near-white card and read as part of the list.
      :focus-visible matters here for the first time, since the element is now
      reachable by keyboard; the accent ring is the one colour allowed to
-     signal state on this surface. */
+     signal state on this surface.
+     This is the one surface that still inverts along with the page. The nav
+     bar above it deliberately does not — see the --nav-* note — so this
+     button and the paper list are what carry the state change. */
   #library .howto {
     display: block; width: 100%; text-align: left;
     font-family: var(--font-ui);
