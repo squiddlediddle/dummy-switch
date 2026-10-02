@@ -3,12 +3,13 @@
    Note: only active on http/https (not file://), and service workers
    require a secure context — so it kicks in on the hosted share link. */
 
-var CACHE = "nerd-switch-v33";
+var CACHE = "nerd-switch-v34";
 var LOCAL = [
   "./",
   "./index.html",
   "./bundle-light-reality-cycle.js",
   "./bundle-the-theory.js",
+  "./bundle-humane.js",
   // add every "./bundle-<id>.js" shipped in index.html here too
   "./manifest.webmanifest",
   "./icons/icon-192.png",
