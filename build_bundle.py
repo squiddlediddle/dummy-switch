@@ -446,7 +446,60 @@ def block_side(b: Block):
 # Bundle assembly
 # --------------------------------------------------------------------------
 
-def build_bundle(text_a: str, text_b: str):
+def retitle(heading: Block, newnum: str):
+    """Rewrite a heading's leading number in place (text, num and name).
+
+    The number NUMBER_RE matched is replaced by `newnum` using the match's own
+    span, so a heading like "12.1 Short-term" can become "9.1 Short-term"
+    without touching the rest of the line. Both sides are rewritten when they
+    carry the same old number, which is what keeps an aligned pair aligned.
+    """
+    m = NUMBER_RE.match(heading.text or "")
+    if not m or m.group(1) == newnum:
+        return False
+    a, b = m.span(1)
+    heading.text = heading.text[:a] + newnum + heading.text[b:]
+    m2 = NUMBER_RE.match(heading.text)
+    heading.num = m2.group(1) if m2 else None
+    heading.name = m2.group(2).strip() if m2 else heading.text
+    return True
+
+
+def renumber_sections(kept):
+    """Renumber the kept sections 1..N in reading order.
+
+    Unnumbered headings (Abstract, References) keep no number, and letter-
+    numbered ones (the old O1/O2 objection style) are left alone — only plain
+    decimal sections take part in the sequence. Subsections keep their own tail
+    number and follow their new parent, so "12.1" under a section that became
+    "9" is rewritten to "9.1". Returns (last_number_used, [(old, new), ...]).
+    """
+    n = 0
+    moved = []
+    for sa, sb in kept:
+        old = sa.heading.num if sa else None
+        if not old or not old[0].isdigit():
+            continue  # Abstract / References / O1-style: not in the sequence
+        n += 1
+        new = str(n)
+        if old == new:
+            continue
+        moved.append((old, new))
+        retitle(sa.heading, new)
+        if sb is not None and sb.heading.num == old:
+            retitle(sb.heading, new)
+        # subsections: keep the tail, swap the parent prefix
+        for ua, ub in pair_sections(sa.subsections, sb.subsections if sb else []):
+            for u in (ua, ub):
+                if not u or not u.heading.num or not u.heading.num[0].isdigit():
+                    continue
+                tail = u.heading.num.split(".", 1)
+                if len(tail) == 2:
+                    retitle(u.heading, new + "." + tail[1])
+    return n, moved
+
+
+def build_bundle(text_a: str, text_b: str, renumber: bool = False):
     header_a, sections_a = build_sections(tokenize(text_a))
     header_b, sections_b = build_sections(tokenize(text_b))
 
@@ -459,6 +512,14 @@ def build_bundle(text_a: str, text_b: str):
             dropped.append((sa, sb))
         else:
             kept.append((sa, sb))
+
+    # Renumber AFTER the drop test (which keys off the draft's own numbers)
+    # and BEFORE the sections are assembled, so the pair matching below and the
+    # emitted "number" fields all see the final numbers.
+    moved = []
+    if renumber:
+        _, moved = renumber_sections(kept)
+
     bundle_sections = []
 
     for sa, sb in kept:
@@ -499,7 +560,7 @@ def build_bundle(text_a: str, text_b: str):
                  for a, b in align_blocks(header_a["lead"], header_b["lead"])],
         "author": meta_a.get("author") or meta_b.get("author") or DEFAULT_AUTHOR,
         "sections": bundle_sections,
-    }, header_a, header_b, dropped
+    }, header_a, header_b, dropped, moved
 
 
 def stats(bundle):
@@ -550,6 +611,11 @@ def main():
     ap.add_argument("--id", default=None, metavar="ID",
                     help="override the bundle id (default: frontmatter id or "
                          "'light-reality-cycle')")
+    ap.add_argument("--renumber", action="store_true",
+                    help="renumber the kept sections 1..N so --drop leaves no "
+                         "gaps in the reading order (unnumbered headings like "
+                         "Abstract keep no number; subsections follow their "
+                         "new parent)")
     args = ap.parse_args()
 
     DROP_SECTIONS.update(d.strip().lower() for d in args.drop)
@@ -558,7 +624,7 @@ def main():
     # the "for everyone" side may carry ✳️***Explained:*** markers — strip them
     tb = strip_markers(Path(args.everyone).read_text(encoding="utf-8"))
 
-    bundle, ha, hb, dropped_sections = build_bundle(ta, tb)
+    bundle, ha, hb, dropped_sections, moved = build_bundle(ta, tb, renumber=args.renumber)
     if args.id:
         bundle["id"] = args.id
     bundle["meta"] = {
@@ -592,6 +658,10 @@ def main():
         for sa, sb in dropped_sections:
             num = sb.heading.num or sa.heading.num
             print(f"           [{num or '-'}] {sa.heading.name or '?'}")
+    if moved:
+        print("renumbered:")
+        for old, new in moved:
+            print(f"           {old} -> {new}")
     print()
     print("section map (alignment anchor = headings):")
     for kind, num, name in section_report(bundle):

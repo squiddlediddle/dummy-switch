@@ -912,112 +912,112 @@ window.PAPER_BUNDLES["humane"] = {
    "subsections": []
   },
   {
+   "number": "9",
+   "heading": {
+    "original": {
+     "kind": "heading",
+     "text": "9. Limitations, cultural considerations, and ethical caveats",
+     "level": 2,
+     "number": "9",
+     "name": "Limitations, cultural considerations, and ethical caveats"
+    },
+    "everyone": {
+     "kind": "heading",
+     "text": "9. Limitations, cultural considerations, and ethical caveats",
+     "level": 2,
+     "number": "9",
+     "name": "Limitations, cultural considerations, and ethical caveats"
+    }
+   },
+   "blocks": [
+    {
+     "original": {
+      "kind": "list",
+      "text": "- HUMANE reduces predictable harm but cannot eliminate contextual power dynamics (e.g., hiring decisions, institutional misuse).\n- Different cultures interpret disclosure very differently; adapt language and thresholds accordingly.\n- Privacy and consent are essential — sharing must be voluntary and revocable.\n- Tests vary widely in quality; misrepresenting provenance is ethically problematic.\n- HUMANE focuses on interpersonal norms; institutional safeguards (policy, audit) are a separate, necessary layer.",
+      "level": null,
+      "number": null,
+      "name": "- HUMANE reduces predictable harm but cannot eliminate contextual power dynamics (e.g., hiring decisions, institutional misuse).\n- Different cultures interpret disclosure very differently; adapt language and thresholds accordingly.\n- Privacy and consent are essential — sharing must be voluntary and revocable.\n- Tests vary widely in quality; misrepresenting provenance is ethically problematic.\n- HUMANE focuses on interpersonal norms; institutional safeguards (policy, audit) are a separate, necessary layer."
+     },
+     "everyone": {
+      "kind": "list",
+      "text": "- HUMANE reduces predictable harm but cannot eliminate contextual power dynamics (e.g., hiring decisions, institutional misuse).\n- Different cultures interpret disclosure very differently; adapt language and thresholds accordingly.\n- Privacy and consent are essential — sharing must be voluntary and revocable.\n- Tests vary widely in quality; misrepresenting provenance is ethically problematic.\n- HUMANE focuses on interpersonal norms; institutional safeguards (policy, audit) are a separate, necessary layer.",
+      "level": null,
+      "number": null,
+      "name": "- HUMANE reduces predictable harm but cannot eliminate contextual power dynamics (e.g., hiring decisions, institutional misuse).\n- Different cultures interpret disclosure very differently; adapt language and thresholds accordingly.\n- Privacy and consent are essential — sharing must be voluntary and revocable.\n- Tests vary widely in quality; misrepresenting provenance is ethically problematic.\n- HUMANE focuses on interpersonal norms; institutional safeguards (policy, audit) are a separate, necessary layer."
+     }
+    }
+   ],
+   "subsections": []
+  },
+  {
+   "number": "10",
+   "heading": {
+    "original": {
+     "kind": "heading",
+     "text": "10. Suggested reading and resources",
+     "level": 2,
+     "number": "10",
+     "name": "Suggested reading and resources"
+    },
+    "everyone": {
+     "kind": "heading",
+     "text": "10. Suggested reading and resources",
+     "level": 2,
+     "number": "10",
+     "name": "Suggested reading and resources"
+    }
+   },
+   "blocks": [
+    {
+     "original": {
+      "kind": "paragraph",
+      "text": "For context and further study; non-exhaustive.",
+      "level": null,
+      "number": null,
+      "name": "For context and further study; non-exhaustive."
+     },
+     "everyone": {
+      "kind": "paragraph",
+      "text": "For context and further study; non-exhaustive.",
+      "level": null,
+      "number": null,
+      "name": "For context and further study; non-exhaustive."
+     }
+    },
+    {
+     "original": {
+      "kind": "list",
+      "text": "- Standards for Educational and Psychological Testing (AERA, APA, NCME) — measurement best practices.\n- Erving Goffman, *Stigma: Notes on the Management of Spoiled Identity* — foundational work on social reaction to perceived difference.\n- Basic texts on psychometrics (reliability, validity, test norms) — textbooks or review chapters.\n- Literature on disclosure protocols in health and identity (informed consent, stigma-reduction strategies).\n- Popular summaries on IQ measurement and interpretation (for lay audiences).",
+      "level": null,
+      "number": null,
+      "name": "- Standards for Educational and Psychological Testing (AERA, APA, NCME) — measurement best practices.\n- Erving Goffman, *Stigma: Notes on the Management of Spoiled Identity* — foundational work on social reaction to perceived difference.\n- Basic texts on psychometrics (reliability, validity, test norms) — textbooks or review chapters.\n- Literature on disclosure protocols in health and identity (informed consent, stigma-reduction strategies).\n- Popular summaries on IQ measurement and interpretation (for lay audiences)."
+     },
+     "everyone": {
+      "kind": "list",
+      "text": "- Standards for Educational and Psychological Testing (AERA, APA, NCME) — measurement best practices.\n- Erving Goffman, *Stigma: Notes on the Management of Spoiled Identity* — foundational work on social reaction to perceived difference.\n- Basic texts on psychometrics (reliability, validity, test norms) — textbooks or review chapters.\n- Literature on disclosure protocols in health and identity (informed consent, stigma-reduction strategies).\n- Popular summaries on IQ measurement and interpretation (for lay audiences).",
+      "level": null,
+      "number": null,
+      "name": "- Standards for Educational and Psychological Testing (AERA, APA, NCME) — measurement best practices.\n- Erving Goffman, *Stigma: Notes on the Management of Spoiled Identity* — foundational work on social reaction to perceived difference.\n- Basic texts on psychometrics (reliability, validity, test norms) — textbooks or review chapters.\n- Literature on disclosure protocols in health and identity (informed consent, stigma-reduction strategies).\n- Popular summaries on IQ measurement and interpretation (for lay audiences)."
+     }
+    }
+   ],
+   "subsections": []
+  },
+  {
    "number": "11",
    "heading": {
     "original": {
      "kind": "heading",
-     "text": "11. Limitations, cultural considerations, and ethical caveats",
+     "text": "11. Appendices",
      "level": 2,
      "number": "11",
-     "name": "Limitations, cultural considerations, and ethical caveats"
-    },
-    "everyone": {
-     "kind": "heading",
-     "text": "11. Limitations, cultural considerations, and ethical caveats",
-     "level": 2,
-     "number": "11",
-     "name": "Limitations, cultural considerations, and ethical caveats"
-    }
-   },
-   "blocks": [
-    {
-     "original": {
-      "kind": "list",
-      "text": "- HUMANE reduces predictable harm but cannot eliminate contextual power dynamics (e.g., hiring decisions, institutional misuse).\n- Different cultures interpret disclosure very differently; adapt language and thresholds accordingly.\n- Privacy and consent are essential — sharing must be voluntary and revocable.\n- Tests vary widely in quality; misrepresenting provenance is ethically problematic.\n- HUMANE focuses on interpersonal norms; institutional safeguards (policy, audit) are a separate, necessary layer.",
-      "level": null,
-      "number": null,
-      "name": "- HUMANE reduces predictable harm but cannot eliminate contextual power dynamics (e.g., hiring decisions, institutional misuse).\n- Different cultures interpret disclosure very differently; adapt language and thresholds accordingly.\n- Privacy and consent are essential — sharing must be voluntary and revocable.\n- Tests vary widely in quality; misrepresenting provenance is ethically problematic.\n- HUMANE focuses on interpersonal norms; institutional safeguards (policy, audit) are a separate, necessary layer."
-     },
-     "everyone": {
-      "kind": "list",
-      "text": "- HUMANE reduces predictable harm but cannot eliminate contextual power dynamics (e.g., hiring decisions, institutional misuse).\n- Different cultures interpret disclosure very differently; adapt language and thresholds accordingly.\n- Privacy and consent are essential — sharing must be voluntary and revocable.\n- Tests vary widely in quality; misrepresenting provenance is ethically problematic.\n- HUMANE focuses on interpersonal norms; institutional safeguards (policy, audit) are a separate, necessary layer.",
-      "level": null,
-      "number": null,
-      "name": "- HUMANE reduces predictable harm but cannot eliminate contextual power dynamics (e.g., hiring decisions, institutional misuse).\n- Different cultures interpret disclosure very differently; adapt language and thresholds accordingly.\n- Privacy and consent are essential — sharing must be voluntary and revocable.\n- Tests vary widely in quality; misrepresenting provenance is ethically problematic.\n- HUMANE focuses on interpersonal norms; institutional safeguards (policy, audit) are a separate, necessary layer."
-     }
-    }
-   ],
-   "subsections": []
-  },
-  {
-   "number": "13",
-   "heading": {
-    "original": {
-     "kind": "heading",
-     "text": "13. Suggested reading and resources",
-     "level": 2,
-     "number": "13",
-     "name": "Suggested reading and resources"
-    },
-    "everyone": {
-     "kind": "heading",
-     "text": "13. Suggested reading and resources",
-     "level": 2,
-     "number": "13",
-     "name": "Suggested reading and resources"
-    }
-   },
-   "blocks": [
-    {
-     "original": {
-      "kind": "paragraph",
-      "text": "For context and further study; non-exhaustive.",
-      "level": null,
-      "number": null,
-      "name": "For context and further study; non-exhaustive."
-     },
-     "everyone": {
-      "kind": "paragraph",
-      "text": "For context and further study; non-exhaustive.",
-      "level": null,
-      "number": null,
-      "name": "For context and further study; non-exhaustive."
-     }
-    },
-    {
-     "original": {
-      "kind": "list",
-      "text": "- Standards for Educational and Psychological Testing (AERA, APA, NCME) — measurement best practices.\n- Erving Goffman, *Stigma: Notes on the Management of Spoiled Identity* — foundational work on social reaction to perceived difference.\n- Basic texts on psychometrics (reliability, validity, test norms) — textbooks or review chapters.\n- Literature on disclosure protocols in health and identity (informed consent, stigma-reduction strategies).\n- Popular summaries on IQ measurement and interpretation (for lay audiences).",
-      "level": null,
-      "number": null,
-      "name": "- Standards for Educational and Psychological Testing (AERA, APA, NCME) — measurement best practices.\n- Erving Goffman, *Stigma: Notes on the Management of Spoiled Identity* — foundational work on social reaction to perceived difference.\n- Basic texts on psychometrics (reliability, validity, test norms) — textbooks or review chapters.\n- Literature on disclosure protocols in health and identity (informed consent, stigma-reduction strategies).\n- Popular summaries on IQ measurement and interpretation (for lay audiences)."
-     },
-     "everyone": {
-      "kind": "list",
-      "text": "- Standards for Educational and Psychological Testing (AERA, APA, NCME) — measurement best practices.\n- Erving Goffman, *Stigma: Notes on the Management of Spoiled Identity* — foundational work on social reaction to perceived difference.\n- Basic texts on psychometrics (reliability, validity, test norms) — textbooks or review chapters.\n- Literature on disclosure protocols in health and identity (informed consent, stigma-reduction strategies).\n- Popular summaries on IQ measurement and interpretation (for lay audiences).",
-      "level": null,
-      "number": null,
-      "name": "- Standards for Educational and Psychological Testing (AERA, APA, NCME) — measurement best practices.\n- Erving Goffman, *Stigma: Notes on the Management of Spoiled Identity* — foundational work on social reaction to perceived difference.\n- Basic texts on psychometrics (reliability, validity, test norms) — textbooks or review chapters.\n- Literature on disclosure protocols in health and identity (informed consent, stigma-reduction strategies).\n- Popular summaries on IQ measurement and interpretation (for lay audiences)."
-     }
-    }
-   ],
-   "subsections": []
-  },
-  {
-   "number": "14",
-   "heading": {
-    "original": {
-     "kind": "heading",
-     "text": "14. Appendices",
-     "level": 2,
-     "number": "14",
      "name": "Appendices"
     },
     "everyone": {
      "kind": "heading",
-     "text": "14. Appendices",
+     "text": "11. Appendices",
      "level": 2,
-     "number": "14",
+     "number": "11",
      "name": "Appendices"
     }
    },
@@ -1122,20 +1122,20 @@ window.PAPER_BUNDLES["humane"] = {
    "subsections": []
   },
   {
-   "number": "15",
+   "number": "12",
    "heading": {
     "original": {
      "kind": "heading",
-     "text": "15. Closing remarks",
+     "text": "12. Closing remarks",
      "level": 2,
-     "number": "15",
+     "number": "12",
      "name": "Closing remarks"
     },
     "everyone": {
      "kind": "heading",
-     "text": "15. Closing remarks",
+     "text": "12. Closing remarks",
      "level": 2,
-     "number": "15",
+     "number": "12",
      "name": "Closing remarks"
     }
    },
