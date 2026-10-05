@@ -78,7 +78,6 @@
     --card-ink: #161616;
     --card-muted: #6e6e6e;
     --card-line: #e2e2e2;
-    --icon-bg: #161616;
     --line: #333333;
     --chrome: #161616;
     --chrome-ink: #ffffff;
@@ -109,7 +108,6 @@
     --card-ink: #fcfcfc;
     --card-muted: #a8a8a8;
     --card-line: #2e2e2e;
-    --icon-bg: #f2f2f2;
     --line: #dddddd;
     --chrome: #ffffff;
     --chrome-ink: #161616;
@@ -372,16 +370,20 @@
      nothing should pose as artwork that isn't. `flex: none` keeps it from
      being squeezed by a long title; min-width: 0 on the text column is what
      actually lets a long word wrap instead of widening the card.
-     The fill is near-black in state A rather than the pale #ececec it
-     started on: at 56px the light square was so close to the card it read as
-     a smudge, not a slot. Pinned to the card's own ink in each state, so it
-     stays the darkest thing on a near-white card and the lightest on a
-     near-black one — 17.6:1 against the card both ways. */
+     Outline, no fill. A filled slot competed with the title: at 56px a solid
+     square reads as an image whether or not there is one, and being achromatic
+     it also read as the heaviest thing on the card. An empty outline says
+     "slot" and nothing more. Border is --card-muted, the one token already
+     tuned to sit legibly on --card in both states (#6e6e6e at 4.9:1 on the
+     near-white card, #a8a8a8 at 8.8:1 on the near-black one), so it inverts
+     for free without a second value. 1px, not 2px — this is a hairline
+     placeholder, and a heavier one would read as a border on the artwork. */
   .lib-card .lib-icon {
     flex: none;
     width: 56px; height: 56px;
     border-radius: 14px;
-    background: var(--icon-bg);
+    border: 1px solid var(--card-muted);
+    background: none;
   }
   .lib-card .lib-text { min-width: 0; }
   .lib-card h2 { margin: 0 0 .1em; border: none; font-size: 1.25em; }

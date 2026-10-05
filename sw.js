@@ -7,7 +7,9 @@
 // assets are cache-FIRST (see fetch()), so an installed PWA would have kept
 // serving v35's markup. Bumping the name makes activate() prune v35 and addAll
 // the new index.html.
-var CACHE = "nerd-switch-v36";
+// v37: the M36 change to the card icon slot in index.html (outline, no fill).
+// The slot is CSS-only, but it ships in index.html, which is cached first.
+var CACHE = "nerd-switch-v37";
 var LOCAL = [
   "./",
   "./index.html",
