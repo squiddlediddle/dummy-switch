@@ -45,8 +45,9 @@
      achromatic: #ffffff, #e5e5e5, #161616 and tints, with no accent colour
      anywhere in it (0.20% of pixels clear 0.35 saturation, all of them
      compression ringing). So --accent is unchanged and still the only colour
-     in the app, which now means it shows up *only* on the blue explained
-     panel and the callout label — it reads louder for being the lone colour.
+     in the app, which now means it shows up *only* on the paper's tagline,
+     blockquote rules, callout labels, raw-math ink and the panel's ✳ badge —
+     it reads louder for being the lone colour.
 
      Two surfaces exist because --card was doing two jobs. On the library it
      IS the card. Inside a paper it was also the background of pre and
@@ -119,6 +120,101 @@
     --quote-bg: #ffffff;
     --quote-ink: #161616;
   }
+  /* ------------------------------------------------------------------
+     READING VIEW. A paper is open — the page is the paper, so it is
+     always white, whichever of the two library states the reader chose.
+     The hint above the library list is the only control for that choice
+     (initTheme); it has no say down here.
+
+     This block sits AFTER state B on purpose. Both selectors are
+     :root[attribute] = specificity (0,2,0), so source order is the tie
+     break, and a paper must win over the stored theme in either state.
+     It is a token swap, not a new theme: no token is invented here that
+     the light state does not already use, so the two paths cannot drift.
+
+     --bg is pure #ffffff rather than state B's #f6f6f6: this is the
+     surface the reading tokens were measured against for the body ink
+     (17.4:1) and the muted greys (#6e6e6e = 5.1:1, up from 4.72:1 on
+     #f6f6f6), and a paper wants the true white. --surface is *not*
+     white — it backs <pre> and .callout, which would otherwise vanish
+     into the page — so it keeps #f6f6f6 as a quiet slab.
+
+     --outline has to be stated here, not left to the theme. It marks the
+     switchable blocks, and in state A it is near-white (#f2f2f2) because
+     state A's page is near-black; on this white page the same near-white
+     outline would be invisible, so it takes the dark token. Same job, same
+     1px, correct on the surface it is painted on.
+
+     --card* and --chrome* are deliberately absent: they only exist on the
+     library, which is display:none while a paper is open, and leaving them
+     on the theme tokens keeps the cards switching with the theme when you
+     go back. --nav-* is absent for the same reason as above — the bar is
+     pinned in :root and never mirrors. */
+  :root[data-view="read"] {
+    --bg: #ffffff;
+    --ink: #161616;
+    --muted: #6e6e6e;
+    --surface: #f6f6f6;
+    --line: #dddddd;
+    --outline: #161616;
+    --code-bg: rgba(22, 22, 22, .07);
+    --quote-bg: #ffffff;
+    --quote-ink: #161616;
+  }
+
+  /* ------------------------------------------------------------------
+     EXPLAIN FOCUS. At least one block is explained, so the reader is
+     looking at an explanation and nothing else: the page goes black and
+     the panel is the only white thing on it. One class, set by
+     updateBadge() from the same count the badge itself uses, so the
+     blackout and the "Turn off n explained" pill can never disagree —
+     and it drops the moment the last box is switched back.
+
+     The blackout is --bg itself, declared here, so `body { background: var(--bg) }`
+     turns black and the canvas goes with it. Painting #container directly was
+     tried first and measured wrong: #container is sized `100dvh - 46px`, so on
+     the shorter viewport heights a mobile browser reports while its URL bar is
+     showing, a white strip was left along the bottom edge — a page-level
+     artefact of the same class as the 46px reservation. The token cannot have
+     that problem. #container is the bar's SIBLING either way, so the top bar
+     keeps its own near-black with its white hairline and shadow: the badge and
+     the home control stay usable and stay legible, which is the whole point of
+     "not the top bar".
+
+     Everything outside the panel is near-black rather than exactly black:
+     the ink, the muted greys, the --surface slabs behind <pre> and
+     .callout, the blockquote fill, the code tint and the --outline all
+     move to #141414 / #0e0e0e, so those elements do not survive as white
+     islands in the blackout the way they would if only the page colour
+     changed. Against #000 that is 1.06:1 — unreadable by design, and a
+     half-degree visible as a ghost of the page's shape, so it reads as a
+     deliberate spotlight rather than a failed render. --accent is pulled
+     to the same near-black for the same reason: the taglines, blockquote
+     rules, callout labels and raw-math ink all live outside the panel,
+     and blue there would be the one thing still lit up.
+
+     Panels re-declare --ink/--muted/--surface/--line on themselves, so
+     this only reaches what is NOT explained. */
+  :root[data-focus="explain"] {
+    --bg: #000000;
+    --ink: #141414;
+    --muted: #141414;
+    --surface: #0e0e0e;
+    --line: #101010;
+    --outline: #141414;
+    --accent: #141414;
+    --code-bg: rgba(255, 255, 255, .03);
+    --quote-bg: #0e0e0e;
+    --quote-ink: #141414;
+  }
+  /* scrollbar-color keeps the scrollbar out of the blackout on desktop:
+     without it the classic scrollbar paints its own light track over the
+     black page. Chrome/Firefox only; everywhere else it is ignored. The
+     background is not repeated here — it is --bg above. */
+  :root[data-focus="explain"] #container {
+    scrollbar-color: #3a3a3a #000000;
+  }
+
   * { box-sizing: border-box; }
   html, body { margin: 0; height: 100%; }
   body {
@@ -149,6 +245,13 @@
     font-size: 13px;
   }
   #topbar .app { font-weight: 700; letter-spacing: .02em; white-space: nowrap; color: var(--nav-ink); }
+  /* The bar's own ink, pinned here rather than left to inheritance. Every child
+     already colours itself from --nav-ink, so this changes nothing visible
+     today — but body colour is a token, and the explain-focus blackout pulls it
+     to near-black, so an uncoloured child added to the bar later would arrive
+     dark-on-dark. Pinning it makes "the bar is not part of the blackout" a
+     property of the bar rather than of its contents. */
+  #topbar { color: var(--nav-ink); }
   #topbar .spacer { flex: 1; }
   /* The badge is the one pill on the bar, and it flips against the bar rather
      than staying blue: white pill / blue text was 3.76:1, and the same blue on
@@ -198,6 +301,20 @@
   }
   #topBtn .btt-arrow { width: 27px; height: 27px; flex: none; fill: currentColor; }
   #topBtn:hover { background: #f3f3f3; border-color: rgba(0, 0, 0, .45); }
+  /* Over the explain-focus blackout the white pill would be the second-brightest
+     thing on screen after the panel itself, which breaks the spotlight: it is
+     chrome, so it takes the top bar's own treatment instead — transparent with
+     a near-white edge and white ink, and a faint wash on hover. Same shape,
+     same position, same hit target; only the fill changes. */
+  :root[data-focus="explain"] #topBtn {
+    background: transparent;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, .55);
+  }
+  :root[data-focus="explain"] #topBtn:hover {
+    background: rgba(255, 255, 255, .10);
+    border-color: #ffffff;
+  }
   #topbar button:hover { color: var(--nav-ink); border-color: var(--nav-ink); }
   /* Pre-existing hover: the pill used to be white-on-blue by default, so
      re-stating --accent here was a visual no-op. Now that the pill inverts to
@@ -314,43 +431,44 @@
 
   p { margin: 0 0 1em; }
 
-  /* explained (blue panel) blocks — same blue as the UI accent, white text,
-     and the font size stays identical to the rest of the paper */
-  .toggleable { cursor: pointer; }
-  /* switchable blocks are outlined at all times, on every device, so they
-     read as clickable — except once switched: the explained blue panel
-     wears no outline (the panel itself is the "explained" state; the
-     pointer cursor and the badge still mark it as revertible). Hover just
-     thickens the line. Outlines don't participate in layout, so the
-     zero-shift guarantee is unaffected. */
-  /* clickable boxes: 1px white outline (enough to read on the grey app
-     background without ringing every block), 2px accent on hover — the
-     explained panels themselves have no outline */
-  /* The "switchable block" marker. Was a fixed #ffffff, which is only ever
-     visible on a dark page — the theme made state B a near-white page, so
-     this had to become the state token or every togglable block would lose
-     its outline in exactly the mode that advertises toggling them.
-     .explained is excluded: it carries its own blue panel. */
-  .toggleable:not(.explained) { outline: 1px solid var(--outline); outline-offset: 3px; }
-  .toggleable:not(.explained):hover { outline: 2px solid var(--accent); }
+  /* explained (white panel) blocks — white box, near-black text, the same
+     font size as the rest of the paper. The panel was blue until the focus
+     pass; the shape, the padding and the zero-shift guarantees below are all
+     unchanged, only the surface flipped. Because it is white it needs the
+     near-black ink, and because the page around it goes black (see
+     :root[data-focus="explain"]) it is now the only white thing on screen —
+     the accent is kept so a quote rule, a callout label or raw math inside
+     the panel still reads as the app's one colour. */
   .explained {
-    --bg: #3d88d8;
-    --ink: #ffffff;
-    --muted: rgba(255, 255, 255, .82);
-    --card: #3d88d8;
-    --accent: #ffffff;
-    --accent-ink: #3d88d8;
-    --line: rgba(255, 255, 255, .4);
-    --code-bg: #3579c4;
-    --quote-bg: #3579c4;
-    --quote-ink: #ffffff;
+    --bg: #ffffff;
+    --ink: #161616;
+    --muted: #555555;
+    --accent: #3d88d8;
+    --line: #e2e2e2;
+    --surface: #f0f0f0;
+    --code-bg: #f0f0f0;
+    --quote-bg: #f7f7f7;
+    --quote-ink: #161616;
     font-size: var(--fs);
-    background: var(--card);
+    background: var(--bg);
     color: var(--ink);
   }
+  /* switchable blocks are outlined at all times, on every device, so they
+     read as clickable — except once switched: the explained panel wears no
+     outline (the panel itself is the "explained" state; the pointer cursor
+     and the badge still mark it as revertible). Hover just thickens the
+     line. Outlines don't participate in layout, so the zero-shift guarantee
+     is unaffected. */
+  /* The "switchable block" marker, in the theme token: a fixed #ffffff was
+     only ever visible on a dark page, so the token is what keeps the ring
+     readable on whichever surface the block is sitting on — the reading
+     view states it as near-black for the same reason. .explained is
+     excluded: the panel itself is the "explained" state. */
+  .toggleable:not(.explained) { outline: 1px solid var(--outline); outline-offset: 3px; }
+  .toggleable:not(.explained):hover { outline: 2px solid var(--accent); }
   /* a few px of air around the text of explained paragraphs/lists: the
      negative margins cancel the added padding exactly, so the text and the
-     flow keep their positions — only the blue box grows outward.
+     flow keep their positions — only the panel grows outward.
      The sides are set individually (NOT the `padding` shorthand) because a
      shorthand would also reset padding-left, and for lists that padding is
      the bullet indent — see the list rule below. */
@@ -363,7 +481,7 @@
   p.explained { padding-left: 8px; }
   /* Lists: keep the 1.6em indent (that's what positions the item text) and
      widen it by the same 8px the negative margin moved the box left, so the
-     text stays put while the blue grows leftwards — far enough that the
+     text stays put while the panel grows leftwards — far enough that the
      bullet/number markers, which browsers draw in the padding area just
      outside the text, land INSIDE the panel instead of hanging off its left
      edge. Nested lists keep the plain 1.6em (the outer panel already covers
@@ -378,13 +496,17 @@
   .explained .callout { background: var(--code-bg); }
 
   /* the explained prefix echoes the drafted ✳️***Explained:*** markers —
-     a white square ✳ badge, then a bold italic "Explained:" label. The gap
+     a square ✳ badge, then a bold italic "Explained:" label. The gap
      between the badge and the label is a single typed space (the text node
-     below), so the whole prefix reads "✳️ Explained:". The badge color is the
-     literal brand blue, NOT var(--accent), because --accent is redefined to
-     white inside panels. Inline with the text for paragraph / quote / heading
-     panels; on LIST panels it is a lead line of its own with the bullets
-     starting on the next line (see buildEl). */
+     below), so the whole prefix reads "✳️ Explained:". The badge INVERTED
+     with the panel: it was a white square carrying a blue ✳, which is
+     invisible the moment the square sits on a white panel, so it is now the
+     panel's near-black square carrying a white ✳ — 17.6:1, and still the
+     app's achromatic palette. Literal colours, not var(--accent): panels
+     redefine --accent, so a token would change meaning between here and
+     there. Inline with the text for paragraph / quote / heading panels; on
+     LIST panels it is a lead line of its own with the bullets starting on
+     the next line (see buildEl). */
   .exlab { font-weight: 700; font-style: italic; white-space: nowrap; }
   /* The badge is upright even though the label is italic: the label's slant
      leans the asterisk to the right (measured +8% of the square's width off
@@ -406,8 +528,8 @@
     display: inline-block;
     width: 1.05em;
     height: 1.05em;
-    background: #ffffff;
-    color: #3d88d8;
+    background: #161616;
+    color: #ffffff;
     text-align: center;
     line-height: .85em;
     font-size: .9em;
@@ -829,11 +951,23 @@ function countExplained() {
 
 /* The badge is an *action*, not a state readout: it turns every explained box
    off. With nothing explained there is nothing to turn off, so it hides
-   entirely — it only exists once at least one block has been switched over. */
+   entirely — it only exists once at least one block has been switched over.
+
+   It is also where the EXPLAIN FOCUS blackout is set (:root[data-focus]), for
+   the same reason the pill's visibility lives here: this is the one function
+   every explained-state change already passes through — toggleItem(),
+   clearExplained(), openBundle() on restore, showLibrary() — so the blackout
+   and the count can never disagree, and the page comes back the moment the
+   last box is switched off. It is driven off the same `n`, and it is dropped
+   on the library along with the pill, so the library is never blacked out by a
+   paper's leftover state. */
 function updateBadge() {
   var n = countExplained();
   var b = document.getElementById("badge");
-  if (!state.bundle || n === 0) { b.classList.add("hidden"); return; }
+  var focused = !!state.bundle && n > 0;
+  if (focused) document.documentElement.setAttribute("data-focus", "explain");
+  else document.documentElement.removeAttribute("data-focus");
+  if (!focused) { b.classList.add("hidden"); return; }
   b.classList.remove("hidden");
   b.textContent = "Turn off " + n + " explained";
 }
@@ -913,6 +1047,9 @@ function showLibrary() {
   doc.classList.add("hidden");
   library.classList.remove("hidden");
   topBtn.classList.add("hidden");
+  // off the reading surface, so the library goes back to whichever theme state
+  // the reader picked on the hint above it (see :root[data-view="read"])
+  document.documentElement.removeAttribute("data-view");
   document.title = "The Nerd Switch";
   container.scrollTop = 0;
   updateTopBtn();
@@ -922,6 +1059,11 @@ function showLibrary() {
 function hideLibrary() {
   library.classList.add("hidden");
   doc.classList.remove("hidden");
+  // the reading surface: the paper is always white, whatever the library theme
+  // state is. Rides this switch rather than being set inside openBundle(), so it
+  // cannot survive the view switch and cannot be skipped by it — the same
+  // argument as the to-top pill below.
+  document.documentElement.setAttribute("data-view", "read");
   // The floating to-top pill belongs to the reading view, so it rides the same
   // switch as the document: hidden on the library, back when a paper is open.
   topBtn.classList.remove("hidden");
@@ -1011,7 +1153,13 @@ if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
    the choice, the same way LAST_KEY is handled — a plain try/catch because
    localStorage throws outright in some privacy modes and a missing theme is
    not worth breaking boot over. Default is state A (no attribute), so a
-   first-time visitor with no stored value gets the near-black page. */
+   first-time visitor with no stored value gets the near-black page.
+
+   This switch is the LIBRARY's, and only the library's: the hint button that
+   drives it lives on that screen, and :root[data-view="read"] is declared
+   after state B in the stylesheet, so a paper is white in either state. That
+   is the point of the split — choosing how the shelves look must not choose
+   how the paper looks. */
 var THEME_KEY = "ds.theme";
 
 function applyTheme(name) {
